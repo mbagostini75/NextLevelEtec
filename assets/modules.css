@@ -149,3 +149,9 @@ body:after{
 .topbar-inner{box-sizing:border-box!important;width:720px!important;max-width:calc(100vw - 28px)!important}
 .xp-banner{box-sizing:border-box!important;width:720px!important;max-width:100%!important}
 @media(max-width:720px){.topbar-inner,.xp-banner{width:calc(100vw - 28px)!important;max-width:calc(100vw - 28px)!important}}
+
+/* Corrige box model: .app tem 692px úteis (720 - 28px de padding) */
+.topbar-inner{box-sizing:border-box!important;width:720px!important;max-width:720px!important;padding-left:14px!important;padding-right:14px!important}
+.xp-banner{box-sizing:border-box!important;width:100%!important;max-width:none!important}
+.hero{box-sizing:border-box!important;width:auto!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
+@media(max-width:748px){.topbar-inner{width:100%!important;max-width:100%!important}.xp-banner{width:100%!important}.hero{width:auto!important}}
