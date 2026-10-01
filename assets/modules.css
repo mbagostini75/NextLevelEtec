@@ -101,3 +101,6 @@ body:after{
   body:before{background-position:center top!important;opacity:.30!important}
   .card,.question-card,.topic-row,.monster-row{background:rgba(10,23,42,.96)!important}
 }
+
+/* Progressive challenge locks */
+.challenge-card.locked,.challenge-card:disabled{opacity:.52!important;cursor:not-allowed!important;filter:saturate(.55);transform:none!important}.challenge-card:disabled:hover{transform:none!important}.challenge-card.locked .subject-arrow,.challenge-card.locked .arrow{color:#9aabc0!important}
