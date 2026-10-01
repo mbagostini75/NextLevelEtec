@@ -279,3 +279,8 @@ body:after{
 .xp-next{left:18.2%!important;width:42.1%!important;top:61%!important;font-size:max(1.7cqw,9px)!important;line-height:1.2!important}
 .xp-rank{left:63.9%!important;right:auto!important;width:20.8%!important;top:13.4%!important;height:59.2%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:.6cqw!important;font-size:max(3.4cqw,14px)!important;line-height:1!important}
 .xp-rank small{font-size:max(1.15cqw,7px)!important;letter-spacing:.16em!important}
+
+
+/* Cabeçalho: mesmo fundo da página (body:before + body:after), fixo na tela, para o logo não ficar numa faixa escura */
+.topbar{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important;background:linear-gradient(rgba(5,10,22,.12),rgba(5,10,22,.42)) fixed,linear-gradient(rgba(7,16,31,.58),rgba(7,16,31,.58)) fixed,linear-gradient(90deg,rgba(5,12,27,.22) 0%,rgba(5,12,27,.52) 34%,rgba(5,12,27,.72) 50%,rgba(5,12,27,.52) 66%,rgba(5,12,27,.22) 100%) fixed,url('nextlevel-background.png') center top/cover no-repeat fixed!important}
+@media(max-width:720px){.topbar{background:linear-gradient(rgba(5,10,22,.12),rgba(5,10,22,.42)) fixed,linear-gradient(rgba(7,16,31,.70),rgba(7,16,31,.70)) fixed,linear-gradient(90deg,rgba(5,12,27,.22) 0%,rgba(5,12,27,.52) 34%,rgba(5,12,27,.72) 50%,rgba(5,12,27,.52) 66%,rgba(5,12,27,.22) 100%) fixed,url('nextlevel-background.png') center top/cover no-repeat fixed!important}}
