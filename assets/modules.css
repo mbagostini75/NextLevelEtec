@@ -195,3 +195,23 @@ body:after{
   background:linear-gradient(rgba(5,12,27,.34),rgba(5,12,27,.34)),url('banner-final.webp') center/100% 100% no-repeat!important;
   box-shadow:none!important;
 }
+
+/* Ajuste visual final: XP e banner inicial com a mesma caixa */
+.xp-banner,
+.hero.quest-start{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  border-radius:18px!important;
+}
+.xp-banner{margin-bottom:4px!important}
+.hero.quest-start{
+  aspect-ratio:2048/684!important;
+  margin-top:0!important;
+  margin-bottom:22px!important;
+  background:url('banner-start.webp') center/cover no-repeat!important;
+  clip-path:none!important;
+  overflow:hidden!important;
+}
