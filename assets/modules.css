@@ -139,3 +139,8 @@ body:after{
 .xp-banner{margin-bottom:0!important}
 .topbar{padding-bottom:4px!important;border-bottom:0!important}
 .hero{margin-top:0!important}
+
+/* Preenche toda a faixa útil do topo */
+.topbar-inner{max-width:720px!important;width:100%!important}
+.xp-banner{max-width:none!important;width:100%!important}
+.hero{max-width:720px!important;width:100%!important}
