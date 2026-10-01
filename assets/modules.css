@@ -230,3 +230,12 @@ body:after{
   box-shadow:0 0 3px #00d1ff,0 0 8px rgba(112,100,237,.9),inset 0 0 2px rgba(255,255,255,.65)!important;
   overflow:hidden!important;
 }
+
+/* Mesma largura externa do banner inferior */
+.xp-banner{
+  box-sizing:border-box!important;
+  width:calc(100% + 28px)!important;
+  max-width:none!important;
+  margin-left:-14px!important;
+  margin-right:-14px!important;
+}
