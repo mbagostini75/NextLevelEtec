@@ -852,43 +852,10 @@
     function isTopicDone(subjectId, topicId) { return !!state.completed[topicKey(subjectId, topicId)]; }
     function subjectDoneCount(subject) { return subject.topics.filter(function (t) { return isTopicDone(subject.id, t.id); }).length; }
     function subjectFullyDone(subject) { return subjectDoneCount(subject) === subject.topics.length; }
-
     /* ---------------- ÁUDIO ---------------- */
-
-    function speak(text) {
-      try {
-        window.speechSynthesis.cancel();
-        var u = new SpeechSynthesisUtterance(text);
-        u.lang = "pt-BR"; u.rate = 0.95;
-        window.speechSynthesis.speak(u);
-      } catch (e) {}
-    }
-    var audioCtx = null;
-    function getCtx() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); return audioCtx; }
-    var beatTimer = null;
-    function toggleBeat(btn) {
-      if (beatTimer) { clearInterval(beatTimer); beatTimer = null; btn.textContent = "🥁 Tocar batida"; btn.classList.remove("active"); return; }
-      var ctx = getCtx(); var step = 0; var interval = (60 / 92) * 1000 / 2;
-      function kick() {
-        var o = ctx.createOscillator(); var g = ctx.createGain();
-        o.frequency.setValueAtTime(120, ctx.currentTime);
-        o.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.15);
-        g.gain.setValueAtTime(0.9, ctx.currentTime);
-        g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
-        o.connect(g); g.connect(ctx.destination); o.start(); o.stop(ctx.currentTime + 0.2);
-      }
-      function hat() {
-        var bufferSize = ctx.sampleRate * 0.04;
-        var buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-        var data = buffer.getChannelData(0);
-        for (var i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * 0.3;
-        var src = ctx.createBufferSource(); src.buffer = buffer;
-        var g = ctx.createGain(); g.gain.setValueAtTime(0.35, ctx.currentTime);
-        src.connect(g); g.connect(ctx.destination); src.start();
-      }
-      beatTimer = setInterval(function () { if (step % 4 === 0) kick(); if (step % 2 === 1) hat(); step = (step + 1) % 8; }, interval);
-      btn.textContent = "⏹ Parar batida"; btn.classList.add("active");
-    }
+    // Áudio removido para manter o foco durante o estudo.
+    function speak() {}
+    function toggleBeat() {}
 
     /* ---------------- LÓGICA DE PERGUNTAS ---------------- */
 
