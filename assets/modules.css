@@ -118,44 +118,41 @@ body:after{
 .xp-banner .xp-next{text-align:center;color:#dcecff;font-size:11px;font-weight:700;margin-top:6px}
 @media(max-width:720px){.xp-banner{min-height:92px!important}.xp-banner-data{margin-left:25%;width:51%;padding:13px 2px}.xp-banner-art{opacity:1}.xp-banner .xp-total{font-size:16px}.xp-banner .xp-rank{font-size:14px}}
 
-/* Alinhamento dos banners principais */
-.topbar-inner{max-width:690px!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important}
-.xp-banner{width:100%!important;max-width:690px!important;margin:0 auto!important;border-radius:18px!important}
-.hero{box-sizing:border-box;width:100%!important;max-width:690px!important;margin-left:auto!important;margin-right:auto!important;border:1px solid rgba(83,190,255,.72)!important;border-radius:18px!important;overflow:hidden!important;padding-left:22px!important;padding-right:22px!important}
-.hero:before{border-radius:18px 18px 0 0!important}
-@media(max-width:720px){.topbar-inner,.xp-banner,.hero{max-width:calc(100vw - 28px)!important}.hero{border-radius:16px!important}}
-
-/* Une visualmente os dois banners sem cortar as curvas */
-.xp-banner{margin-bottom:12px!important}
-.hero{margin-top:0!important;border-top:1px solid rgba(83,190,255,.72)!important;border-radius:18px!important}
-
-/* Correção definitiva: mesmo recuo e cantos reais nos dois banners */
-.xp-banner{margin-bottom:4px!important}
-.hero{margin-top:0!important;margin-bottom:22px!important;border:0!important;border-radius:18px!important;clip-path:inset(0 round 18px)!important;overflow:hidden!important}
-.hero:before{inset:0!important;border-radius:18px!important}
-
-/* Hotfix visual: a arte já contém XP/rank; não duplicar HTML sobre ela */
+/* Layout final do cabeçalho e banners */
+.topbar-inner{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:720px!important;
+  margin:0 auto!important;
+  padding-left:14px!important;
+  padding-right:14px!important;
+  display:grid!important;
+  grid-template-columns:auto 1fr auto!important;
+}
+.brand-mini{grid-column:1!important}
+.header-tools{grid-column:3!important}
+.xp-banner{
+  grid-column:1/-1!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:8px 0 4px!important;
+  border-radius:18px!important;
+}
 .xp-banner-data{display:none!important}
-.xp-banner{margin-bottom:0!important}
-.topbar{padding-bottom:4px!important;border-bottom:0!important}
-.hero{margin-top:0!important}
-
-/* Preenche toda a faixa útil do topo */
-.topbar-inner{max-width:720px!important;width:100%!important}
-.xp-banner{max-width:none!important;width:100%!important}
-.hero{max-width:720px!important;width:100%!important}
-
-/* Banner XP ocupa exatamente a largura do conteúdo principal */
-.topbar-inner{box-sizing:border-box!important;width:720px!important;max-width:calc(100vw - 28px)!important}
-.xp-banner{box-sizing:border-box!important;width:720px!important;max-width:100%!important}
-@media(max-width:720px){.topbar-inner,.xp-banner{width:calc(100vw - 28px)!important;max-width:calc(100vw - 28px)!important}}
-
-/* Corrige box model: .app tem 692px úteis (720 - 28px de padding) */
-.topbar-inner{box-sizing:border-box!important;width:720px!important;max-width:720px!important;padding-left:14px!important;padding-right:14px!important}
-.xp-banner{box-sizing:border-box!important;width:100%!important;max-width:none!important}
-.hero{box-sizing:border-box!important;width:auto!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
-@media(max-width:748px){.topbar-inner{width:100%!important;max-width:100%!important}.xp-banner{width:100%!important}.hero{width:auto!important}}
-
-/* Alinhamento final medido no DevTools: hero 692px, XP 690px */
-.xp-banner{width:692px!important;max-width:692px!important;margin-left:-1px!important;margin-right:-1px!important}
-@media(max-width:720px){.xp-banner{width:calc(100% + 2px)!important;max-width:calc(100% + 2px)!important;margin-left:-1px!important;margin-right:-1px!important}}
+.topbar{padding-bottom:0!important;border-bottom:0!important}
+.hero{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0 0 22px!important;
+  border:0!important;
+  border-radius:18px!important;
+  overflow:hidden!important;
+  clip-path:inset(0 round 18px)!important;
+}
+.hero:before{inset:0!important;border-radius:18px!important}
+@media(max-width:720px){
+  .topbar-inner{max-width:100%!important}
+  .xp-banner,.hero{width:100%!important;max-width:none!important}
+}
