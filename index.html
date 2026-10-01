@@ -1087,7 +1087,7 @@
       var progress = nr ? Math.max(0, Math.min(100, Math.round((state.xp-minimum)/(nr.min-minimum)*100))) : 100;
       return '<header class="topbar"><div class="topbar-inner">' +
         '<a class="brand-mini" aria-label="Next Level — início" href="#" onclick="RotaGame.go({name:\'home\'});return false;"><img class="brand-logo" src="assets/next-level-for-etec.png" width="1800" height="872" alt="Next Level for ETEC"></a>' +
-        '<div class="header-tools">' + (window.NextAccounts ? window.NextAccounts.nav() : '') + (window.NextMusic ? window.NextMusic.button() : '') + '</div>' +
+        '<div class="header-tools">' + (window.NextAccounts ? window.NextAccounts.nav() : '') + '</div>' +
         '<div class="xp-panel" style="--rank-color:' + r.color + '"><div class="xp-caption"><span class="xp-total">' + state.xp + ' <small>XP farmados</small></span><span class="xp-rank">' + r.name + '</span></div><div class="xp-track" role="progressbar" aria-label="Progresso até o próximo rank" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="xp-next">' + (nr ? 'Faltam ' + (nr.min-state.xp) + ' XP para ' + nr.name : 'Você chegou ao rank máximo') + '</div></div>' +
         '</div></header>'; 
     }
@@ -1294,7 +1294,7 @@
       else if (view.name === "boss") body = window.NextModules.renderBoss();
       else if(window.NextAccounts)body=window.NextAccounts.render(view);
       if(view.name==="duel" && duel && duel.onlinePending)body+='<button class="primary-btn" onclick="NextAccounts.retrySync()">Sincronizar rodada</button>';
-      if(window.NextMusic)window.NextMusic.scene(view.name);
+
       app.innerHTML = renderTopbar() + body + '<p id="storage-warning" '+(storageAvailable?'hidden':'')+' role="status">O navegador bloqueou o salvamento. Mantenha a página aberta para preservar esta sessão.</p>';
     }
 
@@ -1319,8 +1319,9 @@
     render();
   })();
   </script>
-<script src="assets/music.js"></script>
+
 <script src="assets/accounts.js"></script>
+<script src="assets/context-help.js"></script>
 </body>
 </html>
 
