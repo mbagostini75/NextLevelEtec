@@ -124,3 +124,7 @@ body:after{
 .hero{box-sizing:border-box;width:100%!important;max-width:690px!important;margin-left:auto!important;margin-right:auto!important;border:1px solid rgba(83,190,255,.72)!important;border-radius:18px!important;overflow:hidden!important;padding-left:22px!important;padding-right:22px!important}
 .hero:before{border-radius:18px 18px 0 0!important}
 @media(max-width:720px){.topbar-inner,.xp-banner,.hero{max-width:calc(100vw - 28px)!important}.hero{border-radius:16px!important}}
+
+/* Une visualmente os dois banners sem cortar as curvas */
+.xp-banner{margin-bottom:12px!important}
+.hero{margin-top:0!important;border-top:1px solid rgba(83,190,255,.72)!important;border-radius:18px!important}
