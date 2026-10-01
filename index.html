@@ -1091,8 +1091,12 @@
         );
       });
       html += '</div>';
-      html += '<button class="subject-card official-card challenge-card" style="--tone:#69d5ff" onclick="RotaGame.go({name:\'official\'})"><span class="subject-emblem exam-symbol" aria-hidden="true">▤</span><span class="subject-info"><span class="subject-tag">VESTIBULINHO ETEC</span><h2>Arena Etec</h2><p>Provas e gabaritos para treinar.</p><small class="subject-materials">PDF · Questões · Gabarito</small></span><span class="subject-arrow">›</span></button>';
-      html += '<button class="chefao-banner challenge-card" onclick="NextModules.startBoss(false)"><span class="crown">⚡</span><span class="txt"><span class="eyebrow">DESAFIO COMPLETO</span><h2>Desafio Final <small>(Você na Etec!)</small></h2><p>180 questões autorais, sete matérias e resoluções ao finalizar.</p></span><span class="arrow">›</span></button>';
+      var totalTopics=0,doneTopics=0;
+      window.NEXT_CURRICULUM.forEach(function(s){totalTopics+=s.topics.length;s.topics.forEach(function(t){if(isTopicDone(s.id,t.id))doneTopics++;});});
+      var arenaUnlocked=doneTopics>0;
+      var arenaDone=window.NextModules&&window.NextModules.arenaCompleted?window.NextModules.arenaCompleted():false;
+      html += '<button class="subject-card official-card challenge-card '+(arenaUnlocked?'':'locked')+'" style="--tone:#69d5ff" '+(arenaUnlocked?'onclick="RotaGame.go({name:\'official\'})"':'disabled')+'><span class="subject-emblem exam-symbol" aria-hidden="true">▤</span><span class="subject-info"><span class="subject-tag">VESTIBULINHO ETEC</span><h2>Arena Etec</h2><p>'+(arenaUnlocked?'Liberada pelo seu progresso · '+doneTopics+' de '+totalTopics+' tópicos dominados.':'Comece os estudos para liberar a Arena.')+'</p><small class="subject-materials">'+(arenaUnlocked?'PDF · Questões · Gabarito':'🔒 Bloqueada')+'</small></span><span class="subject-arrow">'+(arenaUnlocked?'›':'🔒')+'</span></button>';
+      html += '<button class="chefao-banner challenge-card '+(arenaDone?'':'locked')+'" '+(arenaDone?'onclick="NextModules.startBoss(false)"':'disabled')+'><span class="crown">⚡</span><span class="txt"><span class="eyebrow">DESAFIO COMPLETO</span><h2>Desafio Final <small>(Você na Etec!)</small></h2><p>'+(arenaDone?'180 questões autorais, sete matérias e resoluções ao finalizar.':'Complete uma prova da Arena ETEC para liberar o Desafio Final.')+'</p></span><span class="arrow">'+(arenaDone?'›':'🔒')+'</span></button>';
       html += '<p class="theme-card-note">12 perguntas por rodada · avance com 10 acertos.</p>';
       if (monsterCount > 0) html += '<button class="den-btn" onclick="RotaGame.go({name:\'den\'})">⚠ Pendências pra revisar <span class="count">' + monsterCount + '</span></button>';
       return html;
