@@ -144,3 +144,8 @@ body:after{
 .topbar-inner{max-width:720px!important;width:100%!important}
 .xp-banner{max-width:none!important;width:100%!important}
 .hero{max-width:720px!important;width:100%!important}
+
+/* Banner XP ocupa exatamente a largura do conteúdo principal */
+.topbar-inner{box-sizing:border-box!important;width:720px!important;max-width:calc(100vw - 28px)!important}
+.xp-banner{box-sizing:border-box!important;width:720px!important;max-width:100%!important}
+@media(max-width:720px){.topbar-inner,.xp-banner{width:calc(100vw - 28px)!important;max-width:calc(100vw - 28px)!important}}
