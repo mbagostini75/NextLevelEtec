@@ -104,3 +104,16 @@ body:after{
 
 /* Progressive challenge locks */
 .challenge-card.locked,.challenge-card:disabled{opacity:.52!important;cursor:not-allowed!important;filter:saturate(.55);transform:none!important}.challenge-card:disabled:hover{transform:none!important}.challenge-card.locked .subject-arrow,.challenge-card.locked .arrow{color:#9aabc0!important}
+
+/* XP banner integrado */
+.xp-banner{position:relative!important;overflow:hidden!important;min-height:112px!important;width:min(100%,760px)!important;padding:0!important;border:1px solid rgba(75,180,255,.55)!important;border-radius:18px!important;background:#07142a!important;isolation:isolate}
+.xp-banner-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:.76}
+.xp-banner:after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(5,13,30,.22),rgba(5,13,30,.78) 34%,rgba(5,13,30,.72) 67%,rgba(5,13,30,.18));pointer-events:none}
+.xp-banner-data{position:relative;z-index:2;margin-left:31%;width:43%;padding:18px 4px;text-shadow:0 2px 8px #020711}
+.xp-banner .xp-caption{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.xp-banner .xp-total{font-size:20px;color:#fff}.xp-banner .xp-total small{display:block;font-size:10px;color:#9fc6df}
+.xp-banner .xp-rank{font-size:17px;color:var(--rank-color);font-weight:900;text-align:right}.xp-banner .xp-rank small{display:block;color:#a7b9ce;font-size:8px;letter-spacing:.12em}
+.xp-banner .xp-track{height:9px;background:rgba(0,0,0,.62);border:1px solid rgba(111,207,255,.35);box-shadow:0 0 12px rgba(46,190,255,.16)}
+.xp-banner .xp-track span{box-shadow:0 0 10px var(--rank-color)}
+.xp-banner .xp-next{text-align:center;color:#dcecff;font-size:11px;font-weight:700;margin-top:6px}
+@media(max-width:720px){.xp-banner{min-height:92px!important}.xp-banner-data{margin-left:25%;width:51%;padding:13px 2px}.xp-banner-art{opacity:.55}.xp-banner .xp-total{font-size:16px}.xp-banner .xp-rank{font-size:14px}}
