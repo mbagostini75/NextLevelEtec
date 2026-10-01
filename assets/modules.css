@@ -155,3 +155,7 @@ body:after{
 .xp-banner{box-sizing:border-box!important;width:100%!important;max-width:none!important}
 .hero{box-sizing:border-box!important;width:auto!important;max-width:none!important;margin-left:0!important;margin-right:0!important}
 @media(max-width:748px){.topbar-inner{width:100%!important;max-width:100%!important}.xp-banner{width:100%!important}.hero{width:auto!important}}
+
+/* Alinhamento final medido no DevTools: hero 692px, XP 690px */
+.xp-banner{width:692px!important;max-width:692px!important;margin-left:-1px!important;margin-right:-1px!important}
+@media(max-width:720px){.xp-banner{width:calc(100% + 2px)!important;max-width:calc(100% + 2px)!important;margin-left:-1px!important;margin-right:-1px!important}}
