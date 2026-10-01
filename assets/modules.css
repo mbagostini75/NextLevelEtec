@@ -263,3 +263,6 @@ body:after{
 .xp-track{position:absolute!important;left:0!important;top:43%!important;width:61%!important;height:9px!important;margin:0!important;background:rgba(0,0,0,.55)!important;border:1px solid rgba(111,207,255,.55)!important}
 .xp-next{position:absolute!important;left:0!important;top:61%!important;width:61%!important;text-align:center!important;color:#dcecff!important;font-size:11px!important;font-weight:700!important;margin:0!important}
 
+
+/* XP: esconder a margem escura lateral da arte (x 0-38 e 2136-2170 de 2170px) */
+.xp-banner-art{top:0!important;bottom:0!important;left:-1.811%!important;right:auto!important;width:103.43%!important}
