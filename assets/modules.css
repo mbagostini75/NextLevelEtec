@@ -29,3 +29,75 @@ html[data-theme=base] .challenge-card{box-sizing:border-box;width:100%;min-heigh
 html[data-theme=base] .official-card.challenge-card{background:radial-gradient(ellipse at 95% 15%,rgba(45,212,191,.19),transparent 65%),linear-gradient(115deg,#07383b,#0b2028 65%);border:2px solid #2dd4bf;box-shadow:inset 5px 0 0 #2dd4bf;animation:none}
 .official-card.challenge-card .subject-tag,.official-card.challenge-card .subject-arrow{color:#5eead4}.official-card.challenge-card h2{font-size:22px;letter-spacing:.04em;color:#ccfbf1}.official-card.challenge-card .exam-symbol{width:54px;height:54px;flex:0 0 54px;border:1px solid #2dd4bf;border-radius:12px;background:#0d4649;color:#5eead4;font-size:34px}.official-card.challenge-card .subject-info{flex:1;min-width:0}.challenge-card .crown{width:54px;flex:0 0 54px;text-align:center}.challenge-card p{line-height:1.5}
 @media(max-width:520px){html[data-theme=base] .challenge-card{min-height:170px;padding:18px;gap:14px}.official-card.challenge-card h2,.chefao-banner.challenge-card h2{font-size:20px}}
+
+
+/* Next Level 01/10/2026: background aprovado + contraste global */
+html,body{min-height:100%;background:#07101f!important}
+body{
+  background-image:none!important;
+  background-attachment:fixed!important;
+}
+body:before{
+  content:''!important;
+  position:fixed!important;
+  inset:0!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  z-index:0!important;
+  pointer-events:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  transform:none!important;
+  background:
+    linear-gradient(90deg,rgba(5,12,27,.22) 0%,rgba(5,12,27,.52) 34%,rgba(5,12,27,.72) 50%,rgba(5,12,27,.52) 66%,rgba(5,12,27,.22) 100%),
+    url('nextlevel-background.png') center top/cover no-repeat!important;
+  opacity:.42!important;
+}
+body:after{
+  content:''!important;
+  position:fixed!important;
+  inset:0!important;
+  width:auto!important;
+  height:auto!important;
+  z-index:0!important;
+  pointer-events:none!important;
+  border:0!important;
+  transform:none!important;
+  background:linear-gradient(180deg,rgba(5,10,22,.12),rgba(5,10,22,.42))!important;
+}
+#app{position:relative!important;z-index:1!important}
+
+/* Legibilidade dos cards e ações: nunca mais texto escuro sobre fundo escuro */
+.card,.question-card,.topic-row,.monster-row{
+  background:rgba(13,27,48,.94)!important;
+  border-color:#365271!important;
+  color:#f5f8ff!important;
+}
+.card p,.card li,.card strong,.topic-body strong{color:#f5f8ff!important}
+.card h3{color:#8ee8ff!important}
+.module-intro,.topic-body small,.theme-card-note{color:#c2d0e2!important}
+.primary-btn{
+  background:var(--tone,#69d5ff)!important;
+  color:#06111b!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  font-weight:800!important;
+  text-shadow:none!important;
+  opacity:1!important;
+}
+.primary-btn:hover{filter:brightness(1.08)}
+.primary-btn:focus-visible{outline:3px solid #fff!important;outline-offset:3px}
+.primary-btn:disabled{opacity:.5!important}
+.study-action{
+  background:rgba(10,24,43,.96)!important;
+  color:#f5f8ff!important;
+  border-color:#496987!important;
+}
+.study-action span{color:#d4dfed!important}
+
+@media(max-width:720px){
+  body:before{background-position:center top!important;opacity:.30!important}
+  .card,.question-card,.topic-row,.monster-row{background:rgba(10,23,42,.96)!important}
+}
