@@ -266,3 +266,16 @@ body:after{
 
 /* XP: esconder a margem escura lateral da arte (x 0-38 e 2136-2170 de 2170px) */
 .xp-banner-art{top:0!important;bottom:0!important;left:-1.811%!important;right:auto!important;width:103.43%!important}
+
+
+/* XP: dados encaixados na arte (proporção fixa; medidas em % da área visível da arte) */
+.xp-banner{min-height:0!important;height:auto!important;aspect-ratio:692/112!important;container-type:inline-size}
+.xp-banner-data{inset:0!important;width:100%!important;height:100%!important}
+.xp-caption{display:contents!important}
+.xp-total{position:absolute!important;left:18.2%!important;width:42.1%!important;top:12%!important;height:28%!important;display:flex!important;align-items:center!important;gap:.9cqw!important;font-size:max(3.2cqw,15px)!important;line-height:1!important;font-weight:800!important}
+.xp-total small{font-size:max(1.6cqw,9px)!important;margin-left:0!important;font-weight:600!important}
+.xp-track{left:18.35%!important;width:41.85%!important;top:44.4%!important;height:10.9%!important;border:0!important;border-radius:99px!important;background:rgba(0,0,0,.35)!important;overflow:hidden!important}
+.xp-track span{height:100%!important;border-radius:99px!important}
+.xp-next{left:18.2%!important;width:42.1%!important;top:61%!important;font-size:max(1.7cqw,9px)!important;line-height:1.2!important}
+.xp-rank{left:63.9%!important;right:auto!important;width:20.8%!important;top:13.4%!important;height:59.2%!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:.6cqw!important;font-size:max(3.4cqw,14px)!important;line-height:1!important}
+.xp-rank small{font-size:max(1.15cqw,7px)!important;letter-spacing:.16em!important}
