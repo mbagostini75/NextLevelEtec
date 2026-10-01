@@ -1,0 +1,931 @@
+[
+  {
+    "name": "Português",
+    "topics": [
+      {
+        "id": "interpretacao",
+        "title": "Interpretação e inferência",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/pre-enem-leitura-e-interpretacao-de-textos.htm",
+            "title": "Pré-Enem | Videoaula sobre leitura e interpretação de textos"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/redacao/a-interpretacao-textual.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "O texto não conta tudo de forma direta.",
+          "Você junta as pistas e chega à ideia escondida.",
+          "Isso se chama inferência.",
+          "Não é chute. É conclusão com prova no texto."
+        ],
+        "example": "Se uma campanha diz “a cidade também é sua casa”, a ideia escondida é: cuide do espaço público como cuida da sua casa.",
+        "exercise": {
+          "title": "30 exercícios sobre interpretação de texto - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-redacao/exercicios-sobre-interpretacao-texto.htm"
+        }
+      },
+      {
+        "id": "conectivos",
+        "title": "Coesão e conectivos",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/coesao-textual.htm",
+            "title": "Videoaula sobre coesão textual - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/redacao/coesao.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Conectivos ligam ideias.",
+          "Cada um tem um trabalho diferente.",
+          "Porém = oposição. Porque = causa.",
+          "Portanto = conclusão. Para que = objetivo."
+        ],
+        "example": "“Treinou bastante, porém ainda revisou os erros.” — porém mostra que uma ideia contrasta com a outra.",
+        "exercise": {
+          "title": "Exercícios sobre conectores discursivos - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-redacao/exercicios-sobre-conectores-discursivos.htm"
+        }
+      },
+      {
+        "id": "sentido",
+        "title": "Sentido contextual",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/figuras-palavras.htm",
+            "title": "Videoaula sobre figuras de palavras - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/literatura/denotacao-conotacao.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Uma palavra pode mudar de sentido.",
+          "Depende do contexto ao redor dela.",
+          "Não escolha o sinônimo mais comum sem pensar.",
+          "Leia a frase inteira antes de decidir."
+        ],
+        "example": "“O projeto criou raízes” não fala de plantas. Fala de algo que se firmou, que ficou estável.",
+        "exercise": {
+          "title": "Exercícios sobre texto e contexto - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-redacao/exercicios-sobre-texto-contexto.htm"
+        }
+      },
+      {
+        "id": "figuras",
+        "title": "Figuras de linguagem",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/figuras-linguagem.htm",
+            "title": "Videoaula sobre figuras de linguagem - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/gramatica/figuras-linguagem.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Figuras de linguagem dão efeito especial ao texto.",
+          "Metáfora compara sem usar 'como'. Comparação usa 'como'.",
+          "Metonímia troca uma palavra por outra ligada a ela.",
+          "Hipérbole é exagero. Eufemismo suaviza. Ironia diz o oposto."
+        ],
+        "example": "“Ele é um leão em campo” é metáfora (compara sem 'como'). “Ele joga como um leão” é comparação (usa 'como').",
+        "exercise": {
+          "title": "Exercícios sobre figuras de linguagem - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-gramatica/exercicios-sobre-figuras-linguagem.htm"
+        }
+      },
+      {
+        "id": "sintaxe",
+        "title": "Sintaxe — sujeito, predicado e complementos",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/analise-sintatica.htm",
+            "title": "Videoaula sobre análise sintática - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/portugues/sintaxe.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Sujeito é quem pratica ou sofre a ação do verbo.",
+          "Predicado é tudo o que se diz sobre o sujeito.",
+          "Objeto direto completa o verbo sem preposição.",
+          "Objeto indireto completa o verbo com preposição."
+        ],
+        "example": "Em “O aluno entregou o trabalho ao professor”: sujeito = o aluno; objeto direto = o trabalho; objeto indireto = ao professor.",
+        "exercise": {
+          "title": "Exercícios sobre função sintática - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-gramatica/exercicios-sobre-funcao-sintatica-do-substantivo.htm"
+        }
+      },
+      {
+        "id": "morfologia",
+        "title": "Classes de palavras",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/classes-palavras.htm",
+            "title": "Videoaula sobre Classes de Palavras - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/index.php/gramatica/classes-palavras.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Substantivo nomeia seres, coisas e ideias.",
+          "Adjetivo dá qualidade ao substantivo.",
+          "Verbo indica ação, estado ou fenômeno.",
+          "Advérbio modifica o verbo, o adjetivo ou outro advérbio."
+        ],
+        "example": "Em “O menino esperto correu rapidamente”: substantivo = menino; adjetivo = esperto; verbo = correu; advérbio = rapidamente.",
+        "exercise": {
+          "title": "Exercícios sobre classes de palavras (classes gramaticais)",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-gramatica/exercicios-sobre-as-classes-palavras-que-atuam-como-predicativo.htm"
+        }
+      },
+      {
+        "id": "concordancia",
+        "title": "Concordância verbal e nominal",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/concordancia-verbal.htm",
+            "title": "Videoaula sobre concordância verbal - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/index.php/gramatica/concordancia-verbal-nominal.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Concordância verbal: o verbo combina com o sujeito.",
+          "Sujeito composto antes do verbo pede verbo no plural.",
+          "Concordância nominal: artigo, adjetivo e substantivo combinam em gênero e número.",
+          "'Bastante' varia; 'é bom/proibido' fica invariável antes de substantivo sem artigo."
+        ],
+        "example": "Em “A maioria dos alunos chegou cedo”: o verbo concorda com “a maioria” (singular), não com “alunos”.",
+        "exercise": {
+          "title": "Exercícios sobre concordância nominal - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-gramatica/exercicios-sobre-concordancia-nominal.htm"
+        }
+      },
+      {
+        "id": "ortografia",
+        "title": "Ortografia e acentuação",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/acentuacao-grafica.htm",
+            "title": "Videoaula sobre Acentuação Gráfica - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/gramatica/acentuacao.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Acento agudo/circunflexo marca a sílaba tônica de certas palavras.",
+          "Palavras oxítonas, paroxítonas e proparoxítonas têm regras próprias.",
+          "Homônimas soam igual, mas têm sentido/escrita diferentes (ex: mas/mais).",
+          "Parônimas têm grafia parecida, mas sentido diferente (ex: cumprimento/comprimento)."
+        ],
+        "example": "“Ele fez um cumprimento educado” (saudação) x “o comprimento da mesa” (medida) — parônimas que não podem ser trocadas.",
+        "exercise": {
+          "title": "Exercícios sobre ortografia - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-gramatica/exercicios-sobre-ortografia.htm"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Matemática",
+    "topics": [
+      {
+        "id": "porcentagem",
+        "title": "Porcentagem",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/porcentagem.htm",
+            "title": "Videoaula sobre porcentagem - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/porcentagem.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Porcentagem é uma fração de cem.",
+          "30% é o mesmo que 0,30.",
+          "Para achar 30% de um valor, multiplique por 0,30.",
+          "Desconto tira. Aumento soma."
+        ],
+        "example": "30% de 240 = 0,30 × 240 = 72. Se o valor aumenta 30%, o novo total é 240 + 72 = 312.",
+        "exercise": {
+          "title": "Exercícios sobre Porcentagem - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-porcentagem.htm"
+        }
+      },
+      {
+        "id": "razao",
+        "title": "Razão e proporção",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/razao-proporcao.htm",
+            "title": "Videoaula sobre razão e proporção - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/proporcao.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Duas grandezas variam juntas, na mesma relação.",
+          "Organize os dados em colunas.",
+          "Grandezas do mesmo tipo ficam na mesma coluna.",
+          "Depois é só multiplicar em cruz."
+        ],
+        "example": "Se 4 cadernos custam R$ 32, então 1 custa R$ 8, e 7 custam 7 × 8 = R$ 56.",
+        "exercise": {
+          "title": "Enem: lista de exercícios sobre razão e proporção - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/enem-lista-de-exercicios-sobre-razao-e-proporcao.htm"
+        }
+      },
+      {
+        "id": "area",
+        "title": "Área e perímetro",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/perimetro.htm",
+            "title": "Videoaula sobre perímetro - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/area-e-perimetro.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Perímetro é o contorno da figura.",
+          "Área é o espaço dentro dela.",
+          "Retângulo: área = base × altura.",
+          "Retângulo: perímetro = 2 × (base + altura)."
+        ],
+        "example": "Um retângulo de 8 m por 5 m tem perímetro 26 m e área 40 m².",
+        "exercise": {
+          "title": "Exercícios sobre perímetro - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-perimetro-figuras-planas.htm"
+        }
+      },
+      {
+        "id": "equacoes",
+        "title": "Equações do 1º grau",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/equacao-primeiro-grau-com-uma-incognita.htm",
+            "title": "Videoaula sobre equação do 1º grau com uma incógnita"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/equacao-do-1-grau.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Uma equação é como uma balança.",
+          "O que você faz de um lado, faz do outro.",
+          "O objetivo é isolar o x.",
+          "No final, confira substituindo o valor encontrado."
+        ],
+        "example": "Em 2x + 4 = 12: primeiro tira o 4 dos dois lados (2x = 8), depois divide por 2 (x = 4).",
+        "exercise": {
+          "title": "Exercícios sobre equação do 1º grau - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-equacao-do-1-grau.htm"
+        }
+      },
+      {
+        "id": "estatistica",
+        "title": "Estatística — média, moda e mediana",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/pre-enem-estatistica-moda-media-e-mediana.htm",
+            "title": "Pré-Enem | Videoaula sobre estatística (moda, média e mediana)"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/moda-media-mediana.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Média: soma tudo e divide pela quantidade.",
+          "Moda: o valor que mais aparece.",
+          "Mediana: o valor do meio, depois de ordenar.",
+          "Gráficos mostram esses números de forma visual."
+        ],
+        "example": "Nas notas 4, 6 e 8: a média é (4 + 6 + 8) ÷ 3 = 6.",
+        "exercise": {
+          "title": "Exercícios sobre moda, média e mediana - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-moda-media-mediana.htm"
+        }
+      },
+      {
+        "id": "potenciacao",
+        "title": "Potenciação e radiciação",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/potenciacao.htm",
+            "title": "Videoaula sobre Potenciação - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/radiciacao.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Potência é multiplicação repetida da base.",
+          "Expoente negativo vira fração (inverte a base).",
+          "Raiz quadrada desfaz o quadrado de um número.",
+          "Multiplicar potências de mesma base: soma os expoentes."
+        ],
+        "example": "2³ = 2 × 2 × 2 = 8. Já √64 = 8, porque 8 × 8 = 64.",
+        "exercise": {
+          "title": "Exercícios sobre radiciação - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-radiciacao.htm"
+        }
+      },
+      {
+        "id": "produtos_notaveis",
+        "title": "Produtos notáveis e fatoração",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/produtos-notaveis.htm",
+            "title": "Videoaula sobre Produtos Notáveis - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/produtos-notaveis.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Quadrado da soma: (a+b)² = a² + 2ab + b².",
+          "Quadrado da diferença: (a−b)² = a² − 2ab + b².",
+          "Diferença de quadrados: a² − b² = (a+b)(a−b).",
+          "Fatorar é o processo inverso: transformar soma em produto."
+        ],
+        "example": "(x + 3)² = x² + 6x + 9, usando a regra a² + 2ab + b² com a=x e b=3.",
+        "exercise": {
+          "title": "Exercícios sobre produtos notáveis - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-os-produtos-notaveis.htm"
+        }
+      },
+      {
+        "id": "sistemas",
+        "title": "Sistema de equações do 1º grau",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/matematica-do-zero-sistema-de-equacoes.htm",
+            "title": "Videoaula sobre Matemática do Zero | Sistema de equações"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/sistema-equacoes-1-o-2-o-grau.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Sistema é um conjunto de duas equações com duas incógnitas.",
+          "Método da substituição: isola uma incógnita e substitui na outra equação.",
+          "Método da adição: soma as equações pra eliminar uma incógnita.",
+          "A solução é o par (x, y) que satisfaz as duas equações ao mesmo tempo."
+        ],
+        "example": "x + y = 10 e x − y = 2. Somando: 2x = 12, x = 6. Substituindo: 6 + y = 10, y = 4.",
+        "exercise": {
+          "title": "Exercícios sobre sistemas de equações do 1º e do 2º grau",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-sistemas-equacoes-1-o-2-o-grau.htm"
+        }
+      },
+      {
+        "id": "geometria",
+        "title": "Geometria — ângulos e polígonos",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/poligonos.htm",
+            "title": "Videoaula sobre polígonos - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/poligonos.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Ângulos complementares somam 90°. Suplementares somam 180°.",
+          "A soma dos ângulos internos de um triângulo é sempre 180°.",
+          "Polígono de n lados: soma dos ângulos internos = (n−2) × 180°.",
+          "Ângulos opostos pelo vértice são sempre iguais."
+        ],
+        "example": "Em um triângulo, dois ângulos medem 50° e 60°. O terceiro é 180° − 50° − 60° = 70°.",
+        "exercise": {
+          "title": "Exercícios sobre polígonos - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-poligonos.htm"
+        }
+      },
+      {
+        "id": "probabilidade",
+        "title": "Probabilidade",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/probabilidade.htm",
+            "title": "Videoaula sobre probabilidade - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/matematica/probabilidade.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Probabilidade = casos favoráveis ÷ casos possíveis.",
+          "O resultado sempre fica entre 0 (impossível) e 1 (certeza).",
+          "Pode-se expressar como fração, decimal ou porcentagem.",
+          "Eventos independentes: multiplica-se as probabilidades."
+        ],
+        "example": "Em um dado de 6 faces, a chance de sair o número 4 é 1/6, pois há 1 caso favorável em 6 possíveis.",
+        "exercise": {
+          "title": "Exercícios sobre Propriedades da Probabilidade - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-matematica/exercicios-sobre-propriedades-probabilidade.htm"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Biologia",
+    "topics": [
+      {
+        "id": "ecologia",
+        "title": "Ecologia e biodiversidade",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/ecologia.htm",
+            "title": "Videoaula sobre Ecologia - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/biologia/conceitos-respeito-ecologia.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Organismo é um indivíduo; população reúne indivíduos da mesma espécie; comunidade reúne populações diferentes. Ecossistema inclui também água, solo, luz e outros fatores físicos.",
+          "Habitat é o lugar onde um ser vive. Nicho é seu modo de vida: alimentação, atividade e relações com outras espécies.",
+          "Produtores, como plantas, fabricam matéria orgânica. Consumidores se alimentam de outros seres e decompositores reciclam nutrientes. As setas da cadeia indicam o caminho da matéria e da energia.",
+          "A energia disponível diminui ao longo da cadeia, pois os seres a utilizam e dissipam calor. Os nutrientes podem voltar ao ambiente e ser reutilizados; a energia não faz esse mesmo ciclo.",
+          "Na competição, seres disputam recursos; na predação, um captura outro; no parasitismo, um se beneficia prejudicando o hospedeiro. Nem toda relação entre espécies é prejudicial.",
+          "Desmatamento fragmenta habitats. Excesso de nutrientes na água pode estimular algas e reduzir o oxigênio após sua decomposição. Para interpretar um impacto, siga suas consequências na teia alimentar."
+        ],
+        "example": "Capim → gafanhoto → sapo. Se os sapos diminuírem, os gafanhotos podem aumentar e consumir mais capim. É uma previsão simplificada: numa teia real, outros alimentos e predadores também interferem.",
+        "exercise": {
+          "title": "Exercícios sobre biodiversidade - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-geografia/exercicios-sobre-biodiversidade.htm"
+        }
+      },
+      {
+        "id": "celulas",
+        "title": "Células, genética e evolução",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/ciclo-celular.htm",
+            "title": "Videoaula sobre ciclo celular - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/biologia/celula.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "A célula é a unidade básica dos seres vivos. A membrana controla trocas, o citoplasma abriga processos e o material genético contém informações para o funcionamento celular.",
+          "Células procarióticas, como as das bactérias, não têm núcleo delimitado por membrana. Células eucarióticas, como as de animais e plantas, têm núcleo.",
+          "Mitocôndrias participam da respiração celular. Cloroplastos realizam fotossíntese em células vegetais que os possuem. Plantas também respiram; nem toda célula vegetal tem cloroplastos.",
+          "Genes são trechos de DNA; alelos são versões de um gene. Genótipo é a constituição genética e fenótipo é a característica observada, influenciada também pelo ambiente.",
+          "Em um modelo de dominância completa, Aa manifesta o caráter dominante e aa, o recessivo. Dominante não significa mais forte, melhor nem mais frequente.",
+          "Seleção natural ocorre quando diferenças hereditárias influenciam sobrevivência e reprodução. A população pode mudar ao longo das gerações; o indivíduo não cria uma característica porque precisa dela."
+        ],
+        "example": "No modelo Aa × Aa, as combinações são AA, Aa, Aa e aa. Cada descendente tem 25% de chance de ser aa. Isso não obriga uma família com quatro filhos a ter exatamente um com esse genótipo.",
+        "exercise": {
+          "title": "Exercícios sobre genes e cromossomos - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-biologia/exercicios-sobre-genes-cromossomos.htm"
+        }
+      },
+      {
+        "id": "corpo",
+        "title": "Corpo humano, microrganismos e prevenção",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/sistema-imunologico.htm",
+            "title": "Sistema imunológico - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/biologia/imunidade.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "A digestão transforma alimentos em componentes menores; boa parte da absorção de nutrientes ocorre no intestino delgado. O sistema circulatório os distribui pelo corpo.",
+          "Nos pulmões, o oxigênio passa para o sangue e o gás carbônico passa para o ar. O coração bombeia o sangue; respiração e circulação trabalham juntas.",
+          "Os rins filtram o sangue e ajudam a regular água e sais, eliminando resíduos pela urina. Suor e urina não são produzidos pelo mesmo órgão.",
+          "Vírus dependem de células para se multiplicar. Bactérias são seres celulares; algumas causam doenças e muitas têm funções úteis. Fungos também podem ter diferentes funções.",
+          "Vacinas estimulam uma resposta específica e memória imunológica. Antibióticos atuam contra bactérias, não contra vírus. Uma doença pode ter causas diferentes: identifique o agente antes de relacionar a prevenção.",
+          "Água tratada, esgoto adequado, higiene, controle de vetores e vacinação previnem doenças por caminhos diferentes. Dengue, por exemplo, é uma virose transmitida por mosquitos; eliminar criadouros reduz o vetor."
+        ],
+        "example": "Uma comunidade recebeu coleta e tratamento de esgoto. Isso pode reduzir a contaminação da água e a transmissão de certas infecções. Não substitui outras medidas, como vacinação ou controle de mosquitos.",
+        "exercise": {
+          "title": "Exercícios sobre corpo humano - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-biologia/exercicios-sobre-corpo-humano.htm"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Geografia",
+    "topics": [
+      {
+        "id": "cartografia",
+        "title": "Cartografia, clima e água",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/cartografia-sistemas-coordenadas-geograficas.htm",
+            "title": "Videoaula sobre Sistema de coordenadas geográficas - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/geografia/cartografia.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "extra": {
+          "url": "https://brasilescola.uol.com.br/geografia/coordenadas-geograficas.htm",
+          "title": "Coordenadas geográficas"
+        },
+        "summary": [
+          "Mapas representam o espaço de forma reduzida e seletiva. Título, legenda, orientação e escala ajudam a interpretar o que foi representado.",
+          "Na escala 1:n, uma unidade no mapa equivale a n unidades reais. Converta as unidades: 100.000 cm correspondem a 1 km.",
+          "Uma escala 1:10.000 é maior que 1:1.000.000: costuma mostrar uma área menor com mais detalhes. Uma projeção plana sempre distorce algum aspecto da superfície terrestre.",
+          "Latitude mede a posição ao norte ou ao sul do Equador; longitude, a leste ou oeste de Greenwich. Coordenadas permitem localizar lugares.",
+          "Tempo atmosférico descreve condições de um momento; clima reúne padrões de muitos anos. Latitude, altitude, relevo e proximidade do mar influenciam esses padrões.",
+          "A água evapora, condensa, precipita, escoa e infiltra. Vegetação, impermeabilização e relevo interferem no caminho da água e no risco de alagamentos."
+        ],
+        "example": "Duas cidades estão a 3 cm num mapa 1:200.000. Distância real = 3 × 200.000 = 600.000 cm = 6 km. É a distância representada no mapa, não necessariamente a extensão de uma estrada.",
+        "exercise": {
+          "title": "Exercícios sobre Hidrografia, Clima e Relevo - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-geografia/exercicios-sobre-hidrografia-clima-relevo.htm"
+        }
+      },
+      {
+        "id": "populacao",
+        "title": "População, urbanização e economia",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/urbanizacao.htm",
+            "title": "Videoaula sobre urbanização - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/brasil/urbanizacao.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "População absoluta é o número de habitantes; densidade demográfica é população dividida pela área. Um lugar populoso não é necessariamente muito povoado.",
+          "Crescimento vegetativo é a diferença entre nascimentos e mortes. Migração também altera a população: imigração é entrada e emigração é saída.",
+          "Pirâmides etárias representam a população por idade e sexo. Uma base proporcionalmente menor pode indicar redução recente dos nascimentos, mas a interpretação exige contexto.",
+          "Urbanização é o aumento da proporção de habitantes em áreas urbanas. Migrações, atividades econômicas e mudanças no campo ajudam a explicar esse processo.",
+          "Expansão urbana sem infraestrutura pode agravar problemas de moradia, transporte, saneamento e risco ambiental. Não atribua esses problemas apenas às escolhas individuais dos moradores.",
+          "No setor primário estão atividades como agricultura e extração; no secundário, a transformação industrial; no terciário, comércio e serviços. Uma cadeia produtiva pode envolver os três."
+        ],
+        "example": "Um município tem 120.000 habitantes e 600 km²: 120.000 ÷ 600 = 200 habitantes/km². É uma média; bairros e áreas rurais podem ter concentrações muito diferentes.",
+        "exercise": {
+          "title": "Exercícios sobre urbanização no Brasil - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-geografia-do-brasil/exercicios-sobre-urbanizacao-no-brasil.htm"
+        }
+      },
+      {
+        "id": "ambiente",
+        "title": "Ambiente, recursos e sustentabilidade",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/desenvolvimento-sustentavel.htm",
+            "title": "Videoaula sobre desenvolvimento sustentável - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/geografia/desenvolvimento-sustentavel.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Recursos renováveis se recompõem em prazos compatíveis com seu uso, sob certas condições. Isso não significa estoque ilimitado: água e florestas também podem ser degradadas.",
+          "Petróleo, carvão e gás natural são combustíveis fósseis, formados em períodos muito longos. Sua queima libera gases que intensificam o efeito estufa.",
+          "O efeito estufa natural ajuda a manter a Terra aquecida. Seu aumento por atividades humanas contribui para o aquecimento global. Buraco na camada de ozônio é outro fenômeno.",
+          "Desmatamento pode reduzir biodiversidade e proteção do solo. Sem cobertura vegetal, a chuva pode carregar sedimentos, provocando erosão e assoreamento.",
+          "Sustentabilidade relaciona proteção ambiental, condições sociais e atividades econômicas. Reduzir consumo desnecessário, reutilizar e tratar resíduos complementam a reciclagem.",
+          "Nenhuma fonte de energia é totalmente livre de impactos. Compare emissões, ocupação do território, materiais utilizados e efeitos sobre comunidades, além de considerar se a fonte é renovável."
+        ],
+        "example": "Placas solares usam uma fonte renovável e não queimam combustível durante a geração. Sua fabricação e o destino dos equipamentos também precisam ser considerados na avaliação ambiental.",
+        "exercise": {
+          "title": "Exercícios sobre meio ambiente - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-geografia/exercicios-sobre-meio-ambiente.htm"
+        }
+      }
+    ]
+  },
+  {
+    "name": "História",
+    "topics": [
+      {
+        "id": "antiga",
+        "title": "Antiguidade, Idade Média e fontes",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/idade-media.htm",
+            "title": "Videoaula sobre Idade Média - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/historiag/idade-media.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "História investiga ações humanas no tempo a partir de fontes. Cartas, objetos, construções, imagens e relatos podem ser fontes; precisam de contexto, autoria e comparação.",
+          "Séculos reúnem cem anos: de 1901 a 2000 é o século XX. Datas ajudam a ordenar fatos, mas explicar História exige relacionar causas, mudanças e permanências.",
+          "Sociedades antigas eram variadas. No Egito, o Nilo favorecia a agricultura; isso não explica sozinho toda a organização política, religiosa e social.",
+          "A democracia ateniense tinha participação restrita: mulheres, escravizados e estrangeiros não tinham os mesmos direitos políticos dos cidadãos homens. Evite compará-la como se fosse idêntica à atual.",
+          "Em partes da Europa medieval, relações feudais envolviam terra, obrigações e dependência. Servidão e escravidão não são sinônimos; tampouco toda sociedade medieval era feudal.",
+          "A periodização Antiguidade–Idade Média–Idade Moderna é uma convenção centrada na trajetória europeia. Uma data de mudança de período não transforma todas as sociedades de uma vez."
+        ],
+        "example": "Uma pintura de um rei mostra como ele queria ser representado. Para investigar sua atuação, compare a imagem com registros de impostos, relatos e outros documentos. A fonte informa algo, mas não tudo.",
+        "exercise": {
+          "title": "Exercícios sobre a Alta Idade Média - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-historia/exercicios-sobre-a-alta-idade-media.htm"
+        }
+      },
+      {
+        "id": "colonia",
+        "title": "Colonização, escravidão e Independência",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/colonizacao-no-brasil.htm",
+            "title": "Videoaula sobre colonização no Brasil - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/historiab/brasil-colonia.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "A colonização portuguesa ocorreu sobre territórios de diversos povos indígenas, com conflitos, alianças, imposições e resistências. Esses povos não formavam um único grupo homogêneo.",
+          "A produção açucareira colonial articulava grandes propriedades, comércio externo e trabalho escravizado. Outras atividades e formas de trabalho também existiam.",
+          "Pessoas africanas foram violentamente escravizadas e trazidas de sociedades diversas. Resistências incluíram fugas, quilombos, revoltas e preservação de práticas culturais.",
+          "A mineração ampliou a circulação de pessoas e mercadorias e a cobrança de tributos no século XVIII. Movimentos de contestação tiveram participantes e objetivos diferentes.",
+          "A transferência da corte portuguesa em 1808 e a abertura dos portos alteraram relações políticas e comerciais. São processos importantes para compreender a Independência de 1822.",
+          "A Independência rompeu o vínculo político com Portugal, mas o Brasil continuou monárquico e manteve a escravidão. Separe mudança política de transformações sociais que ocorreram depois."
+        ],
+        "example": "“O Brasil tornou-se independente em 1822” não significa “todos conquistaram liberdade em 1822”. A escravidão só foi abolida legalmente em 1888; direitos e desigualdades tiveram outras trajetórias.",
+        "exercise": {
+          "title": "Exercícios sobre Independência do Brasil. Independência do Brasil",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-historia-do-brasil/exercicios-sobre-independencia-brasil.htm"
+        }
+      },
+      {
+        "id": "moderna",
+        "title": "Industrialização, direitos e República",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/revolucao-industrial.htm",
+            "title": "Videoaula sobre Revolução Industrial - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/historiag/revolucao-industrial.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "extra": {
+          "url": "https://brasilescola.uol.com.br/historiab/brasil-republica2.htm",
+          "title": "República Brasileira"
+        },
+        "summary": [
+          "A Revolução Industrial ampliou o uso de máquinas e a produção fabril. Mudou relações de trabalho, consumo e cidades; não trouxe benefícios iguais para todos.",
+          "Longas jornadas, trabalho infantil e condições precárias impulsionaram mobilizações. Direitos trabalhistas resultaram de disputas e organização, não de concessões automáticas das máquinas.",
+          "A abolição legal da escravidão no Brasil ocorreu em 1888 e a proclamação da República, em 1889. A mudança de regime não eliminou desigualdades nem garantiu participação política a todos.",
+          "No século XX, guerras e regimes autoritários envolveram disputas políticas e econômicas. Propaganda e censura ajudam a compreender como se buscava controlar opiniões.",
+          "A ditadura militar brasileira iniciou-se em 1964. A redemocratização envolveu mobilização social; a campanha Diretas Já pediu eleições diretas, mas a eleição presidencial de 1985 foi indireta.",
+          "A Constituição de 1988 ampliou garantias de direitos. Diferencie o reconhecimento legal de um direito e sua efetivação na vida cotidiana; documentos, dados e relatos podem revelar essa distância."
+        ],
+        "example": "Uma lei proíbe uma prática, mas dados mostram que ela continua ocorrendo. A conclusão não é que a lei nunca existiu: é preciso investigar fiscalização, acesso a direitos e condições sociais.",
+        "exercise": {
+          "title": "Exercícios sobre industrialização do Brasil - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-geografia-do-brasil/exercicios-sobre-industria-no-brasil.htm"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Química",
+    "topics": [
+      {
+        "id": "materia",
+        "title": "Matéria, misturas e separação",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/substancias-misturas.htm",
+            "title": "Videoaula sobre Substâncias e Misturas - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/quimica/separacao-misturas.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Matéria tem massa e ocupa espaço. Massa não é volume: dois objetos do mesmo tamanho podem ter massas diferentes.",
+          "Sólidos mantêm forma e volume aproximadamente definidos; líquidos têm volume definido e se adaptam ao recipiente; gases ocupam o volume disponível. Mudanças de estado não criam, por si, uma nova substância.",
+          "Substância pura tem composição química definida. Mistura reúne substâncias; uma mistura homogênea tem uma fase e uma heterogênea tem mais de uma fase. Uma fase não significa uma única substância.",
+          "Densidade = massa ÷ volume. Com unidades compatíveis, ela ajuda a comparar materiais e prever o comportamento de líquidos que não se misturam.",
+          "Filtração separa sólido não dissolvido de um fluido. Decantação utiliza diferenças de densidade; imantação pode separar um material atraído por ímã.",
+          "Evaporação pode recuperar um sólido dissolvido; destilação permite também recolher o líquido vaporizado e condensado. Escolha o método pelas propriedades e pelo que deseja recuperar."
+        ],
+        "example": "Em água com areia e sal dissolvido, filtre primeiro para retirar a areia. O sal passa com a água pelo filtro. Depois, evaporação pode recuperar o sal; destilação permite recolher também a água.",
+        "exercise": {
+          "title": "Exercícios sobre separação de misturas - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-quimica/exercicios-sobre-separacao-misturas.htm"
+        }
+      },
+      {
+        "id": "atomos",
+        "title": "Átomos, elementos e fórmulas",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/componentes-atomo.htm",
+            "title": "Videoaula sobre Componentes do átomo - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/quimica/elementos-quimicos.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "O núcleo atômico contém prótons positivos e, em geral, nêutrons sem carga. Elétrons têm carga negativa e ocupam a região ao redor do núcleo.",
+          "Número atômico (Z) é a quantidade de prótons e identifica o elemento. Número de massa (A) é prótons mais nêutrons; assim, nêutrons = A − Z.",
+          "Um átomo neutro tem igual quantidade de prótons e elétrons. Íons surgem por perda ou ganho de elétrons; isso não altera o número de prótons.",
+          "Isótopos são átomos do mesmo elemento com diferentes números de nêutrons. A tabela periódica organiza os elementos por número atômico.",
+          "Símbolos identificam elementos; fórmulas indicam a composição. Em H₂O, o índice 2 vale para H e a ausência de índice em O significa um átomo de oxigênio por molécula.",
+          "Em 3 H₂O, o coeficiente 3 multiplica toda a fórmula: são 6 átomos de H e 3 de O. Alterar um coeficiente e alterar um índice têm significados diferentes."
+        ],
+        "example": "Um átomo neutro com Z = 11 e A = 23 tem 11 prótons, 12 nêutrons e 11 elétrons. Se perder um elétron, torna-se um íon positivo com 10 elétrons; continua sendo o mesmo elemento.",
+        "exercise": {
+          "title": "Exercícios sobre a massa dos átomos - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-quimica/exercicios-sobre-massa-dos-atomos.htm"
+        }
+      },
+      {
+        "id": "reacoes",
+        "title": "Transformações, reações e soluções",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/reacoes-quimicas.htm",
+            "title": "Videoaula sobre reações químicas - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/quimica/solucoes.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Transformação física pode mudar estado, forma ou distribuição sem mudar a identidade química. Transformação química produz substâncias diferentes.",
+          "Gás, precipitado, luz ou mudança de cor podem ser indícios de reação, mas precisam de contexto. Bolhas na água fervendo, por exemplo, não provam uma reação química.",
+          "Em sistema fechado, a massa total se conserva. Se um gás escapa de um recipiente aberto, a massa medida apenas no recipiente pode diminuir.",
+          "Numa equação química, reagentes ficam antes da seta e produtos, depois. Balancear ajusta coeficientes para conservar a quantidade de átomos de cada elemento; não se alteram os índices das fórmulas.",
+          "Em uma solução, soluto é o componente dissolvido e solvente é o meio em que ele se dissolve. Concentração em g/L = massa de soluto em gramas ÷ volume da solução em litros.",
+          "Diluir adicionando solvente reduz a concentração sem aumentar a massa de soluto. Solubilidade indica quanto pode se dissolver em certas condições; excesso pode permanecer não dissolvido."
+        ],
+        "example": "Dissolvem-se 10 g de sal e completa-se o volume da solução para 0,5 L: concentração = 10 ÷ 0,5 = 20 g/L. Se o volume total passar a 1 L sem perder sal, a concentração será 10 g/L.",
+        "exercise": {
+          "title": "Exercícios sobre transformações da matéria - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-quimica/exercicios-sobre-transformacoes-materia.htm"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Física",
+    "topics": [
+      {
+        "id": "movimento",
+        "title": "Movimento e forças",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/primeira-lei-newton---inercia.htm",
+            "title": "Videoaula sobre Primeira Lei de Newton - Inércia - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/fisica/forca-movimento.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Um corpo está em movimento ou repouso em relação a um referencial. Uma pessoa sentada num ônibus pode estar em repouso em relação ao banco e em movimento em relação à rua.",
+          "Rapidez média relaciona distância total e tempo total. Em trajetória retilínea sem mudança de sentido, o cálculo distância/tempo também dá o módulo da velocidade média.",
+          "No movimento uniforme, a velocidade é constante e distância = rapidez × tempo. Use unidades compatíveis: 1 m/s corresponde a 3,6 km/h.",
+          "Aceleração mede a mudança da velocidade por tempo. Pode envolver aumento, redução ou mudança de direção; não significa apenas ficar mais rápido.",
+          "Força resultante = massa × aceleração. Resultante nula não obriga repouso: um corpo pode manter movimento retilíneo uniforme. Inércia é a tendência de conservar o estado de movimento.",
+          "Peso é força gravitacional: P = m × g, medido em newtons. Massa é medida em quilogramas. Ação e reação atuam em corpos diferentes, por isso não se anulam como forças no mesmo corpo."
+        ],
+        "example": "Um ciclista percorre 600 m em 120 s, em linha reta sem voltar: rapidez média = 600 ÷ 120 = 5 m/s = 18 km/h. Se parar durante parte do percurso, esse tempo também entra na média.",
+        "exercise": {
+          "title": "Exercícios sobre força - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-fisica/exercicios-sobre-forca.htm"
+        }
+      },
+      {
+        "id": "energia",
+        "title": "Energia, trabalho e potência",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/pre-enem-energia-trabalho-e-potencia.htm",
+            "title": "Pré-Enem | Videoaula sobre energia, trabalho e potência"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/fisica/energia.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Energia pode ser transferida e transformada. Num sistema isolado, a energia total se conserva; no cotidiano, parte pode se espalhar como energia térmica e som.",
+          "Energia cinética está associada ao movimento: Ec = m × v² ÷ 2. Dobrar a velocidade, mantendo a massa, quadruplica a energia cinética.",
+          "Energia potencial gravitacional pode ser calculada por Ep = m × g × h, para condições usuais perto da superfície terrestre e uma altura de referência definida.",
+          "Quando uma força constante age na mesma direção e sentido do deslocamento, trabalho = força × distância. Se a direção for outra, não aplique essa forma simplificada automaticamente.",
+          "Potência é energia transferida ou trabalho realizado por tempo: P = E ÷ t. Um watt equivale a um joule por segundo; maior potência não significa necessariamente maior energia total usada.",
+          "Em uma queda sem resistência do ar, energia potencial pode virar cinética. Com atrito, parte da energia mecânica se transforma em energia térmica; a energia total não desaparece."
+        ],
+        "example": "Duas máquinas transferem 600 J. A que faz isso em 10 s tem 60 W; a que leva 20 s tem 30 W. Transferem a mesma energia, mas têm potências médias diferentes.",
+        "exercise": {
+          "title": "Enem: lista de exercícios sobre trabalho, energia e potência",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-fisica/enem-lista-de-exercicios-sobre-trabalho-energia-e-potencia.htm"
+        }
+      },
+      {
+        "id": "eletricidade",
+        "title": "Eletricidade e circuitos",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/corrente-eletrica.htm",
+            "title": "Videoaula sobre Corrente Elétrica - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/fisica/circuitos-eletricos.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "summary": [
+          "Corrente elétrica é movimento ordenado de cargas. Um caminho fechado e condições adequadas de alimentação permitem a corrente; abrir um interruptor interrompe o caminho.",
+          "Tensão é medida em volts; corrente, em ampères; resistência, em ohms. Para um resistor ôhmico em condições constantes: U = R × I.",
+          "Em série, os componentes compartilham um caminho de corrente e as resistências se somam. Se o caminho é interrompido, a corrente nesse circuito cessa.",
+          "Em paralelo, há diferentes ramos ligados aos mesmos pontos. Nas ligações domésticas usuais, isso permite que aparelhos funcionem independentemente, respeitados os limites da instalação.",
+          "Potência elétrica = tensão × corrente. Consumo de energia em kWh = potência em kW × tempo em horas; 1.000 W = 1 kW.",
+          "Condutores e isolantes têm comportamentos diferentes. Água e umidade podem aumentar riscos em instalações; não faça experiências com tomadas. Diagramas didáticos usam fontes de baixa tensão e orientação adequada."
+        ],
+        "example": "Um aparelho de 500 W funciona 4 h: 500 W = 0,5 kW; energia = 0,5 × 4 = 2 kWh. Potência é a taxa de uso de energia, enquanto kWh mede a energia consumida.",
+        "exercise": {
+          "title": "Exercícios sobre circuitos elétricos - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-fisica/exercicios-sobre-circuitos-eletricos.htm"
+        }
+      },
+      {
+        "id": "calorondas",
+        "title": "Calor, ondas e óptica",
+        "videos": [
+          {
+            "url": "https://brasilescola.uol.com.br/videos/calor.htm",
+            "title": "Videoaula sobre Calor - Brasil Escola"
+          }
+        ],
+        "reading": {
+          "url": "https://brasilescola.uol.com.br/fisica/natureza-uma-onda.htm",
+          "title": "Texto e exemplos — Brasil Escola"
+        },
+        "extra": {
+          "url": "https://brasilescola.uol.com.br/fisica/processo-propagacao-calor.htm",
+          "title": "Propagação de calor"
+        },
+        "summary": [
+          "Temperatura está relacionada à agitação das partículas. Calor é energia transferida por diferença de temperatura; espontaneamente, vai do corpo mais quente para o mais frio.",
+          "Condução transfere energia por interações no material; convecção envolve movimento de fluidos; radiação pode ocorrer no vácuo. Uma situação pode combinar os três processos.",
+          "Mudanças de estado envolvem trocas de energia. Evaporação pode ocorrer abaixo da temperatura de ebulição; não confunda as duas formas de vaporização.",
+          "Ondas transportam energia sem transportar todo o meio junto com elas. Frequência é o número de oscilações por segundo e comprimento de onda é a distância entre repetições do padrão.",
+          "Som é onda mecânica e precisa de um meio; luz é eletromagnética e pode viajar no vácuo. Som mais agudo tem maior frequência; som mais forte está ligado à intensidade, não à mesma propriedade.",
+          "Reflexão é o retorno da onda após atingir uma superfície. Refração envolve passagem entre meios com mudança na velocidade de propagação; a direção pode mudar. Espelhos e lentes não atuam pelo mesmo fenômeno principal."
+        ],
+        "example": "A luz do Sol atravessa o espaço por radiação. O som de uma explosão não chegaria pelo vácuo, pois precisa de um meio material. Dentro de uma sala, pode haver eco por reflexão do som.",
+        "exercise": {
+          "title": "Exercícios sobre Óptica - Brasil Escola",
+          "url": "https://exercicios.brasilescola.uol.com.br/exercicios-fisica/exercicios-sobre-optica.htm"
+        }
+      }
+    ]
+  }
+]

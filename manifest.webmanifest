@@ -1,0 +1,1 @@
+{"name": "NextLevel", "short_name": "NextLevel", "start_url": "/", "display": "standalone", "background_color": "#08090f", "theme_color": "#151046", "icons": [{"src": "assets/nextlevel-icon.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any"}]}

@@ -1,0 +1,38 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://next-level-etec.mbagostini75.chatgpt.site/api/:path*"
+    },
+    {
+      "source": "/conta",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/grupos",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/convite",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/admin/:path*",
+      "destination": "https://next-level-etec.mbagostini75.chatgpt.site/admin/:path*",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ]
+}

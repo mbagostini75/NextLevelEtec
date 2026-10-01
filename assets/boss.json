@@ -1,0 +1,3062 @@
+[
+  {
+    "id": "boss-56",
+    "subject": "Matemática",
+    "topic": "Geometria",
+    "prompt": "Uma placa retangular mede 14 cm por 9 cm. Qual é a área em cm²?",
+    "options": [
+      "136",
+      "126",
+      "131",
+      "141"
+    ],
+    "answer": 1,
+    "solution": [
+      "Área = 14 × 9 = 126 cm²."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-25",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Leia: “O mercado fechou às oito. Às oito e meia, Ana encontrou a porta trancada.” Qual conclusão tem apoio no texto?",
+    "options": [
+      "O mercado não abriu naquele dia",
+      "Ana foi atendida",
+      "Ana trabalha no mercado",
+      "Ana chegou após o fechamento"
+    ],
+    "answer": 3,
+    "solution": [
+      "O texto informa fechamento às oito e chegada às oito e meia."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-166",
+    "subject": "Geografia",
+    "topic": "Escala",
+    "prompt": "Em um mapa na escala 1:200.000, dois pontos estão separados por 4 cm. Qual é a distância real em quilômetros?",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "11"
+    ],
+    "answer": 2,
+    "solution": [
+      "Cada centímetro representa 2 km; 4 × 2 = 8 km."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-40",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Leia: “Miguel revisou o trabalho antes de enviá-lo.” O pronome lo retoma qual termo?",
+    "options": [
+      "Antes",
+      "Miguel",
+      "Revisou",
+      "Trabalho"
+    ],
+    "answer": 3,
+    "solution": [
+      "O objeto revisado e enviado é o trabalho."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-84",
+    "subject": "Biologia",
+    "topic": "Genética",
+    "prompt": "Uma planta recebe luz, água e CO₂. Qual processo permite produzir matéria orgânica?",
+    "options": [
+      "Coagulação",
+      "Fotossíntese",
+      "Fermentação alcoólica",
+      "Digestão animal"
+    ],
+    "answer": 1,
+    "solution": [
+      "A fotossíntese utiliza esses recursos para formar matéria orgânica."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-145",
+    "subject": "Física",
+    "topic": "Forças",
+    "prompt": "Uma massa de 6 kg tem aceleração de 3 m/s². Qual é a força resultante em newtons?",
+    "options": [
+      "18",
+      "20",
+      "22",
+      "24"
+    ],
+    "answer": 0,
+    "solution": [
+      "F = m × a = 6 × 3 = 18 N."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-176",
+    "subject": "Geografia",
+    "topic": "População",
+    "prompt": "Uma região tem 150000 habitantes e 600 km². Qual é a densidade em habitantes/km²?",
+    "options": [
+      "260",
+      "270",
+      "250",
+      "280"
+    ],
+    "answer": 2,
+    "solution": [
+      "Densidade = população/área = 150000/600 = 250."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-22",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Leia: “O jardim voltou a florescer.” A palavra voltou sugere o quê?",
+    "options": [
+      "O jardim foi destruído",
+      "O jardim nunca teve flores",
+      "As flores são artificiais",
+      "O jardim já florescera antes"
+    ],
+    "answer": 3,
+    "solution": [
+      "Voltar a fazer algo pressupõe ocorrência anterior."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-90",
+    "subject": "Biologia",
+    "topic": "Genética",
+    "prompt": "Na cadeia algas → pequenos crustáceos → peixes, os crustáceos ocupam qual nível?",
+    "options": [
+      "Consumidor terciário",
+      "Produtor",
+      "Decompositor",
+      "Consumidor primário"
+    ],
+    "answer": 3,
+    "solution": [
+      "Eles se alimentam dos produtores."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-17",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Leia: “Apesar do trânsito, Joana chegou no horário.” Qual relação aparece?",
+    "options": [
+      "Alternância",
+      "Adição",
+      "Concessão",
+      "Finalidade"
+    ],
+    "answer": 2,
+    "solution": [
+      "O trânsito não impediu a chegada no horário."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-135",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "Um pesquisador compara cartas, objetos e relatos de uma mesma época. Qual método fortalece a análise?",
+    "options": [
+      "Ignorar quem produziu os documentos",
+      "Tratar toda memória como reprodução perfeita",
+      "Aceitar apenas uma fonte sem crítica",
+      "Comparar diferentes fontes e seus contextos"
+    ],
+    "answer": 3,
+    "solution": [
+      "Fontes têm perspectivas e devem ser contextualizadas."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-68",
+    "subject": "Matemática",
+    "topic": "Razão",
+    "prompt": "Um lote com 45 peças é dividido na razão 2:3. Quantas peças ficam na primeira parte?",
+    "options": [
+      "20",
+      "18",
+      "19",
+      "21"
+    ],
+    "answer": 1,
+    "solution": [
+      "São cinco partes; a primeira recebe 2/5 × 45 = 18."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-170",
+    "subject": "Geografia",
+    "topic": "População",
+    "prompt": "Uma região tem 80000 habitantes e 400 km². Qual é a densidade em habitantes/km²?",
+    "options": [
+      "230",
+      "220",
+      "210",
+      "200"
+    ],
+    "answer": 3,
+    "solution": [
+      "Densidade = população/área = 80000/400 = 200."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-36",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Leia: “O aviso orienta: mantenha o portão fechado.” Qual é a finalidade principal?",
+    "options": [
+      "Contar uma piada",
+      "Dar uma instrução",
+      "Definir um substantivo",
+      "Relatar uma viagem"
+    ],
+    "answer": 1,
+    "solution": [
+      "O imperativo orienta uma ação do leitor."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-80",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Em um lago, fungos decompõem restos de seres vivos. Qual é sua função principal?",
+    "options": [
+      "Criar energia do nada",
+      "Eliminar toda a água",
+      "Reciclar nutrientes",
+      "Substituir a luz solar"
+    ],
+    "answer": 2,
+    "solution": [
+      "Decompositores transformam matéria orgânica e devolvem nutrientes."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-43",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Leia: “Não há vagas hoje; volte amanhã.” Qual informação é explícita?",
+    "options": [
+      "Hoje não há vagas",
+      "O serviço foi encerrado para sempre",
+      "O leitor já se matriculou",
+      "Amanhã todas as vagas estarão preenchidas"
+    ],
+    "answer": 0,
+    "solution": [
+      "A primeira oração informa a falta de vagas hoje."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-96",
+    "subject": "Biologia",
+    "topic": "Genética",
+    "prompt": "Um lago recebe muito esgoto rico em nutrientes e passa a ter excesso de algas. Qual processo é sugerido?",
+    "options": [
+      "Osmose de rochas",
+      "Fixação de carbono no núcleo",
+      "Eutrofização",
+      "Recombinação genética"
+    ],
+    "answer": 2,
+    "solution": [
+      "O excesso de nutrientes favorece proliferação de algas e pode reduzir oxigênio."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-45",
+    "subject": "Matemática",
+    "topic": "Equações",
+    "prompt": "Uma quantidade multiplicada por 5 e reduzida em 9 resulta em 51. Qual é a quantidade?",
+    "options": [
+      "14",
+      "12",
+      "16",
+      "18"
+    ],
+    "answer": 1,
+    "solution": [
+      "5x − 9 = 51; 5x = 60; x = 12."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-140",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "Tábuas de argila com escrita cuneiforme remetem principalmente a qual região antiga?",
+    "options": [
+      "Brasil colonial",
+      "Escandinávia moderna",
+      "Mesopotâmia",
+      "Japão industrial"
+    ],
+    "answer": 2,
+    "solution": [
+      "A escrita cuneiforme desenvolveu-se na Mesopotâmia."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-175",
+    "subject": "Geografia",
+    "topic": "Escala",
+    "prompt": "Em um mapa na escala 1:200.000, dois pontos estão separados por 7 cm. Qual é a distância real em quilômetros?",
+    "options": [
+      "17",
+      "15",
+      "16",
+      "14"
+    ],
+    "answer": 3,
+    "solution": [
+      "Cada centímetro representa 2 km; 7 × 2 = 14 km."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-11",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Em “Estude para que compreenda”, para que expressa o quê?",
+    "options": [
+      "Alternância",
+      "Oposição",
+      "Causa",
+      "Finalidade"
+    ],
+    "answer": 3,
+    "solution": [
+      "Compreender é a finalidade do estudo."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-26",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Em “Ficou em casa porque choveu”, porque introduz o quê?",
+    "options": [
+      "Concessão",
+      "Causa",
+      "Comparação",
+      "Conclusão"
+    ],
+    "answer": 1,
+    "solution": [
+      "A chuva é apresentada como motivo."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-14",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Em “Treinou, portanto melhorou”, portanto indica o quê?",
+    "options": [
+      "Tempo",
+      "Concessão",
+      "Alternância",
+      "Conclusão"
+    ],
+    "answer": 3,
+    "solution": [
+      "A melhora aparece como conclusão do treino."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-174",
+    "subject": "Geografia",
+    "topic": "Demografia",
+    "prompt": "Em um ano, um município registra 900 nascimentos e 240 mortes. Sem considerar migrações, qual é o crescimento vegetativo em pessoas?",
+    "options": [
+      "680",
+      "670",
+      "660",
+      "690"
+    ],
+    "answer": 2,
+    "solution": [
+      "Crescimento vegetativo = nascimentos − mortes = 900 − 240 = 660."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-7",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Em “Quando o sinal tocar, entre”, quando estabelece qual relação?",
+    "options": [
+      "Finalidade",
+      "Tempo",
+      "Adição",
+      "Comparação"
+    ],
+    "answer": 1,
+    "solution": [
+      "A entrada é situada em relação ao momento do sinal."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-153",
+    "subject": "Física",
+    "topic": "Movimento",
+    "prompt": "Um carrinho mantém 18 m/s por 11 s. Qual distância percorre em metros?",
+    "options": [
+      "198",
+      "204",
+      "200",
+      "202"
+    ],
+    "answer": 0,
+    "solution": [
+      "d = v × t = 18 × 11 = 198 m."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-133",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "O uso das cheias do Nilo para agricultura remete a qual sociedade antiga?",
+    "options": [
+      "Brasil republicano",
+      "Atenas clássica",
+      "Inglaterra industrial",
+      "Egito antigo"
+    ],
+    "answer": 3,
+    "solution": [
+      "O rio Nilo teve papel central na agricultura egípcia."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-64",
+    "subject": "Matemática",
+    "topic": "Porcentagem",
+    "prompt": "Uma peça custa R$ 640,00 e recebe desconto de 15%. Qual é o preço final em reais?",
+    "options": [
+      "554",
+      "544",
+      "564",
+      "574"
+    ],
+    "answer": 1,
+    "solution": [
+      "Preço final = 0,85 × 640 = 544."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-85",
+    "subject": "Biologia",
+    "topic": "Prevenção",
+    "prompt": "Dois animais disputam o mesmo alimento escasso. Qual relação ocorre?",
+    "options": [
+      "Competição",
+      "Fotossíntese",
+      "Mutualismo",
+      "Comensalismo obrigatório"
+    ],
+    "answer": 0,
+    "solution": [
+      "O uso do mesmo recurso limitado caracteriza competição."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-168",
+    "subject": "Geografia",
+    "topic": "Demografia",
+    "prompt": "Em um ano, um município registra 700 nascimentos e 200 mortes. Sem considerar migrações, qual é o crescimento vegetativo em pessoas?",
+    "options": [
+      "530",
+      "520",
+      "500",
+      "510"
+    ],
+    "answer": 2,
+    "solution": [
+      "Crescimento vegetativo = nascimentos − mortes = 700 − 200 = 500."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-127",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "A participação direta de cidadãos, com exclusão de mulheres, escravizados e estrangeiros, caracteriza qual experiência antiga?",
+    "options": [
+      "Democracia ateniense",
+      "Ditadura militar brasileira",
+      "Sufrágio universal moderno",
+      "Monarquia portuguesa de 1808"
+    ],
+    "answer": 0,
+    "solution": [
+      "A cidadania ateniense era restrita."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-73",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Um carrapato retira nutrientes de um cachorro e o prejudica. Qual relação ocorre?",
+    "options": [
+      "Competição entre iguais",
+      "Produção primária",
+      "Mutualismo",
+      "Parasitismo"
+    ],
+    "answer": 3,
+    "solution": [
+      "O parasita beneficia-se em prejuízo do hospedeiro."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-3",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Em “Se houver vaga, farei o curso”, se expressa o quê?",
+    "options": [
+      "Conclusão",
+      "Causa",
+      "Condição",
+      "Explicação"
+    ],
+    "answer": 2,
+    "solution": [
+      "Fazer o curso depende da existência de vaga."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-18",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Em “Tanto leu quanto escreveu”, tanto...quanto expressa o quê?",
+    "options": [
+      "Exclusão",
+      "Oposição",
+      "Adição",
+      "Condição"
+    ],
+    "answer": 2,
+    "solution": [
+      "As duas ações são somadas."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-165",
+    "subject": "Geografia",
+    "topic": "Demografia",
+    "prompt": "Em um ano, um município registra 600 nascimentos e 180 mortes. Sem considerar migrações, qual é o crescimento vegetativo em pessoas?",
+    "options": [
+      "420",
+      "450",
+      "440",
+      "430"
+    ],
+    "answer": 0,
+    "solution": [
+      "Crescimento vegetativo = nascimentos − mortes = 600 − 180 = 420."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-2",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Em “O aluno devorou o livro”, devorou tem qual sentido contextual?",
+    "options": [
+      "Comeu as páginas literalmente",
+      "Emprestou o livro",
+      "Rasgou o livro obrigatoriamente",
+      "Leu com intensidade"
+    ],
+    "answer": 3,
+    "solution": [
+      "O uso figurado indica leitura intensa."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-49",
+    "subject": "Matemática",
+    "topic": "Porcentagem",
+    "prompt": "Uma peça custa R$ 400,00 e recebe desconto de 15%. Qual é o preço final em reais?",
+    "options": [
+      "350",
+      "340",
+      "360",
+      "370"
+    ],
+    "answer": 1,
+    "solution": [
+      "Preço final = 0,85 × 400 = 340."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-48",
+    "subject": "Matemática",
+    "topic": "Razão",
+    "prompt": "Um lote com 25 peças é dividido na razão 2:3. Quantas peças ficam na primeira parte?",
+    "options": [
+      "13",
+      "10",
+      "11",
+      "12"
+    ],
+    "answer": 1,
+    "solution": [
+      "São cinco partes; a primeira recebe 2/5 × 25 = 10."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-93",
+    "subject": "Biologia",
+    "topic": "Prevenção",
+    "prompt": "A retirada de uma mata divide o habitat de uma espécie em pequenos fragmentos. Qual consequência é possível?",
+    "options": [
+      "Fim de todas as mutações",
+      "Aumento obrigatório de toda biodiversidade",
+      "Redução da conexão entre populações",
+      "Criação automática de novas florestas"
+    ],
+    "answer": 2,
+    "solution": [
+      "A fragmentação dificulta deslocamento e pode isolar populações."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-66",
+    "subject": "Matemática",
+    "topic": "Geometria",
+    "prompt": "Uma placa retangular mede 16 cm por 11 cm. Qual é a área em cm²?",
+    "options": [
+      "176",
+      "186",
+      "191",
+      "181"
+    ],
+    "answer": 0,
+    "solution": [
+      "Área = 16 × 11 = 176 cm²."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-29",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Em “A proposta está em aberto”, a expressão significa o quê?",
+    "options": [
+      "Foi necessariamente rejeitada",
+      "Está escrita em uma porta",
+      "Foi apagada",
+      "Ainda não foi decidida"
+    ],
+    "answer": 3,
+    "solution": [
+      "Em aberto indica pendência de decisão."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-5",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Em “Ela quebrou o gelo na reunião”, a expressão sugere o quê?",
+    "options": [
+      "Quebrou um copo",
+      "Cancelou a reunião",
+      "Resfriou o ambiente",
+      "Reduziu a tensão inicial"
+    ],
+    "answer": 3,
+    "solution": [
+      "Quebrar o gelo é uma expressão figurada de aproximação."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-62",
+    "subject": "Matemática",
+    "topic": "Estatística",
+    "prompt": "Em cinco rodadas, os resultados foram 14, 18, 22, 26 e 10. Qual é a média?",
+    "options": [
+      "18",
+      "20",
+      "19",
+      "21"
+    ],
+    "answer": 0,
+    "solution": [
+      "A soma é 90; dividindo por 5, a média é 18."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-124",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "A dependência de camponeses em relação a senhores de terras aparece em qual contexto europeu?",
+    "options": [
+      "Democracia universal contemporânea",
+      "Industrialização exclusivamente digital",
+      "Relações feudais medievais",
+      "República brasileira de 1988"
+    ],
+    "answer": 2,
+    "solution": [
+      "A terra e as obrigações de dependência estruturavam relações feudais."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-169",
+    "subject": "Geografia",
+    "topic": "Escala",
+    "prompt": "Em um mapa na escala 1:200.000, dois pontos estão separados por 5 cm. Qual é a distância real em quilômetros?",
+    "options": [
+      "11",
+      "10",
+      "13",
+      "12"
+    ],
+    "answer": 1,
+    "solution": [
+      "Cada centímetro representa 2 km; 5 × 2 = 10 km."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-100",
+    "subject": "Química",
+    "topic": "Concentração",
+    "prompt": "Uma solução contém 24 g de soluto em 2 L de solução. Qual é a concentração em g/L?",
+    "options": [
+      "13",
+      "12",
+      "14",
+      "15"
+    ],
+    "answer": 1,
+    "solution": [
+      "C = massa/volume = 24/2 = 12 g/L."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-81",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Uma planta perde vapor de água pelas folhas. Qual processo ocorre?",
+    "options": [
+      "Transpiração",
+      "Fecundação",
+      "Solidificação",
+      "Digestão"
+    ],
+    "answer": 0,
+    "solution": [
+      "A transpiração libera vapor de água."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-114",
+    "subject": "Química",
+    "topic": "Densidade",
+    "prompt": "Uma amostra tem massa 180 g e volume 60 cm³. Qual é sua densidade em g/cm³?",
+    "options": [
+      "5",
+      "2",
+      "4",
+      "3"
+    ],
+    "answer": 3,
+    "solution": [
+      "d = 180/60 = 3 g/cm³."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-77",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Na seleção natural, qual característica tende a ser favorecida?",
+    "options": [
+      "Variante hereditária que aumenta o sucesso reprodutivo no ambiente",
+      "Qualquer diferença sem relação com reprodução",
+      "Característica adquirida por vontade",
+      "Toda característica rara obrigatoriamente"
+    ],
+    "answer": 0,
+    "solution": [
+      "A seleção depende do ambiente e de diferenças hereditárias."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-71",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Uma célula animal necessita sintetizar proteínas. Qual estrutura atua diretamente nessa síntese?",
+    "options": [
+      "Ribossomo",
+      "Vacúolo de planta",
+      "Parede de celulose",
+      "Cloroplasto"
+    ],
+    "answer": 0,
+    "solution": [
+      "Ribossomos realizam a tradução do RNA."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-171",
+    "subject": "Geografia",
+    "topic": "Demografia",
+    "prompt": "Em um ano, um município registra 800 nascimentos e 220 mortes. Sem considerar migrações, qual é o crescimento vegetativo em pessoas?",
+    "options": [
+      "580",
+      "600",
+      "610",
+      "590"
+    ],
+    "answer": 0,
+    "solution": [
+      "Crescimento vegetativo = nascimentos − mortes = 800 − 220 = 580."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-146",
+    "subject": "Física",
+    "topic": "Eletricidade",
+    "prompt": "Um resistor de 12 Ω conduz 3 A. Qual é a tensão em volts?",
+    "options": [
+      "42",
+      "36",
+      "38",
+      "40"
+    ],
+    "answer": 1,
+    "solution": [
+      "U = R × I = 12 × 3 = 36 V."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-70",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Uma célula vegetal realiza fotossíntese. Qual organela participa diretamente?",
+    "options": [
+      "Centríolo",
+      "Lisossomo",
+      "Ribossomo isolado",
+      "Cloroplasto"
+    ],
+    "answer": 3,
+    "solution": [
+      "Cloroplastos abrigam a maquinaria fotossintetizante."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-139",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "Feiras medievais cresceram com circulação de mercadorias. Qual atividade foi ampliada?",
+    "options": [
+      "Abolição brasileira",
+      "Internet",
+      "Comércio",
+      "Fabricação de automóveis"
+    ],
+    "answer": 2,
+    "solution": [
+      "Feiras integravam redes comerciais."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-41",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Em “O tempo voa”, ocorre principalmente qual figura?",
+    "options": [
+      "Metáfora",
+      "Enumeração",
+      "Eufemismo",
+      "Onomatopeia"
+    ],
+    "answer": 0,
+    "solution": [
+      "O tempo é associado figuradamente a algo que voa."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-78",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Uma bactéria não possui núcleo delimitado. Ela é classificada como quê?",
+    "options": [
+      "Procarionte",
+      "Animal pluricelular",
+      "Vírus obrigatório",
+      "Eucarionte nuclear"
+    ],
+    "answer": 0,
+    "solution": [
+      "Bactérias são células procarióticas."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-160",
+    "subject": "Física",
+    "topic": "Forças",
+    "prompt": "Uma massa de 11 kg tem aceleração de 8 m/s². Qual é a força resultante em newtons?",
+    "options": [
+      "92",
+      "94",
+      "88",
+      "90"
+    ],
+    "answer": 2,
+    "solution": [
+      "F = m × a = 11 × 8 = 88 N."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-58",
+    "subject": "Matemática",
+    "topic": "Razão",
+    "prompt": "Um lote com 35 peças é dividido na razão 2:3. Quantas peças ficam na primeira parte?",
+    "options": [
+      "15",
+      "17",
+      "14",
+      "16"
+    ],
+    "answer": 2,
+    "solution": [
+      "São cinco partes; a primeira recebe 2/5 × 35 = 14."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-116",
+    "subject": "Química",
+    "topic": "Concentração",
+    "prompt": "Uma solução contém 144 g de soluto em 6 L de solução. Qual é a concentração em g/L?",
+    "options": [
+      "26",
+      "25",
+      "27",
+      "24"
+    ],
+    "answer": 3,
+    "solution": [
+      "C = massa/volume = 144/6 = 24 g/L."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-92",
+    "subject": "Biologia",
+    "topic": "Genética",
+    "prompt": "Uma célula forma duas células com o mesmo número de cromossomos. Qual divisão é compatível?",
+    "options": [
+      "Meiose completa",
+      "Fecundação",
+      "Mitose",
+      "Mutação obrigatória"
+    ],
+    "answer": 2,
+    "solution": [
+      "A mitose mantém o número de cromossomos."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-4",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Em “O rio acordou furioso”, ocorre qual figura?",
+    "options": [
+      "Pleonasmo",
+      "Elipse",
+      "Metonímia",
+      "Personificação"
+    ],
+    "answer": 3,
+    "solution": [
+      "Acordar e sentir fúria são atribuídos ao rio."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-63",
+    "subject": "Matemática",
+    "topic": "Razão",
+    "prompt": "Um lote com 40 peças é dividido na razão 2:3. Quantas peças ficam na primeira parte?",
+    "options": [
+      "16",
+      "18",
+      "17",
+      "19"
+    ],
+    "answer": 0,
+    "solution": [
+      "São cinco partes; a primeira recebe 2/5 × 40 = 16."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-94",
+    "subject": "Biologia",
+    "topic": "Genética",
+    "prompt": "Na formação de gametas, qual divisão reduz o número de cromossomos à metade?",
+    "options": [
+      "Meiose",
+      "Fusão",
+      "Respiração",
+      "Mitose"
+    ],
+    "answer": 0,
+    "solution": [
+      "A meiose produz células haploides."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-162",
+    "subject": "Física",
+    "topic": "Calor",
+    "prompt": "Uma colher metálica aquece pelo contato com a panela. Qual transferência de energia predomina ao longo do metal?",
+    "options": [
+      "Fusão nuclear",
+      "Translação",
+      "Convecção no vácuo",
+      "Condução"
+    ],
+    "answer": 3,
+    "solution": [
+      "Na condução, a energia é transferida no material sem escoamento macroscópico do metal."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-105",
+    "subject": "Química",
+    "topic": "Fórmulas",
+    "prompt": "Quantos átomos de oxigênio há no total em 4 moléculas de CO₂?",
+    "options": [
+      "8",
+      "10",
+      "11",
+      "9"
+    ],
+    "answer": 0,
+    "solution": [
+      "Cada molécula tem dois átomos de oxigênio: 2 × 4 = 8."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-69",
+    "subject": "Matemática",
+    "topic": "Probabilidade",
+    "prompt": "Uma roleta tem 12 setores iguais, dos quais 5 são azuis. Qual é a chance de cair em azul?",
+    "options": [
+      "5/12",
+      "5/7",
+      "1/12",
+      "7/12"
+    ],
+    "answer": 0,
+    "solution": [
+      "Há 5 resultados favoráveis em 12 setores equiprováveis."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-142",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "A produção de açúcar em grandes propriedades coloniais brasileiras esteve ligada a quê?",
+    "options": [
+      "Igualdade de renda garantida",
+      "Ausência de comércio externo",
+      "Industrialização elétrica",
+      "Exploração de trabalho escravizado"
+    ],
+    "answer": 3,
+    "solution": [
+      "A economia açucareira utilizou intensamente trabalho escravizado."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-164",
+    "subject": "Geografia",
+    "topic": "População",
+    "prompt": "Uma região tem 30000 habitantes e 200 km². Qual é a densidade em habitantes/km²?",
+    "options": [
+      "170",
+      "160",
+      "180",
+      "150"
+    ],
+    "answer": 3,
+    "solution": [
+      "Densidade = população/área = 30000/200 = 150."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-173",
+    "subject": "Geografia",
+    "topic": "População",
+    "prompt": "Uma região tem 112500 habitantes e 500 km². Qual é a densidade em habitantes/km²?",
+    "options": [
+      "225",
+      "255",
+      "245",
+      "235"
+    ],
+    "answer": 0,
+    "solution": [
+      "Densidade = população/área = 112500/500 = 225."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-61",
+    "subject": "Matemática",
+    "topic": "Geometria",
+    "prompt": "Uma placa retangular mede 15 cm por 10 cm. Qual é a área em cm²?",
+    "options": [
+      "165",
+      "150",
+      "160",
+      "155"
+    ],
+    "answer": 1,
+    "solution": [
+      "Área = 15 × 10 = 150 cm²."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-13",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Em “Já expliquei mil vezes”, o número exagerado produz qual figura?",
+    "options": [
+      "Antítese",
+      "Onomatopeia",
+      "Hipérbole",
+      "Eufemismo"
+    ],
+    "answer": 2,
+    "solution": [
+      "O exagero intensifica a repetição."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-131",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "Comunidades formadas por pessoas que resistiam à escravidão são exemplificadas por quê?",
+    "options": [
+      "Corporações industriais modernas",
+      "Quilombos",
+      "Pólis gregas",
+      "Senado romano"
+    ],
+    "answer": 1,
+    "solution": [
+      "Quilombos foram espaços de organização e resistência."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-27",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Em “É doce como mel”, qual figura aparece?",
+    "options": [
+      "Eufemismo",
+      "Comparação",
+      "Ironia obrigatória",
+      "Metonímia"
+    ],
+    "answer": 1,
+    "solution": [
+      "Como marca comparação explícita."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-42",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Em “Entre o amor e o ódio”, há oposição que caracteriza o quê?",
+    "options": [
+      "Antítese",
+      "Onomatopeia",
+      "Pleonasmo",
+      "Comparação"
+    ],
+    "answer": 0,
+    "solution": [
+      "Amor e ódio são apresentados como opostos."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-91",
+    "subject": "Biologia",
+    "topic": "Prevenção",
+    "prompt": "Um indivíduo tem alelos A e a num locus. Qual é sua classificação?",
+    "options": [
+      "Homozigoto recessivo",
+      "Sem genótipo",
+      "Homozigoto dominante",
+      "Heterozigoto"
+    ],
+    "answer": 3,
+    "solution": [
+      "Alelos diferentes caracterizam heterozigose."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-83",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Em Aa × Aa com dominância completa, qual é a chance de aa?",
+    "options": [
+      "75%",
+      "100%",
+      "25%",
+      "50%"
+    ],
+    "answer": 2,
+    "solution": [
+      "As combinações são AA, Aa, aA e aa; uma em quatro é aa."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-148",
+    "subject": "Física",
+    "topic": "Forças",
+    "prompt": "Uma massa de 7 kg tem aceleração de 4 m/s². Qual é a força resultante em newtons?",
+    "options": [
+      "28",
+      "30",
+      "32",
+      "34"
+    ],
+    "answer": 0,
+    "solution": [
+      "F = m × a = 7 × 4 = 28 N."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-107",
+    "subject": "Química",
+    "topic": "Reações",
+    "prompt": "Em sistema fechado, 21 g de um reagente reagem totalmente com 28 g de outro. Qual é a massa total dos produtos em gramas?",
+    "options": [
+      "55",
+      "51",
+      "49",
+      "53"
+    ],
+    "answer": 2,
+    "solution": [
+      "Conservação da massa: 21 + 28 = 49 g."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-60",
+    "subject": "Matemática",
+    "topic": "Equações",
+    "prompt": "Uma quantidade multiplicada por 5 e reduzida em 9 resulta em 66. Qual é a quantidade?",
+    "options": [
+      "15",
+      "21",
+      "19",
+      "17"
+    ],
+    "answer": 0,
+    "solution": [
+      "5x − 9 = 66; 5x = 75; x = 15."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-57",
+    "subject": "Matemática",
+    "topic": "Estatística",
+    "prompt": "Em cinco rodadas, os resultados foram 13, 17, 21, 25 e 9. Qual é a média?",
+    "options": [
+      "19",
+      "20",
+      "17",
+      "18"
+    ],
+    "answer": 2,
+    "solution": [
+      "A soma é 85; dividindo por 5, a média é 17."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-106",
+    "subject": "Química",
+    "topic": "Densidade",
+    "prompt": "Uma amostra tem massa 120 g e volume 40 cm³. Qual é sua densidade em g/cm³?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "5"
+    ],
+    "answer": 1,
+    "solution": [
+      "d = 120/40 = 3 g/cm³."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-152",
+    "subject": "Física",
+    "topic": "Eletricidade",
+    "prompt": "Um resistor de 18 Ω conduz 5 A. Qual é a tensão em volts?",
+    "options": [
+      "90",
+      "92",
+      "96",
+      "94"
+    ],
+    "answer": 0,
+    "solution": [
+      "U = R × I = 18 × 5 = 90 V."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-44",
+    "subject": "Matemática",
+    "topic": "Porcentagem",
+    "prompt": "Uma peça custa R$ 320,00 e recebe desconto de 15%. Qual é o preço final em reais?",
+    "options": [
+      "292",
+      "282",
+      "272",
+      "302"
+    ],
+    "answer": 2,
+    "solution": [
+      "Preço final = 0,85 × 320 = 272."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-12",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Em “Ouvi um tic-tac”, tic-tac exemplifica o quê?",
+    "options": [
+      "Metáfora",
+      "Antítese",
+      "Eufemismo",
+      "Onomatopeia"
+    ],
+    "answer": 3,
+    "solution": [
+      "A palavra imita um som."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-72",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Uma mudança na sequência do DNA recebe qual nome?",
+    "options": [
+      "Mutação",
+      "Predação",
+      "Convecção",
+      "Evaporação"
+    ],
+    "answer": 0,
+    "solution": [
+      "Mutações alteram a informação genética."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-102",
+    "subject": "Química",
+    "topic": "Densidade",
+    "prompt": "Uma amostra tem massa 90 g e volume 30 cm³. Qual é sua densidade em g/cm³?",
+    "options": [
+      "4",
+      "2",
+      "5",
+      "3"
+    ],
+    "answer": 3,
+    "solution": [
+      "d = 90/30 = 3 g/cm³."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-109",
+    "subject": "Química",
+    "topic": "Fórmulas",
+    "prompt": "Quantos átomos de oxigênio há no total em 5 moléculas de CO₂?",
+    "options": [
+      "13",
+      "11",
+      "10",
+      "12"
+    ],
+    "answer": 2,
+    "solution": [
+      "Cada molécula tem dois átomos de oxigênio: 2 × 5 = 10."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-117",
+    "subject": "Química",
+    "topic": "Fórmulas",
+    "prompt": "Quantos átomos de oxigênio há no total em 7 moléculas de CO₂?",
+    "options": [
+      "15",
+      "17",
+      "16",
+      "14"
+    ],
+    "answer": 3,
+    "solution": [
+      "Cada molécula tem dois átomos de oxigênio: 2 × 7 = 14."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-9",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Em “Os livros novos chegaram”, qual é o núcleo do sujeito?",
+    "options": [
+      "Os",
+      "Chegaram",
+      "Livros",
+      "Novos"
+    ],
+    "answer": 2,
+    "solution": [
+      "O sujeito é Os livros novos e o núcleo é livros."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-138",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "A extração de ouro no século XVIII alterou rotas econômicas brasileiras. Qual região foi central?",
+    "options": [
+      "Groenlândia",
+      "Minas Gerais",
+      "Japão",
+      "Antártida"
+    ],
+    "answer": 1,
+    "solution": [
+      "A mineração mineira atraiu população e reorganizou fluxos."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-8",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Em “Fernanda escreveu uma carta”, uma carta funciona como quê?",
+    "options": [
+      "Sujeito",
+      "Objeto direto",
+      "Adjunto adverbial",
+      "Vocativo"
+    ],
+    "answer": 1,
+    "solution": [
+      "O termo completa escreveu sem preposição."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-115",
+    "subject": "Química",
+    "topic": "Reações",
+    "prompt": "Em sistema fechado, 27 g de um reagente reagem totalmente com 32 g de outro. Qual é a massa total dos produtos em gramas?",
+    "options": [
+      "59",
+      "65",
+      "63",
+      "61"
+    ],
+    "answer": 0,
+    "solution": [
+      "Conservação da massa: 27 + 32 = 59 g."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-87",
+    "subject": "Biologia",
+    "topic": "Prevenção",
+    "prompt": "Dois gametas se unem. Qual célula é formada?",
+    "options": [
+      "Hemácia adulta",
+      "Bactéria",
+      "Vírus",
+      "Zigoto"
+    ],
+    "answer": 3,
+    "solution": [
+      "O zigoto resulta da fecundação."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-82",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Qual órgão integra a circulação impulsionando o sangue?",
+    "options": [
+      "Estômago",
+      "Coração",
+      "Intestino grosso",
+      "Vesícula biliar"
+    ],
+    "answer": 1,
+    "solution": [
+      "As contrações cardíacas impulsionam o sangue."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-155",
+    "subject": "Física",
+    "topic": "Eletricidade",
+    "prompt": "Um resistor de 21 Ω conduz 6 A. Qual é a tensão em volts?",
+    "options": [
+      "130",
+      "126",
+      "132",
+      "128"
+    ],
+    "answer": 1,
+    "solution": [
+      "U = R × I = 21 × 6 = 126 V."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-53",
+    "subject": "Matemática",
+    "topic": "Razão",
+    "prompt": "Um lote com 30 peças é dividido na razão 2:3. Quantas peças ficam na primeira parte?",
+    "options": [
+      "12",
+      "15",
+      "13",
+      "14"
+    ],
+    "answer": 0,
+    "solution": [
+      "São cinco partes; a primeira recebe 2/5 × 30 = 12."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-50",
+    "subject": "Matemática",
+    "topic": "Equações",
+    "prompt": "Uma quantidade multiplicada por 5 e reduzida em 9 resulta em 56. Qual é a quantidade?",
+    "options": [
+      "15",
+      "19",
+      "13",
+      "17"
+    ],
+    "answer": 2,
+    "solution": [
+      "5x − 9 = 56; 5x = 65; x = 13."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-55",
+    "subject": "Matemática",
+    "topic": "Equações",
+    "prompt": "Uma quantidade multiplicada por 5 e reduzida em 9 resulta em 61. Qual é a quantidade?",
+    "options": [
+      "20",
+      "18",
+      "14",
+      "16"
+    ],
+    "answer": 2,
+    "solution": [
+      "5x − 9 = 61; 5x = 70; x = 14."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-158",
+    "subject": "Física",
+    "topic": "Eletricidade",
+    "prompt": "Um resistor de 24 Ω conduz 7 A. Qual é a tensão em volts?",
+    "options": [
+      "168",
+      "174",
+      "172",
+      "170"
+    ],
+    "answer": 0,
+    "solution": [
+      "U = R × I = 24 × 7 = 168 V."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-150",
+    "subject": "Física",
+    "topic": "Movimento",
+    "prompt": "Um carrinho mantém 15 m/s por 10 s. Qual distância percorre em metros?",
+    "options": [
+      "152",
+      "150",
+      "154",
+      "156"
+    ],
+    "answer": 1,
+    "solution": [
+      "d = v × t = 15 × 10 = 150 m."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-120",
+    "subject": "Química",
+    "topic": "Concentração",
+    "prompt": "Uma solução contém 189 g de soluto em 7 L de solução. Qual é a concentração em g/L?",
+    "options": [
+      "28",
+      "30",
+      "27",
+      "29"
+    ],
+    "answer": 2,
+    "solution": [
+      "C = massa/volume = 189/7 = 27 g/L."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-104",
+    "subject": "Química",
+    "topic": "Concentração",
+    "prompt": "Uma solução contém 45 g de soluto em 3 L de solução. Qual é a concentração em g/L?",
+    "options": [
+      "16",
+      "18",
+      "15",
+      "17"
+    ],
+    "answer": 2,
+    "solution": [
+      "C = massa/volume = 45/3 = 15 g/L."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-54",
+    "subject": "Matemática",
+    "topic": "Porcentagem",
+    "prompt": "Uma peça custa R$ 480,00 e recebe desconto de 15%. Qual é o preço final em reais?",
+    "options": [
+      "408",
+      "428",
+      "418",
+      "438"
+    ],
+    "answer": 0,
+    "solution": [
+      "Preço final = 0,85 × 480 = 408."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-37",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Em “Preciso de silêncio”, de silêncio funciona como quê?",
+    "options": [
+      "Objeto direto",
+      "Vocativo",
+      "Sujeito",
+      "Objeto indireto"
+    ],
+    "answer": 3,
+    "solution": [
+      "Precisar exige de nesse uso."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-6",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Em “O aluno ficou tranquilo”, tranquilo funciona como quê?",
+    "options": [
+      "Objeto direto",
+      "Vocativo",
+      "Predicativo do sujeito",
+      "Artigo"
+    ],
+    "answer": 2,
+    "solution": [
+      "O adjetivo atribui estado ao sujeito por meio de ficou."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-167",
+    "subject": "Geografia",
+    "topic": "População",
+    "prompt": "Uma região tem 52500 habitantes e 300 km². Qual é a densidade em habitantes/km²?",
+    "options": [
+      "185",
+      "195",
+      "175",
+      "205"
+    ],
+    "answer": 2,
+    "solution": [
+      "Densidade = população/área = 52500/300 = 175."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-95",
+    "subject": "Biologia",
+    "topic": "Prevenção",
+    "prompt": "Qual estrutura permite a principal troca gasosa entre ar e sangue nos pulmões?",
+    "options": [
+      "Alvéolo",
+      "Néfron",
+      "Tendão",
+      "Vesícula"
+    ],
+    "answer": 0,
+    "solution": [
+      "Alvéolos ficam em contato com capilares."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-74",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Uma hemácia transporta oxigênio principalmente usando qual molécula?",
+    "options": [
+      "Clorofila",
+      "Hemoglobina",
+      "Amido",
+      "Celulose"
+    ],
+    "answer": 1,
+    "solution": [
+      "A hemoglobina liga-se ao oxigênio."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-121",
+    "subject": "Química",
+    "topic": "Fórmulas",
+    "prompt": "Quantos átomos de oxigênio há no total em 8 moléculas de CO₂?",
+    "options": [
+      "18",
+      "17",
+      "19",
+      "16"
+    ],
+    "answer": 3,
+    "solution": [
+      "Cada molécula tem dois átomos de oxigênio: 2 × 8 = 16."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-67",
+    "subject": "Matemática",
+    "topic": "Estatística",
+    "prompt": "Em cinco rodadas, os resultados foram 15, 19, 23, 27 e 11. Qual é a média?",
+    "options": [
+      "19",
+      "20",
+      "21",
+      "22"
+    ],
+    "answer": 0,
+    "solution": [
+      "A soma é 95; dividindo por 5, a média é 19."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-46",
+    "subject": "Matemática",
+    "topic": "Geometria",
+    "prompt": "Uma placa retangular mede 12 cm por 7 cm. Qual é a área em cm²?",
+    "options": [
+      "99",
+      "84",
+      "94",
+      "89"
+    ],
+    "answer": 1,
+    "solution": [
+      "Área = 12 × 7 = 84 cm²."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-35",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Em “Na escola, todos estudam”, na escola indica o quê?",
+    "options": [
+      "Lugar",
+      "Causa",
+      "Finalidade",
+      "Condição"
+    ],
+    "answer": 0,
+    "solution": [
+      "A expressão situa a ação no espaço."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-98",
+    "subject": "Química",
+    "topic": "Densidade",
+    "prompt": "Uma amostra tem massa 60 g e volume 20 cm³. Qual é sua densidade em g/cm³?",
+    "options": [
+      "3",
+      "2",
+      "4",
+      "5"
+    ],
+    "answer": 0,
+    "solution": [
+      "d = 60/20 = 3 g/cm³."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-110",
+    "subject": "Química",
+    "topic": "Densidade",
+    "prompt": "Uma amostra tem massa 150 g e volume 50 cm³. Qual é sua densidade em g/cm³?",
+    "options": [
+      "4",
+      "2",
+      "3",
+      "5"
+    ],
+    "answer": 2,
+    "solution": [
+      "d = 150/50 = 3 g/cm³."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-149",
+    "subject": "Física",
+    "topic": "Eletricidade",
+    "prompt": "Um resistor de 15 Ω conduz 4 A. Qual é a tensão em volts?",
+    "options": [
+      "64",
+      "60",
+      "66",
+      "62"
+    ],
+    "answer": 1,
+    "solution": [
+      "U = R × I = 15 × 4 = 60 V."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-147",
+    "subject": "Física",
+    "topic": "Movimento",
+    "prompt": "Um carrinho mantém 12 m/s por 9 s. Qual distância percorre em metros?",
+    "options": [
+      "108",
+      "112",
+      "110",
+      "114"
+    ],
+    "answer": 0,
+    "solution": [
+      "d = v × t = 12 × 9 = 108 m."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-177",
+    "subject": "Geografia",
+    "topic": "Demografia",
+    "prompt": "Em um ano, um município registra 1000 nascimentos e 260 mortes. Sem considerar migrações, qual é o crescimento vegetativo em pessoas?",
+    "options": [
+      "750",
+      "760",
+      "740",
+      "770"
+    ],
+    "answer": 2,
+    "solution": [
+      "Crescimento vegetativo = nascimentos − mortes = 1000 − 260 = 740."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-137",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "A chegada da corte portuguesa ao Brasil em 1808 relaciona-se a qual contexto?",
+    "options": [
+      "Guerras napoleônicas",
+      "Proclamação da República",
+      "Ditadura de 1964",
+      "Segunda Guerra Mundial"
+    ],
+    "answer": 0,
+    "solution": [
+      "As invasões napoleônicas motivaram a transferência da corte."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-157",
+    "subject": "Física",
+    "topic": "Forças",
+    "prompt": "Uma massa de 10 kg tem aceleração de 7 m/s². Qual é a força resultante em newtons?",
+    "options": [
+      "74",
+      "70",
+      "72",
+      "76"
+    ],
+    "answer": 1,
+    "solution": [
+      "F = m × a = 10 × 7 = 70 N."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-30",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Em “Caminhamos lentamente”, lentamente pertence a qual classe?",
+    "options": [
+      "Artigo",
+      "Preposição",
+      "Substantivo",
+      "Advérbio"
+    ],
+    "answer": 3,
+    "solution": [
+      "Modifica o verbo indicando modo."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-122",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "Qual ordem histórica está correta para o Brasil?",
+    "options": [
+      "Independência e República ocorreram somente em 1988",
+      "Abolição em 1500, Independência em 1932, República em 1988",
+      "República em 1822, abolição em 1808, Independência em 1889",
+      "Independência em 1822, abolição em 1888, República em 1889"
+    ],
+    "answer": 3,
+    "solution": [
+      "As datas situam três mudanças políticas e sociais distintas."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-47",
+    "subject": "Matemática",
+    "topic": "Estatística",
+    "prompt": "Em cinco rodadas, os resultados foram 11, 15, 19, 23 e 7. Qual é a média?",
+    "options": [
+      "17",
+      "18",
+      "16",
+      "15"
+    ],
+    "answer": 3,
+    "solution": [
+      "A soma é 75; dividindo por 5, a média é 15."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-163",
+    "subject": "Geografia",
+    "topic": "Escala",
+    "prompt": "Em um mapa na escala 1:200.000, dois pontos estão separados por 3 cm. Qual é a distância real em quilômetros?",
+    "options": [
+      "9",
+      "8",
+      "7",
+      "6"
+    ],
+    "answer": 3,
+    "solution": [
+      "Cada centímetro representa 2 km; 3 × 2 = 6 km."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-180",
+    "subject": "Geografia",
+    "topic": "Demografia",
+    "prompt": "Em um ano, um município registra 1100 nascimentos e 280 mortes. Sem considerar migrações, qual é o crescimento vegetativo em pessoas?",
+    "options": [
+      "820",
+      "840",
+      "830",
+      "850"
+    ],
+    "answer": 0,
+    "solution": [
+      "Crescimento vegetativo = nascimentos − mortes = 1100 − 280 = 820."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-112",
+    "subject": "Química",
+    "topic": "Concentração",
+    "prompt": "Uma solução contém 105 g de soluto em 5 L de solução. Qual é a concentração em g/L?",
+    "options": [
+      "21",
+      "24",
+      "23",
+      "22"
+    ],
+    "answer": 0,
+    "solution": [
+      "C = massa/volume = 105/5 = 21 g/L."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-88",
+    "subject": "Biologia",
+    "topic": "Genética",
+    "prompt": "Qual órgão produz bile, importante na digestão de gorduras?",
+    "options": [
+      "Coração",
+      "Pulmão",
+      "Fígado",
+      "Rim"
+    ],
+    "answer": 2,
+    "solution": [
+      "A bile produzida no fígado ajuda a emulsificar gorduras."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-113",
+    "subject": "Química",
+    "topic": "Fórmulas",
+    "prompt": "Quantos átomos de oxigênio há no total em 6 moléculas de CO₂?",
+    "options": [
+      "12",
+      "15",
+      "13",
+      "14"
+    ],
+    "answer": 0,
+    "solution": [
+      "Cada molécula tem dois átomos de oxigênio: 2 × 6 = 12."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-59",
+    "subject": "Matemática",
+    "topic": "Porcentagem",
+    "prompt": "Uma peça custa R$ 560,00 e recebe desconto de 15%. Qual é o preço final em reais?",
+    "options": [
+      "476",
+      "496",
+      "506",
+      "486"
+    ],
+    "answer": 0,
+    "solution": [
+      "Preço final = 0,85 × 560 = 476."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-103",
+    "subject": "Química",
+    "topic": "Reações",
+    "prompt": "Em sistema fechado, 18 g de um reagente reagem totalmente com 26 g de outro. Qual é a massa total dos produtos em gramas?",
+    "options": [
+      "44",
+      "48",
+      "46",
+      "50"
+    ],
+    "answer": 0,
+    "solution": [
+      "Conservação da massa: 18 + 26 = 44 g."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-128",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "A Independência brasileira de 1822 eliminou imediatamente a escravidão?",
+    "options": [
+      "Sim; a Lei Áurea é de 1822",
+      "Sim; não houve mais escravizados",
+      "Não existia escravidão no Brasil",
+      "Não; ela permaneceu até a abolição legal de 1888"
+    ],
+    "answer": 3,
+    "solution": [
+      "A ruptura com Portugal não aboliu a escravidão."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-52",
+    "subject": "Matemática",
+    "topic": "Estatística",
+    "prompt": "Em cinco rodadas, os resultados foram 12, 16, 20, 24 e 8. Qual é a média?",
+    "options": [
+      "19",
+      "18",
+      "17",
+      "16"
+    ],
+    "answer": 3,
+    "solution": [
+      "A soma é 80; dividindo por 5, a média é 16."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-178",
+    "subject": "Geografia",
+    "topic": "Escala",
+    "prompt": "Em um mapa na escala 1:200.000, dois pontos estão separados por 8 cm. Qual é a distância real em quilômetros?",
+    "options": [
+      "17",
+      "19",
+      "16",
+      "18"
+    ],
+    "answer": 2,
+    "solution": [
+      "Cada centímetro representa 2 km; 8 × 2 = 16 km."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-24",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Em “Aqueles alunos chegaram”, aqueles é qual tipo de palavra?",
+    "options": [
+      "Pronome demonstrativo",
+      "Advérbio",
+      "Preposição",
+      "Verbo"
+    ],
+    "answer": 0,
+    "solution": [
+      "Aqueles aponta os alunos."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-32",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Em “Três alunos faltaram”, três é qual classe?",
+    "options": [
+      "Verbo",
+      "Artigo",
+      "Pronome pessoal",
+      "Numeral"
+    ],
+    "answer": 3,
+    "solution": [
+      "O termo indica quantidade."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-130",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "A Revolução Industrial mudou a produção por meio de quê?",
+    "options": [
+      "Fim imediato do comércio",
+      "Proibição universal das máquinas",
+      "Expansão de máquinas e do sistema fabril",
+      "Retorno obrigatório à coleta"
+    ],
+    "answer": 2,
+    "solution": [
+      "Máquinas e fábricas reorganizaram a produção."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-19",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Em “Estudamos com atenção”, com é qual classe?",
+    "options": [
+      "Verbo",
+      "Artigo",
+      "Preposição",
+      "Adjetivo"
+    ],
+    "answer": 2,
+    "solution": [
+      "Liga a ação ao complemento atenção."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-28",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Em “Uma tarde tranquila”, tranquila é qual classe?",
+    "options": [
+      "Advérbio",
+      "Preposição",
+      "Verbo",
+      "Adjetivo"
+    ],
+    "answer": 3,
+    "solution": [
+      "Caracteriza o substantivo tarde."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-118",
+    "subject": "Química",
+    "topic": "Densidade",
+    "prompt": "Uma amostra tem massa 210 g e volume 70 cm³. Qual é sua densidade em g/cm³?",
+    "options": [
+      "5",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2,
+    "solution": [
+      "d = 210/70 = 3 g/cm³."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-159",
+    "subject": "Física",
+    "topic": "Movimento",
+    "prompt": "Um carrinho mantém 24 m/s por 13 s. Qual distância percorre em metros?",
+    "options": [
+      "312",
+      "314",
+      "316",
+      "318"
+    ],
+    "answer": 0,
+    "solution": [
+      "d = v × t = 24 × 13 = 312 m."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-111",
+    "subject": "Química",
+    "topic": "Reações",
+    "prompt": "Em sistema fechado, 24 g de um reagente reagem totalmente com 30 g de outro. Qual é a massa total dos produtos em gramas?",
+    "options": [
+      "60",
+      "58",
+      "56",
+      "54"
+    ],
+    "answer": 3,
+    "solution": [
+      "Conservação da massa: 24 + 30 = 54 g."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-97",
+    "subject": "Biologia",
+    "topic": "Prevenção",
+    "prompt": "Qual estrutura intestinal favorece a absorção por ampliar a superfície?",
+    "options": [
+      "Válvulas cardíacas",
+      "Ossículos do ouvido",
+      "Vilosidades do intestino delgado",
+      "Alvéolos pulmonares"
+    ],
+    "answer": 2,
+    "solution": [
+      "As vilosidades aumentam a área de absorção."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-38",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Qual frase apresenta concordância verbal correta?",
+    "options": [
+      "Existem dúvidas sobre o tema.",
+      "Os alunos existe.",
+      "Nós existe dúvidas.",
+      "Existe dúvidas sobre o tema."
+    ],
+    "answer": 0,
+    "solution": [
+      "Existir concorda com o sujeito plural dúvidas."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-144",
+    "subject": "Física",
+    "topic": "Movimento",
+    "prompt": "Um carrinho mantém 9 m/s por 8 s. Qual distância percorre em metros?",
+    "options": [
+      "78",
+      "74",
+      "72",
+      "76"
+    ],
+    "answer": 2,
+    "solution": [
+      "d = v × t = 9 × 8 = 72 m."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-79",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Qual organismo depende de células hospedeiras para replicar seu material genético e é acelular?",
+    "options": [
+      "Vírus",
+      "Bactéria autônoma",
+      "Fungo",
+      "Planta"
+    ],
+    "answer": 0,
+    "solution": [
+      "Vírus não têm estrutura celular completa."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-1",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Qual frase apresenta concordância nominal correta?",
+    "options": [
+      "As respostas estão corretas.",
+      "A respostas estão corretas.",
+      "As resposta estão corretas.",
+      "As respostas estão correto."
+    ],
+    "answer": 0,
+    "solution": [
+      "Respostas e corretas estão no feminino plural."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-151",
+    "subject": "Física",
+    "topic": "Forças",
+    "prompt": "Uma massa de 8 kg tem aceleração de 5 m/s². Qual é a força resultante em newtons?",
+    "options": [
+      "42",
+      "44",
+      "40",
+      "46"
+    ],
+    "answer": 2,
+    "solution": [
+      "F = m × a = 8 × 5 = 40 N."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-156",
+    "subject": "Física",
+    "topic": "Movimento",
+    "prompt": "Um carrinho mantém 21 m/s por 12 s. Qual distância percorre em metros?",
+    "options": [
+      "256",
+      "254",
+      "252",
+      "258"
+    ],
+    "answer": 2,
+    "solution": [
+      "d = v × t = 21 × 12 = 252 m."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-51",
+    "subject": "Matemática",
+    "topic": "Geometria",
+    "prompt": "Uma placa retangular mede 13 cm por 8 cm. Qual é a área em cm²?",
+    "options": [
+      "109",
+      "114",
+      "104",
+      "119"
+    ],
+    "answer": 2,
+    "solution": [
+      "Área = 13 × 8 = 104 cm²."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-99",
+    "subject": "Química",
+    "topic": "Reações",
+    "prompt": "Em sistema fechado, 15 g de um reagente reagem totalmente com 24 g de outro. Qual é a massa total dos produtos em gramas?",
+    "options": [
+      "45",
+      "39",
+      "43",
+      "41"
+    ],
+    "answer": 1,
+    "solution": [
+      "Conservação da massa: 15 + 24 = 39 g."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-136",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "Qual consequência social pode ser ligada à industrialização?",
+    "options": [
+      "Igualdade automática entre todos",
+      "Fim de qualquer poluição",
+      "Crescimento urbano e conflitos trabalhistas",
+      "Desaparecimento das cidades"
+    ],
+    "answer": 2,
+    "solution": [
+      "As mudanças ampliaram cidades e disputas sobre condições de trabalho."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-33",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Qual frase está correta quando haver significa existir?",
+    "options": [
+      "Houveram muitos candidatos.",
+      "Houve muitos candidatos.",
+      "Haviam muitas vagas.",
+      "Houveram uma vaga."
+    ],
+    "answer": 1,
+    "solution": [
+      "Haver impessoal fica no singular."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-108",
+    "subject": "Química",
+    "topic": "Concentração",
+    "prompt": "Uma solução contém 72 g de soluto em 4 L de solução. Qual é a concentração em g/L?",
+    "options": [
+      "21",
+      "19",
+      "18",
+      "20"
+    ],
+    "answer": 2,
+    "solution": [
+      "C = massa/volume = 72/4 = 18 g/L."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-134",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "Qual organização coletiva pode defender interesses de trabalhadores?",
+    "options": [
+      "Feudo",
+      "Capitania hereditária",
+      "Sindicato",
+      "Pólis antiga"
+    ],
+    "answer": 2,
+    "solution": [
+      "Sindicatos atuam na defesa de interesses trabalhistas."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-154",
+    "subject": "Física",
+    "topic": "Forças",
+    "prompt": "Uma massa de 9 kg tem aceleração de 6 m/s². Qual é a força resultante em newtons?",
+    "options": [
+      "60",
+      "56",
+      "58",
+      "54"
+    ],
+    "answer": 3,
+    "solution": [
+      "F = m × a = 9 × 6 = 54 N."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-89",
+    "subject": "Biologia",
+    "topic": "Prevenção",
+    "prompt": "Qual medida estimula memória imunológica específica antes da exposição natural a uma doença?",
+    "options": [
+      "Vacinação",
+      "Impedir a circulação sanguínea",
+      "Antibiótico para todo vírus",
+      "Eliminar todas as hemácias"
+    ],
+    "answer": 0,
+    "solution": [
+      "Vacinas induzem resposta e memória específicas."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-132",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "A Revolução Francesa de 1789 questionou qual organização política e social?",
+    "options": [
+      "Antigo Regime",
+      "Internet",
+      "República brasileira de 1889",
+      "Constituição brasileira de 1988"
+    ],
+    "answer": 0,
+    "solution": [
+      "Ela confrontou estruturas monárquicas e de privilégios."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-119",
+    "subject": "Química",
+    "topic": "Reações",
+    "prompt": "Em sistema fechado, 30 g de um reagente reagem totalmente com 34 g de outro. Qual é a massa total dos produtos em gramas?",
+    "options": [
+      "64",
+      "66",
+      "70",
+      "68"
+    ],
+    "answer": 0,
+    "solution": [
+      "Conservação da massa: 30 + 34 = 64 g."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-31",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Qual frase está correta quando fazer indica tempo decorrido?",
+    "options": [
+      "Fazem um mês.",
+      "Faz cinco meses.",
+      "Fazem muito tempo.",
+      "Fazem cinco meses."
+    ],
+    "answer": 1,
+    "solution": [
+      "Fazer impessoal fica no singular."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-126",
+    "subject": "História",
+    "topic": "Abolição e República",
+    "prompt": "O tráfico atlântico e a escravidão interna são processos distintos. Qual lei brasileira de 1850 atingiu o tráfico?",
+    "options": [
+      "Código Eleitoral de 1932",
+      "Lei Áurea de 1888",
+      "Lei Eusébio de Queirós",
+      "Constituição de 1988"
+    ],
+    "answer": 2,
+    "solution": [
+      "A lei proibiu o tráfico atlântico sem abolir a escravidão interna."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-20",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Complete: “Eles ___ o texto ontem.”",
+    "options": [
+      "Leu",
+      "Leram",
+      "Lemos",
+      "Lê"
+    ],
+    "answer": 1,
+    "solution": [
+      "O verbo concorda com eles na terceira pessoa do plural."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-141",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "A Lei Áurea de 1888 representou qual mudança legal?",
+    "options": [
+      "Abolição da escravidão",
+      "Criação da monarquia",
+      "Início do tráfico atlântico",
+      "Fim de todos os problemas sociais"
+    ],
+    "answer": 0,
+    "solution": [
+      "A abolição legal não resolveu automaticamente desigualdades históricas."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-172",
+    "subject": "Geografia",
+    "topic": "Escala",
+    "prompt": "Em um mapa na escala 1:200.000, dois pontos estão separados por 6 cm. Qual é a distância real em quilômetros?",
+    "options": [
+      "15",
+      "12",
+      "13",
+      "14"
+    ],
+    "answer": 1,
+    "solution": [
+      "Cada centímetro representa 2 km; 6 × 2 = 12 km."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-161",
+    "subject": "Física",
+    "topic": "Eletricidade",
+    "prompt": "Um resistor de 27 Ω conduz 8 A. Qual é a tensão em volts?",
+    "options": [
+      "216",
+      "220",
+      "218",
+      "222"
+    ],
+    "answer": 0,
+    "solution": [
+      "U = R × I = 27 × 8 = 216 V."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-21",
+    "subject": "Português",
+    "topic": "Interpretação",
+    "prompt": "Qual palavra está grafada corretamente?",
+    "options": [
+      "Beneficiente",
+      "Benefisente",
+      "Benificente",
+      "Beneficente"
+    ],
+    "answer": 3,
+    "solution": [
+      "A forma correta é beneficente."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-143",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "Na Primeira República, o voto de cabresto estava relacionado a quê?",
+    "options": [
+      "Voto secreto plenamente livre para todos",
+      "Democracia ateniense",
+      "Eleição direta de faraós",
+      "Controle e pressão de chefes políticos locais"
+    ],
+    "answer": 3,
+    "solution": [
+      "Dependência e coerção limitavam a liberdade eleitoral."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-101",
+    "subject": "Química",
+    "topic": "Fórmulas",
+    "prompt": "Quantos átomos de oxigênio há no total em 3 moléculas de CO₂?",
+    "options": [
+      "8",
+      "7",
+      "9",
+      "6"
+    ],
+    "answer": 3,
+    "solution": [
+      "Cada molécula tem dois átomos de oxigênio: 2 × 3 = 6."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-125",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "A conquista do voto feminino no Brasil em 1932 representa o quê?",
+    "options": [
+      "Abolição da escravidão",
+      "Ampliação da participação política",
+      "Fim automático de toda desigualdade",
+      "Retorno às capitanias"
+    ],
+    "answer": 1,
+    "solution": [
+      "A medida ampliou direitos políticos em meio a mobilizações."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-86",
+    "subject": "Biologia",
+    "topic": "Genética",
+    "prompt": "Uma cidade trata o esgoto antes de despejá-lo em rios. Qual resultado é esperado?",
+    "options": [
+      "Criação de vírus novos obrigatoriamente",
+      "Redução de contaminação e de vias de transmissão",
+      "Eliminação de toda biodiversidade",
+      "Aumento necessário de fezes na água"
+    ],
+    "answer": 1,
+    "solution": [
+      "O tratamento reduz a carga de contaminantes."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-16",
+    "subject": "Português",
+    "topic": "Morfologia",
+    "prompt": "Qual alternativa apresenta a grafia correta da palavra usada em “uma regra admite uma...” ?",
+    "options": [
+      "Eceção",
+      "Excessão",
+      "Esceção",
+      "Exceção"
+    ],
+    "answer": 3,
+    "solution": [
+      "Exceção é a grafia correta."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-123",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "Censura e perseguição de opositores no Brasil após 1964 caracterizam qual regime?",
+    "options": [
+      "República romana antiga",
+      "Ditadura militar",
+      "Democracia ateniense",
+      "Governo-geral colonial"
+    ],
+    "answer": 1,
+    "solution": [
+      "O regime restringiu direitos e reprimiu oposição."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-23",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Qual palavra é paroxítona?",
+    "options": [
+      "Café",
+      "Fácil",
+      "Lâmpada",
+      "Avó"
+    ],
+    "answer": 1,
+    "solution": [
+      "Fá-cil tem a penúltima sílaba tônica."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-76",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Qual intervenção reduz diretamente criadouros domésticos do Aedes aegypti?",
+    "options": [
+      "Apagar todas as luzes",
+      "Tomar antibióticos preventivamente",
+      "Evitar acúmulo de água em recipientes",
+      "Aumentar recipientes abertos"
+    ],
+    "answer": 2,
+    "solution": [
+      "Eliminar água parada reduz locais de reprodução."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-75",
+    "subject": "Biologia",
+    "topic": "Ecologia",
+    "prompt": "Um antibiótico prescrito para uma infecção bacteriana atua contra qual grupo, sem tratar o vírus em si?",
+    "options": [
+      "Nenhum microrganismo",
+      "Vírus em geral",
+      "Todos os agentes com igual efeito",
+      "Bactérias"
+    ],
+    "answer": 3,
+    "solution": [
+      "Antibióticos antibacterianos têm alvos presentes nas bactérias."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-10",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Qual palavra é oxítona?",
+    "options": [
+      "Lâmpada",
+      "Fácil",
+      "Café",
+      "Mesa"
+    ],
+    "answer": 2,
+    "solution": [
+      "Ca-fé tem a última sílaba tônica."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-65",
+    "subject": "Matemática",
+    "topic": "Equações",
+    "prompt": "Uma quantidade multiplicada por 5 e reduzida em 9 resulta em 71. Qual é a quantidade?",
+    "options": [
+      "20",
+      "22",
+      "18",
+      "16"
+    ],
+    "answer": 3,
+    "solution": [
+      "5x − 9 = 71; 5x = 80; x = 16."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-129",
+    "subject": "História",
+    "topic": "Industrialização",
+    "prompt": "A campanha Diretas Já e a Constituição de 1988 integram principalmente qual processo?",
+    "options": [
+      "Colonização portuguesa",
+      "Início da Idade Média",
+      "Expansão do Império Romano",
+      "Redemocratização brasileira"
+    ],
+    "answer": 3,
+    "solution": [
+      "Esses eventos se relacionam à retomada e consolidação democrática."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-15",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Complete: “___ você faltou?”",
+    "options": [
+      "Porque",
+      "Porquê",
+      "Por que",
+      "Por quê"
+    ],
+    "answer": 2,
+    "solution": [
+      "No início da pergunta direta usa-se por que."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-39",
+    "subject": "Português",
+    "topic": "Sintaxe",
+    "prompt": "Complete: “Não sei o ___ da mudança.”",
+    "options": [
+      "Por que",
+      "Porque",
+      "Porquê",
+      "Por quê"
+    ],
+    "answer": 2,
+    "solution": [
+      "Porquê é substantivo e admite artigo."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-179",
+    "subject": "Geografia",
+    "topic": "População",
+    "prompt": "Uma região tem 192500 habitantes e 700 km². Qual é a densidade em habitantes/km²?",
+    "options": [
+      "275",
+      "305",
+      "285",
+      "295"
+    ],
+    "answer": 0,
+    "solution": [
+      "Densidade = população/área = 192500/700 = 275."
+    ],
+    "origin": "autoral"
+  },
+  {
+    "id": "boss-34",
+    "subject": "Português",
+    "topic": "Conectivos",
+    "prompt": "Complete: “Ele é um ___ colega, pois trata mal os outros.”",
+    "options": [
+      "Mal",
+      "Mál",
+      "Máu",
+      "Mau"
+    ],
+    "answer": 3,
+    "solution": [
+      "Mau é adjetivo e opõe-se a bom."
+    ],
+    "origin": "autoral"
+  }
+]
