@@ -117,3 +117,10 @@ body:after{
 .xp-banner .xp-track span{box-shadow:0 0 10px var(--rank-color)}
 .xp-banner .xp-next{text-align:center;color:#dcecff;font-size:11px;font-weight:700;margin-top:6px}
 @media(max-width:720px){.xp-banner{min-height:92px!important}.xp-banner-data{margin-left:25%;width:51%;padding:13px 2px}.xp-banner-art{opacity:1}.xp-banner .xp-total{font-size:16px}.xp-banner .xp-rank{font-size:14px}}
+
+/* Alinhamento dos banners principais */
+.topbar-inner{max-width:690px!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important}
+.xp-banner{width:100%!important;max-width:690px!important;margin:0 auto!important;border-radius:18px!important}
+.hero{box-sizing:border-box;width:100%!important;max-width:690px!important;margin-left:auto!important;margin-right:auto!important;border:1px solid rgba(83,190,255,.72)!important;border-radius:18px!important;overflow:hidden!important;padding-left:22px!important;padding-right:22px!important}
+.hero:before{border-radius:18px 18px 0 0!important}
+@media(max-width:720px){.topbar-inner,.xp-banner,.hero{max-width:calc(100vw - 28px)!important}.hero{border-radius:16px!important}}
