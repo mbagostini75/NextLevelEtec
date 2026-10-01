@@ -156,3 +156,42 @@ body:after{
   .topbar-inner{max-width:100%!important}
   .xp-banner,.hero{width:100%!important;max-width:none!important}
 }
+
+/* Geometria final dos banners: preservar a arte original e suas bordas */
+.hero.quest-start{
+  width:100%!important;
+  max-width:none!important;
+  aspect-ratio:2048/684!important;
+  height:auto!important;
+  margin:0 0 22px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:24px!important;
+  clip-path:none!important;
+  overflow:hidden!important;
+  background:url('banner-start.webp') center/100% 100% no-repeat!important;
+  box-shadow:none!important;
+}
+.hero.quest-start:before{display:none!important}
+.official-card.challenge-card{
+  width:100%!important;
+  aspect-ratio:1942/809!important;
+  height:auto!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:24px!important;
+  overflow:hidden!important;
+  background:linear-gradient(rgba(5,12,27,.34),rgba(5,12,27,.34)),url('banner-arena.webp') center/100% 100% no-repeat!important;
+  box-shadow:none!important;
+}
+.chefao-banner.challenge-card{
+  width:100%!important;
+  aspect-ratio:2048/768!important;
+  height:auto!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:24px!important;
+  overflow:hidden!important;
+  background:linear-gradient(rgba(5,12,27,.34),rgba(5,12,27,.34)),url('banner-final.webp') center/100% 100% no-repeat!important;
+  box-shadow:none!important;
+}
