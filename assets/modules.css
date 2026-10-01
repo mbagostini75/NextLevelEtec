@@ -128,3 +128,8 @@ body:after{
 /* Une visualmente os dois banners sem cortar as curvas */
 .xp-banner{margin-bottom:12px!important}
 .hero{margin-top:0!important;border-top:1px solid rgba(83,190,255,.72)!important;border-radius:18px!important}
+
+/* Correção definitiva: mesmo recuo e cantos reais nos dois banners */
+.xp-banner{margin-bottom:4px!important}
+.hero{margin-top:0!important;margin-bottom:22px!important;border:0!important;border-radius:18px!important;clip-path:inset(0 round 18px)!important;overflow:hidden!important}
+.hero:before{inset:0!important;border-radius:18px!important}
