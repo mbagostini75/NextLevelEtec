@@ -215,3 +215,10 @@ body:after{
   clip-path:none!important;
   overflow:hidden!important;
 }
+
+/* Borda do XP igual à do banner principal */
+.xp-banner{
+  border:2px solid #7064ed!important;
+  border-radius:24px!important;
+  box-shadow:0 0 6px rgba(112,100,237,.65),inset 0 0 3px rgba(112,100,237,.45)!important;
+}
