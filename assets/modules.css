@@ -139,7 +139,7 @@ body:after{
   margin:8px 0 4px!important;
   border-radius:18px!important;
 }
-.xp-banner-data{display:none!important}
+
 .topbar{padding-bottom:0!important;border-bottom:0!important}
 .hero{
   box-sizing:border-box!important;
@@ -251,3 +251,14 @@ body:after{
   object-position:center center!important;
   transform:none!important;
 }
+
+/* Dados dinâmicos do XP sobre a nova arte-base; caixa externa preservada */
+.xp-banner-data{display:block!important;position:absolute!important;z-index:2!important;left:19%!important;top:8%!important;width:64%!important;height:84%!important;margin:0!important;padding:0!important;pointer-events:none!important}
+.xp-caption{height:34%!important;align-items:center!important}
+.xp-total{font-size:20px!important;color:#fff!important}
+.xp-total small{display:inline!important;font-size:11px!important;color:#b9d6eb!important;margin-left:4px!important}
+.xp-rank{position:absolute!important;right:3%!important;top:5%!important;width:25%!important;font-size:17px!important;color:var(--rank-color)!important;font-weight:900!important;text-align:center!important;display:block!important}
+.xp-rank:before{display:none!important}
+.xp-rank small{display:block!important;color:#b8c8d8!important;font-size:8px!important;letter-spacing:.12em!important}
+.xp-track{position:absolute!important;left:0!important;top:43%!important;width:61%!important;height:9px!important;margin:0!important;background:rgba(0,0,0,.55)!important;border:1px solid rgba(111,207,255,.55)!important}
+.xp-next{position:absolute!important;left:0!important;top:61%!important;width:61%!important;text-align:center!important;color:#dcecff!important;font-size:11px!important;font-weight:700!important;margin:0!important}
