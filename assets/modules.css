@@ -133,3 +133,9 @@ body:after{
 .xp-banner{margin-bottom:4px!important}
 .hero{margin-top:0!important;margin-bottom:22px!important;border:0!important;border-radius:18px!important;clip-path:inset(0 round 18px)!important;overflow:hidden!important}
 .hero:before{inset:0!important;border-radius:18px!important}
+
+/* Hotfix visual: a arte já contém XP/rank; não duplicar HTML sobre ela */
+.xp-banner-data{display:none!important}
+.xp-banner{margin-bottom:0!important}
+.topbar{padding-bottom:4px!important;border-bottom:0!important}
+.hero{margin-top:0!important}
