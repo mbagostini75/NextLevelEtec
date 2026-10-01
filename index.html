@@ -1055,7 +1055,7 @@
       return '<header class="topbar"><div class="topbar-inner">' +
         '<a class="brand-mini" aria-label="Next Level — início" href="#" onclick="RotaGame.go({name:\'home\'});return false;"><img class="brand-logo" src="assets/next-level-for-etec.png" width="1800" height="872" alt="Next Level for ETEC"></a>' +
         '<div class="header-tools">' + (window.NextAccounts ? window.NextAccounts.nav() : '') + '</div>' +
-        '<div class="xp-panel" style="--rank-color:' + r.color + '"><div class="xp-caption"><span class="xp-total">' + state.xp + ' <small>XP farmados</small></span><span class="xp-rank">' + r.name + '</span></div><div class="xp-track" role="progressbar" aria-label="Progresso até o próximo rank" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="xp-next">' + (nr ? 'Faltam ' + (nr.min-state.xp) + ' XP para ' + nr.name : 'Você chegou ao rank máximo') + '</div></div>' +
+        '<div class="xp-panel xp-banner" style="--rank-color:' + r.color + '"><img class="xp-banner-art" src="assets/a_wide_rectangular_futuristic_game_education_ui.png" alt="" aria-hidden="true"><div class="xp-banner-data"><div class="xp-caption"><span class="xp-total">' + state.xp + ' <small>XP farmados</small></span><span class="xp-rank"><small>NÍVEL ATUAL</small>' + r.name + '</span></div><div class="xp-track" role="progressbar" aria-label="Progresso até o próximo rank" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="xp-next">' + (nr ? 'Faltam ' + (nr.min-state.xp) + ' XP para ' + nr.name : 'Você chegou ao rank máximo') + '</div></div></div>' +
         '</div></header>'; 
     }
 
