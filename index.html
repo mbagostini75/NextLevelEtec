@@ -10,6 +10,7 @@
 <meta name="twitter:title" content="NextLevel" />
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/anime-quest.css">
+<link rel="stylesheet" href="assets/rankings.css">
 <link rel="icon" type="image/png" href="assets/nextlevel-icon.png">
 <link rel="apple-touch-icon" href="assets/nextlevel-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
@@ -1266,7 +1267,7 @@
       else if(window.NextAccounts)body=window.NextAccounts.render(view);
       if(view.name==="duel" && duel && duel.onlinePending)body+='<button class="primary-btn" onclick="NextAccounts.retrySync()">Sincronizar rodada</button>';
 
-      app.innerHTML = renderTopbar() + body + '<p id="storage-warning" '+(storageAvailable?'hidden':'')+' role="status">O navegador bloqueou o salvamento. Mantenha a página aberta para preservar esta sessão.</p>';
+      app.innerHTML = renderTopbar() + body + (window.NextRanking ? window.NextRanking.render() : '') + '<p id="storage-warning" '+(storageAvailable?'hidden':'')+' role="status">O navegador bloqueou o salvamento. Mantenha a página aberta para preservar esta sessão.</p>';
     }
 
     window.NEXT_ENGINE = { subjects: SUBJECTS, state:function(){return state;}, view:function(){return view;}, duel:function(){return duel;}, save:saveState, go:go, render:render, installOnlineDuel:function(s,t,ranked,questions){duelEndApplied=false;duel={subjectId:s,topicId:t,isRanked:ranked,questions:questions,index:0,round:1,correctCount:0,wrongThisRound:[],wrongPrompts:[],lives:LIVES_MAX,phase:"asking"};view={name:"duel"};render();window.scrollTo(0,0);} };
@@ -1292,7 +1293,7 @@
   </script>
 
 <script src="assets/accounts.js"></script>
+<script src="assets/rankings.js"></script>
 <script src="assets/context-help.js"></script>
 </body>
 </html>
-
