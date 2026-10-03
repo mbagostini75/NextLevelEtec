@@ -2,7 +2,8 @@ name = "next-level-backend"
 main = "dist/server/index.js"
 compatibility_date = "2026-10-02"
 workers_dev = true
-# account_id = "SEU_ACCOUNT_ID" # opcional; sem IDs da plataforma anterior
+# Mantém variáveis definidas no painel (ex.: ADMIN_EMAIL) a cada deploy
+keep_vars = true
 
 [assets]
 directory = "./public"
@@ -12,12 +13,11 @@ run_worker_first = true
 [[d1_databases]]
 binding = "DB"
 database_name = "next-level-db"
-database_id = "00000000-0000-0000-0000-000000000000" # substituir pelo ID do SEU D1
+database_id = "8b1a1ee3-318a-4140-908b-fd635ee561f3"
 migrations_dir = "drizzle"
 
 [vars]
-APP_ORIGIN = "https://SEU-WORKER.SEUSUBDOMINIO.workers.dev"
-GOOGLE_OAUTH_CLIENT_ID = "SEU_CLIENT_ID.apps.googleusercontent.com"
-MAIL_SENDER = "SEU_REMETENTE"
-ADMIN_EMAIL = "SEU_EMAIL_ADMIN" # vários e-mails separados por vírgula
-# GMAIL_STORAGE_KEY é segredo: npx wrangler secret put GMAIL_STORAGE_KEY
+APP_ORIGIN = "https://nextleveletec.vercel.app"
+GOOGLE_OAUTH_CLIENT_ID = "271368-bko5qb9ta2ic3lr8t7ghju2p3mvebajc.apps.googleusercontent.com"
+MAIL_SENDER = "nextleveletec@gmail.com"
+# ADMIN_EMAIL e GMAIL_STORAGE_KEY são segredos no painel da Cloudflare (Variáveis e segredos)
