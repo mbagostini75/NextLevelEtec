@@ -2,3 +2,6 @@
 @media(max-width:1100px){.nl-rank-dock{display:none}.nl-rank-mobile-trigger{display:block;position:fixed;z-index:29;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));min-height:46px;padding:0 15px;border:1px solid #c5ff31;border-radius:24px;background:#201843;color:#fff;font-weight:800;box-shadow:0 0 18px #6b48d777}}
 @media(min-width:1101px){#app{margin-right:320px}}
 .nl-rank-login{width:100%;min-height:40px;padding:8px 12px;border:1px solid #45e4f4;border-radius:9px;background:linear-gradient(90deg,#39245f,#173841);color:#fff;font-weight:800;cursor:pointer}
+/* Ranking: mesma moldura e mesmo alinhamento superior do banner de XP */
+.nl-rank-dock{top:var(--nl-rank-top,50px);max-height:calc(100vh - var(--nl-rank-top,50px) - 16px);border:2px solid #00d1ff;border-radius:24px;box-shadow:0 0 3px #00d1ff,0 0 8px rgba(112,100,237,.9),inset 0 0 2px rgba(255,255,255,.65);background:linear-gradient(155deg,#0b1b3cf5,#0d1026f7)}
+.nl-rank-sheet{border:2px solid #00d1ff;border-bottom:0;box-shadow:0 0 3px #00d1ff,0 0 8px rgba(112,100,237,.9),inset 0 0 2px rgba(255,255,255,.65)}
