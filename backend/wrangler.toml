@@ -1,0 +1,23 @@
+name = "next-level-backend"
+main = "dist/server/index.js"
+compatibility_date = "2026-10-02"
+workers_dev = true
+# account_id = "SEU_ACCOUNT_ID" # opcional; sem IDs da plataforma anterior
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "next-level-db"
+database_id = "00000000-0000-0000-0000-000000000000" # substituir pelo ID do SEU D1
+migrations_dir = "drizzle"
+
+[vars]
+APP_ORIGIN = "https://SEU-WORKER.SEUSUBDOMINIO.workers.dev"
+GOOGLE_OAUTH_CLIENT_ID = "SEU_CLIENT_ID.apps.googleusercontent.com"
+MAIL_SENDER = "SEU_REMETENTE"
+ADMIN_EMAIL = "SEU_EMAIL_ADMIN" # vários e-mails separados por vírgula
+# GMAIL_STORAGE_KEY é segredo: npx wrangler secret put GMAIL_STORAGE_KEY
