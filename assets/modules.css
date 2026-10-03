@@ -284,3 +284,8 @@ body:after{
 /* Cabeçalho: mesmo fundo da página (body:before + body:after), fixo na tela, para o logo não ficar numa faixa escura */
 .topbar{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important;background:linear-gradient(rgba(5,10,22,.12),rgba(5,10,22,.42)) fixed,linear-gradient(rgba(7,16,31,.58),rgba(7,16,31,.58)) fixed,linear-gradient(90deg,rgba(5,12,27,.22) 0%,rgba(5,12,27,.52) 34%,rgba(5,12,27,.72) 50%,rgba(5,12,27,.52) 66%,rgba(5,12,27,.22) 100%) fixed,url('nextlevel-background.png') center top/cover no-repeat fixed!important}
 @media(max-width:720px){.topbar{background:linear-gradient(rgba(5,10,22,.12),rgba(5,10,22,.42)) fixed,linear-gradient(rgba(7,16,31,.70),rgba(7,16,31,.70)) fixed,linear-gradient(90deg,rgba(5,12,27,.22) 0%,rgba(5,12,27,.52) 34%,rgba(5,12,27,.72) 50%,rgba(5,12,27,.52) 66%,rgba(5,12,27,.22) 100%) fixed,url('nextlevel-background.png') center top/cover no-repeat fixed!important}}
+
+/* Série / turma em listas (valor padronizado) */
+.grade-row{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:10px}
+.grade-field select{width:100%;box-sizing:border-box;min-height:52px;padding:12px;border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:10px;font:16px/1.5 Lexend,system-ui,sans-serif}
+.grade-field select:disabled{opacity:.45}
