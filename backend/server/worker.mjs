@@ -18,7 +18,7 @@ async function owner(request,env) {
   if(!allowed.includes(user.email.toLowerCase()))throw new Failure(403,'Esta página é exclusiva do administrador do Next Level.');
   return user.id;
 }
-function db(env) { if(!env.DB || !env.GMAIL_STORAGE_KEY) throw new Failure(503,'A conexão de e-mail está indisponível. Tente novamente mais tarde.'); return env.DB; }
+function db(env) { if(!env.DB) throw new Failure(503,'O banco de dados está indisponível. Tente novamente mais tarde.'); return env.DB; }
 async function encryptionKey(env) { return crypto.subtle.importKey('raw',unb64(env.GMAIL_STORAGE_KEY),{name:'AES-GCM'},false,['encrypt','decrypt']); }
 async function seal(value,env) {
   const iv=crypto.getRandomValues(new Uint8Array(12));

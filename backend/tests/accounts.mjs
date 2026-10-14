@@ -9,7 +9,7 @@ const database=new DatabaseSync(':memory:');
 database.exec('PRAGMA foreign_keys=ON');
 for(const file of fs.readdirSync('drizzle').filter(x=>x.endsWith('.sql')).sort())database.exec(fs.readFileSync('drizzle/'+file,'utf8'));
 function statement(sql,args=[]){return {bind(...values){return statement(sql,values);},async first(){return database.prepare(sql).get(...args)||null;},async all(){return {results:database.prepare(sql).all(...args)};},async run(){return database.prepare(sql).run(...args);}};}
-const env={APP_ORIGIN:origin,GOOGLE_OAUTH_CLIENT_ID:"test-client",MAIL_SENDER:"nextleveletec@gmail.com",ADMIN_EMAIL:"admin@example.com",GMAIL_STORAGE_KEY:randomBytes(32).toString('base64url'),DB:{prepare:statement,async batch(statements){database.exec('BEGIN');try{const result=[];for(const s of statements)result.push(await s.run());database.exec('COMMIT');return result;}catch(error){database.exec('ROLLBACK');throw error;}}},ASSETS:{fetch(){return new Response('asset');}}};
+const env={APP_ORIGIN:origin,GOOGLE_OAUTH_CLIENT_ID:"test-client",MAIL_SENDER:"nextleveletec@gmail.com",ADMIN_EMAIL:"admin@example.com",GMAIL_STORAGE_KEY:randomBytes(32).toString('base64url'),ACCOUNT_CSRF_KEY:randomBytes(32).toString('base64url'),DB:{prepare:statement,async batch(statements){database.exec('BEGIN');try{const result=[];for(const s of statements)result.push(await s.run());database.exec('COMMIT');return result;}catch(error){database.exec('ROLLBACK');throw error;}}},ASSETS:{fetch(){return new Response('asset');}}};
 const mails=[];let failMail=false;
 globalThis.fetch=async(url,init)=>{if(url.endsWith('/token'))return Response.json({access_token:'test-access',refresh_token:'test-refresh',scope:'https://www.googleapis.com/auth/gmail.send'});if(url.endsWith('/userinfo'))return Response.json({email:'nextleveletec@gmail.com',email_verified:true});if(url.endsWith('/messages/send')){if(failMail)return Response.json({error:'failed'},{status:500});mails.push(Buffer.from(JSON.parse(init.body).raw,'base64url').toString());return Response.json({id:'mail-'+mails.length});}throw Error('Unexpected external request');};
 const adminHeaders={};
@@ -25,8 +25,8 @@ const connect=await adminPost('/admin/email/conectar',{}),oauthState=new URL(con
 assert.equal((await worker.fetch(new Request(origin+'/admin/email/retorno?state='+oauthState+'&code=test',{headers:adminHeaders}),env)).status,303);
 database.prepare('DELETE FROM users WHERE id=?').run(adminUser);
 function client(){let csrf='',cookies=new Map();return {async call(path,body,expected=200,extra={}){const headers={cookie:[...cookies].map(([k,v])=>k+'='+v).join('; '),...extra};if(body!==undefined)Object.assign(headers,{'content-type':'application/json','x-nextlevel-request':'1','x-nextlevel-csrf':csrf});const response=await worker.fetch(new Request(origin+path,{method:body===undefined?'GET':'POST',headers,body:body===undefined?undefined:JSON.stringify(body)}),env);for(const cookie of response.headers.getSetCookie()){const pair=cookie.split(';')[0],index=pair.indexOf('=');cookies.set(pair.slice(0,index),pair.slice(index+1));}const data=await response.json();assert.equal(response.status,expected,JSON.stringify({path,data}));if(data.csrf)csrf=data.csrf;return data;}};}
-const a=client(),b=client(),c=client(),anonymous=client();
-for(const person of [a,b,c,anonymous])assert.equal((await person.call('/api/conta')).user,null);
+const a=client(),b=client(),c=client(),anonymous=client(),byEmail=client();
+for(const person of [a,b,c,anonymous,byEmail])assert.equal((await person.call('/api/conta')).user,null);
 const registration=(name,email,nick=name)=>({name,nick,email,password:'strong-password-123',birthDate:'2010-07-18',school:'Escola Exemplo',grade:'9º ano',address:'Endereço privado 123'});
 await anonymous.call('/api/cadastro',{...registration('Inválido','invalid@example.com'),birthDate:'2010-02-31'},400);
 const invalidPassword=await a.call('/api/cadastro',{...registration('Ana','ana@example.com'),password:'12345'},400);
@@ -114,8 +114,9 @@ await a.call('/api/grupos/'+created.id+'/remover',{userId:bruno.id});
 await b.call('/api/grupos/'+created.id,undefined,403);
 assert.equal((await a.call('/api/grupos/'+created.id)).ranking.length,1);
 await a.call('/api/sair',{});await a.call('/api/conta');
-await a.call('/api/entrar',{email:'ana@example.com',password:'wrong-password'},401);
-await a.call('/api/entrar',{email:'ana@example.com',password:'123456'});await a.call('/api/conta');
+await a.call('/api/entrar',{identifier:'ana@example.com',password:'wrong-password'},401);
+await a.call('/api/entrar',{identifier:'Ana',password:'123456'});assert.equal((await a.call('/api/conta')).user.nick,'Ana');
+await byEmail.call('/api/entrar',{identifier:'ana@example.com',password:'123456'});assert.equal((await byEmail.call('/api/conta')).user.nick,'Ana');
 await anonymous.call('/api/recuperar',{email:'ana@example.com'});
 const reset=emailToken('ana@example.com','reset');
 await anonymous.call('/api/redefinir',{token:reset,password:'12345'},400);
