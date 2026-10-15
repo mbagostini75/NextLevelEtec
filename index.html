@@ -117,7 +117,7 @@
   .chefao-banner .arrow { font-size: 22px; color: var(--gold); }
 
   .screen-header { display: flex; align-items: center; gap: 10px; margin: 16px 0 4px; }
-  .back-btn { border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: var(--radius-sm); width: 36px; height: 36px; font-size: 15px; }
+  .back-btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: var(--radius-sm); min-width: 88px; min-height: 44px; padding: 0 12px; font-size: 13px; font-weight: 700; white-space: nowrap; }
   .screen-header h2 { margin: 0; font-size: 19px; }
   .screen-header small { display: block; color: var(--text-dim); font-size: 11px; text-transform: none; font-family: 'Lexend', sans-serif; }
 
@@ -955,7 +955,7 @@
       if(optIndex<0||optIndex>=q.options.length)return;
       duel.selected = optIndex;
       var correct = optIndex === q.answer;
-      if (correct) { duel.correctCount++; if(!state.solvedKeys) state.solvedKeys={}; var solvedKey=duel.subjectId+"|"+q.sourceKey; if(!state.solvedKeys[solvedKey]){state.solvedKeys[solvedKey]=true;state.xp+=10;} }
+      if (correct) { duel.correctCount++; if(!state.solvedKeys) state.solvedKeys={}; var solvedKey=duel.subjectId+"|"+q.sourceKey; if(!state.solvedKeys[solvedKey]){state.solvedKeys[solvedKey]=true;state.xp+=3;} }
       else if (duel.isRanked) { duel.lives--; duel.wrongPrompts.push(q.prompt); }
       else { duel.wrongThisRound.push(q); }
       saveState();
@@ -1056,23 +1056,24 @@
       return '<header class="topbar"><div class="topbar-inner">' +
         '<a class="brand-mini" aria-label="Next Level — início" href="#" onclick="RotaGame.go({name:\'home\'});return false;"><img class="brand-logo" src="assets/next-level-for-etec.png" width="1800" height="872" alt="Next Level for ETEC"></a>' +
         '<div class="header-tools">' + (window.NextAccounts ? window.NextAccounts.nav() : '') + '</div>' +
-        '<div class="xp-panel xp-banner" style="--rank-color:' + r.color + '"><img class="xp-banner-art" src="assets/banner-xp-dinamico-next-level.png" alt="" aria-hidden="true"><div class="xp-banner-data"><div class="xp-caption"><span class="xp-total">' + state.xp + ' <small>XP farmados</small></span><span class="xp-rank"><small>NÍVEL ATUAL</small>' + r.name + '</span></div><div class="xp-track" role="progressbar" aria-label="Progresso até o próximo rank" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="xp-next">' + (nr ? 'Faltam ' + (nr.min-state.xp) + ' XP para ' + nr.name : 'Você chegou ao rank máximo') + '</div></div></div>' +
+        '<div class="xp-panel xp-banner" style="--rank-color:' + r.color + '"><img class="xp-banner-art" src="assets/banner-xp-dinamico-next-level.png" alt="" aria-hidden="true"><div class="xp-banner-data"><div class="xp-caption"><span class="xp-total">' + state.xp + ' <small>XP farmados</small></span><span class="xp-rank"><small>NÍVEL ATUAL</small>' + r.name + '</span></div><div class="xp-track" role="progressbar" aria-label="Progresso até o próximo rank" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="xp-next">' + (nr ? 'Faltam ' + (nr.min-state.xp) + ' XP para ' + nr.name + ' · ' + progress + '% do caminho' : 'Você chegou ao rank máximo') + '</div></div></div>' +
         '</div></header>'; 
     }
 
     function renderHome() {
       var monsterCount = Object.keys(state.wrongLog).filter(function (k) { return state.wrongLog[k].length > 0; }).length;
       var html = '';
+      html += window.NextModules.renderArenaSummary(true);
       html += '<section class="hero"><h1>Seu futuro. Seu próximo nível.</h1><p>Escolha uma matéria. Entenda o assunto, pratique e farme XP.</p></section>';
       html += '<div class="subjects">';
       window.NEXT_CURRICULUM.forEach(function (subject) {
-        var done = subject.topics.filter(function(t){return isTopicDone(subject.id,t.id);}).length;var marks={pt:'PT',mat:'∑',bio:'BIO',geo:'GEO',hist:'HIS',qui:'QUÍ',fis:'FÍS'};var mark=marks[subject.id]||subject.name.substring(0,3).toUpperCase();
+        var done = subject.topics.filter(function(t){return isTopicDone(subject.id,t.id);}).length;var percent=subject.topics.length?Math.round(done/subject.topics.length*100):0;var marks={pt:'PT',mat:'∑',bio:'BIO',geo:'GEO',hist:'HIS',qui:'QUÍ',fis:'FÍS'};var mark=marks[subject.id]||subject.name.substring(0,3).toUpperCase();
         html += (
           '<button class="subject-card" style="--tone:' + subject.toneHex + '" onclick="RotaGame.go({name:\'subject\',subjectId:\'' + subject.id + '\'})">' +
             '<div class="subject-emblem" aria-hidden="true">'+mark+'</div><div class="subject-info">' +
-              '<div class="subject-tag">' + ('ANÁLISE DAS PROVAS · ' + subject.percent.toFixed(1).replace('.',',') + '%') + '</div>' +
+              '<div class="subject-tag">' + ('FREQUÊNCIA NAS PROVAS · ' + subject.percent.toFixed(1).replace('.',',') + '%') + '</div>' +
               '<h2>' + subject.name + '</h2>' +
-              '<p>' + done + ' de ' + subject.topics.length + ' tópicos dominados</p><small class="subject-materials">Estudar →</small>' +
+              '<p>' + done + ' de ' + subject.topics.length + ' tópicos dominados</p><div class="subject-progress-inline"><div class="subject-progress-caption"><span>Progresso</span><strong>' + percent + '%</strong></div><div class="subject-progress-track" role="progressbar" aria-label="Progresso em ' + subject.name + '" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + percent + '"><span style="width:' + percent + '%"></span></div></div><small class="subject-materials">Estudar →</small>' +
               '<div class="subject-stars">' + subject.topics.map(function (t) { return '<i class="' + (isTopicDone(subject.id, t.id) ? "on" : "") + '"></i>'; }).join('') + '</div>' +
             '</div>' +
             '<div class="subject-arrow">›</div>' +
@@ -1083,7 +1084,7 @@
         html += (
           '<div class="subject-card" style="--tone:' + subject.toneHex + ';opacity:.55">' +
             '<div style="flex:1">' +
-              '<div class="subject-tag">' + ('ANÁLISE DAS PROVAS · ' + subject.percent.toFixed(1).replace('.',',') + '%') + '</div>' +
+              '<div class="subject-tag">' + ('FREQUÊNCIA NAS PROVAS · ' + subject.percent.toFixed(1).replace('.',',') + '%') + '</div>' +
               '<h2>' + subject.name + '</h2>' +
               '<p>Em construção — ainda não tem conteúdo verificado aqui</p>' +
             '</div>' +
@@ -1092,11 +1093,7 @@
         );
       });
       html += '</div>';
-      var totalTopics=0,doneTopics=0;
-      window.NEXT_CURRICULUM.forEach(function(s){totalTopics+=s.topics.length;s.topics.forEach(function(t){if(isTopicDone(s.id,t.id))doneTopics++;});});
-      var arenaUnlocked=doneTopics>0;
       var arenaDone=window.NextModules&&window.NextModules.arenaCompleted?window.NextModules.arenaCompleted():false;
-      html += '<button class="subject-card official-card challenge-card '+(arenaUnlocked?'':'locked')+'" style="--tone:#69d5ff" '+(arenaUnlocked?'onclick="RotaGame.go({name:\'official\'})"':'disabled')+'><span class="subject-emblem exam-symbol" aria-hidden="true">▤</span><span class="subject-info"><span class="subject-tag">VESTIBULINHO ETEC</span><h2>Arena Etec</h2><p>'+(arenaUnlocked?'Liberada pelo seu progresso · '+doneTopics+' de '+totalTopics+' tópicos dominados.':'Comece os estudos para liberar a Arena.')+'</p><small class="subject-materials">'+(arenaUnlocked?'PDF · Questões · Gabarito':'🔒 Bloqueada')+'</small></span><span class="subject-arrow">'+(arenaUnlocked?'›':'🔒')+'</span></button>';
       html += '<button class="chefao-banner challenge-card '+(arenaDone?'':'locked')+'" '+(arenaDone?'onclick="NextModules.startBoss(false)"':'disabled')+'><span class="crown">⚡</span><span class="txt"><span class="eyebrow">DESAFIO COMPLETO</span><h2>Desafio Final <small>(Você na Etec!)</small></h2><p>'+(arenaDone?'180 questões autorais, sete matérias e resoluções ao finalizar.':'Conquiste nota acima de 85% em uma prova da Arena ETEC para liberar. Você pode refazer a prova quantas vezes precisar.')+'</p></span><span class="arrow">'+(arenaDone?'›':'🔒')+'</span></button>';
       html += '<p class="theme-card-note">12 perguntas por rodada · avance com 10 acertos.</p>';
       if (monsterCount > 0) html += '<button class="den-btn" onclick="RotaGame.go({name:\'den\'})">⚠ Pendências pra revisar <span class="count">' + monsterCount + '</span></button>';
@@ -1107,7 +1104,7 @@
     function renderSubject(subjectId) {
       var subject = findSubject(subjectId);
       var html = '';
-      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'home\'})">‹</button><div><h2>' + subject.name + '</h2><small>' + subject.tag + '</small></div></div>';
+      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'home\'})">← <span>Voltar</span></button><div><h2>' + subject.name + '</h2><small>' + subject.tag + '</small></div></div>';
       html += '<p class="module-intro">Os materiais existentes estão liberados para estudar. Abra um tópico para ver o resumo, a videoaula, a leitura e os exercícios. Os duelos avançam por etapas.</p>';
       subject.topics.forEach(function (t, idx) {
         var done = isTopicDone(subject.id, t.id);
@@ -1137,7 +1134,7 @@
       var t = findTopic(subjectId, topicId);
       var done = isTopicDone(subjectId, topicId);
       var html = '';
-      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'subject\',subjectId:\'' + subjectId + '\'})">‹</button><h2>' + t.title + '</h2></div>';
+      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'subject\',subjectId:\'' + subjectId + '\'})">← <span>Voltar</span></button><h2>' + t.title + '</h2></div>';
       html += window.NextModules.renderStudyStart(subject.name, topicId);
       html += '<div class="card" style="--tone:' + subject.toneHex + '"><h3>Resumo do tópico</h3><ul class="chunk-list">' + t.explain.map(function (l) { return '<li>' + esc(l) + '</li>'; }).join('') + '</ul>';
       html += '<div class="example-box"><span>Exemplo</span>' + esc(t.example) + '</div>';
@@ -1166,7 +1163,7 @@
         ? ("RotaGame.go({name:'subject',subjectId:'" + duel.subjectId + "'})")
         : ("RotaGame.go({name:'topic',subjectId:'" + duel.subjectId + "',topicId:'" + duel.topicId + "'})");
       var html = '';
-      html += '<div class="screen-header"><button class="back-btn" onclick="' + backOnclick + '">‹</button><h2>' + title + '</h2></div>';
+      html += '<div class="screen-header"><button class="back-btn" onclick="' + backOnclick + '">← <span>Voltar</span></button><h2>' + title + '</h2></div>';
 
       if (duel.phase === "roundResult") {
         var n = duel.wrongThisRound.length;
@@ -1229,7 +1226,7 @@
 
     function renderDen() {
       var html = '';
-      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'home\'})">‹</button><h2>Pendências</h2></div>';
+      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'home\'})">← <span>Voltar</span></button><h2>Pendências</h2></div>';
       var rows = [];
       SUBJECTS.forEach(function (subject) {
         subject.topics.forEach(function (t) {

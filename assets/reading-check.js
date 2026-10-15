@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-var BONUS=20;
+var BONUS=6;
 function E(){return window.NEXT_ENGINE;}
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),v=a[i];a[i]=a[j];a[j]=v;}return a;}
@@ -28,7 +28,7 @@ function submit(){var d=current();if(!d||d.submitted||d.answers.some(function(a)
 }
 function button(s,t){var d=init()[key(s,t)];return '<div class="card"><h3>Mostre que entendeu</h3><p>4 perguntas · acerte 3 para ganhar '+BONUS+' XP uma única vez neste tópico. Abrir os links não dá pontos.</p><button class="primary-btn" onclick="ReadingCheck.start(\''+s+'\',\''+t+'\',false)">'+(d?(d.submitted?'Ver minha checagem':'Continuar checagem'):'Checar o que aprendi')+'</button>'+(d&&d.earned?'<p>✓ Bônus deste tópico já conquistado.</p>':'')+'</div>';}
 function render(){var v=E().view(),d=current(),lesson=topic(v.subjectId,v.topicId);if(!d||!lesson)return '';var q=d.questions[d.index];
- var h='<div class="screen-header"><button class="back-btn" aria-label="Voltar ao tópico" onclick="RotaGame.go({name:\'topic\',subjectId:\''+v.subjectId+'\',topicId:\''+v.topicId+'\'})">‹</button><div><h2>Mostre que entendeu</h2><small>'+esc(lesson.title)+'</small></div></div>';
+ var h='<div class="screen-header"><button class="back-btn" aria-label="Voltar ao tópico" onclick="RotaGame.go({name:\'topic\',subjectId:\''+v.subjectId+'\',topicId:\''+v.topicId+'\'})">← <span>Voltar</span></button><div><h2>Mostre que entendeu</h2><small>'+esc(lesson.title)+'</small></div></div>';
  if(d.submitted)h+='<div class="result-banner '+(d.passed?'win':'')+'"><h3>'+d.score+' de 4 acertos</h3><p>'+(d.passed?(d.reward?'Você farmou +'+BONUS+' XP!':'Você acertou! O bônus já foi concedido anteriormente.'):'Volte ao material e tente novamente com outras perguntas.')+'</p></div>';
  h+='<div class="question-card"><div class="qcount">'+(d.index+1)+' / 4</div><p class="prompt">'+esc(q.prompt)+'</p><div class="options">';
  q.options.forEach(function(o,i){var chosen=d.answers[d.index]===i;h+='<button class="option-btn '+(d.submitted?(q.answer===i?'correct':chosen?'wrong':''):chosen?'selected':'')+'" aria-pressed="'+chosen+'" '+(d.submitted?'disabled':'onclick="ReadingCheck.mark('+i+')"')+'><span class="letter">'+String.fromCharCode(65+i)+'</span>'+esc(o)+'</button>';});h+='</div></div>';
