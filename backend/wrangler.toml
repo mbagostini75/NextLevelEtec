@@ -1,0 +1,24 @@
+name = "next-level-backend"
+main = "dist/server/index.js"
+compatibility_date = "2026-10-02"
+workers_dev = true
+account_id = "d4e0836ac02b10d46be57e22b7eef427"
+# Mantém variáveis definidas no painel (ex.: ADMIN_EMAIL) a cada deploy
+keep_vars = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "next-level-db"
+database_id = "8b1a1ee3-318a-4140-908b-fd635ee561f3"
+migrations_dir = "drizzle"
+
+[vars]
+APP_ORIGIN = "https://nextleveletec.vercel.app"
+GOOGLE_OAUTH_CLIENT_ID = "514157271368-bko5qb9ta2ic3lr8t7ghju2p3mvebajc.apps.googleusercontent.com"
+MAIL_SENDER = "nextleveletec@gmail.com"
+# ADMIN_EMAIL e GMAIL_STORAGE_KEY são segredos no painel da Cloudflare (Variáveis e segredos)

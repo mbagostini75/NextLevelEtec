@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a12" />
+<title>Next Level — Ranqueada</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+  :root {
+    --bg: #08090f;
+    --panel: #12131c;
+    --panel-2: #191b28;
+    --border: #262838;
+    --text: #eef0fb;
+    --text-dim: #888ca8;
+    --pt: #ff3b5c;
+    --pt-dark: #7a0f24;
+    --mat: #00d1ff;
+    --mat-dark: #045166;
+    --good: #2fe07a;
+    --bad: #ff4d4d;
+    --gold: #ffc93c;
+    --radius: 12px;
+    --radius-sm: 8px;
+    color-scheme: dark;
+  }
+  :root[data-mode="leitura"] {
+    --bg: #f7f3e8;
+    --panel: #fffdf5;
+    --panel-2: #fbf1d9;
+    --border: #ddd0a8;
+    --text: #201c10;
+    --text-dim: #5c5136;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html,   body {
+    margin: 0; 
+    background: #4a9c5c; 
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 16px, rgba(0,0,0,.1) 16px, rgba(0,0,0,.1) 32px),
+      repeating-linear-gradient(90deg, transparent, transparent 16px, rgba(0,0,0,.1) 16px, rgba(0,0,0,.1) 32px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0px, transparent 1px);
+    background-size: 32px 32px, 32px 32px, 100% 100%;
+    color: var(--text);
+    font-family: 'Lexend', sans-serif; line-height: 1.6;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+    body {
+    margin: 0; 
+    background: #4a9c5c; 
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 16px, rgba(0,0,0,.1) 16px, rgba(0,0,0,.1) 32px),
+      repeating-linear-gradient(90deg, transparent, transparent 16px, rgba(0,0,0,.1) 16px, rgba(0,0,0,.1) 32px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0px, transparent 1px);
+    background-size: 32px 32px, 32px 32px, 100% 100%;
+    color: var(--text);
+    font-family: 'Lexend', sans-serif; line-height: 1.6;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  h1, h2, h3, .display, button.tag { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; letter-spacing: .03em; }
+  button { font-family: inherit; cursor: pointer; }
+  .app { max-width: 720px; margin: 0 auto; padding: 0 14px 60px; }
+
+  .topbar { position: sticky; top: 0; z-index: 20; padding-top: calc(8px + env(safe-area-inset-top, 0px)); padding-bottom: 8px; background: linear-gradient(var(--bg), var(--bg) 82%, transparent); }
+  .topbar-inner { max-width: 720px; margin: 0 auto; padding: 0 14px; display: flex; align-items: center; gap: 8px; }
+  .rank-chip { display: flex; align-items: center; gap: 8px; background: var(--panel); border: 1px solid var(--border); border-top: 3px solid var(--rank-color, var(--gold)); border-radius: var(--radius-sm); padding: 6px 10px; margin-right: auto; }
+  .rank-diamond { width: 16px; height: 16px; background: var(--rank-color, var(--gold)); transform: rotate(45deg); border-radius: 3px; flex: 0 0 auto; }
+  .rank-chip .rname { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .04em; }
+  .rank-chip .rxp { font-size: 10px; color: var(--text-dim); }
+  .stat { display: flex; align-items: center; gap: 4px; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 5px 9px; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; }
+  .stat b { color: var(--gold); font-size: 14px; }
+  .mode-btn { border: 1px solid var(--border); background: var(--panel); color: var(--text-dim); border-radius: var(--radius-sm); padding: 6px 8px; font-size: 11px; font-weight: 600; }
+
+  .hero { padding: 14px 2px 4px; }
+  .hero h1 { font-size: 26px; margin: 2px 0; }
+  .hero p { color: var(--text-dim); font-size: 13.5px; margin: 0; max-width: 460px; }
+
+  .subjects { display: grid; gap: 14px; margin-top: 18px; }
+  .subject-card { position: relative; text-align: left; width: 100%; border-radius: var(--radius); background: var(--panel); border: 1px solid var(--border); border-top: 3px solid var(--tone); padding: 16px; color: var(--text); display: flex; align-items: center; gap: 14px; }
+  .subject-card:active { background: var(--panel-2); }
+  .subject-tag { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: .08em; color: var(--tone); }
+  .subject-card h2 { margin: 2px 0 4px; font-size: 19px; }
+  .subject-card p { margin: 0; font-size: 12.5px; color: var(--text-dim); }
+  .subject-stars { display: flex; gap: 3px; margin-top: 8px; }
+  .subject-stars i { width: 16px; height: 16px; border-radius: 3px; background: var(--border); }
+  .subject-stars i.on { background: var(--tone); }
+  .subject-arrow { margin-left: auto; font-size: 20px; color: var(--text-dim); }
+
+  .den-btn { margin-top: 14px; width: 100%; text-align: left; border-radius: var(--radius); border: 1px solid var(--border); border-top: 3px solid var(--bad); background: var(--panel); color: var(--text); padding: 13px; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 10px; }
+  .den-btn span.count { margin-left: auto; background: var(--bad); color: #fff; border-radius: 999px; padding: 2px 9px; font-size: 11px; font-family: 'Rajdhani', sans-serif; }
+
+  @keyframes chefaoGlow { 0%,100% { box-shadow: 0 0 10px rgba(255,201,60,.35), inset 0 0 20px rgba(255,201,60,.08); } 50% { box-shadow: 0 0 22px rgba(255,201,60,.7), inset 0 0 30px rgba(255,201,60,.18); } }
+  .chefao-banner {
+    display: flex; align-items: center; gap: 14px; width: 100%; text-align: left;
+    margin-top: 16px; padding: 18px; border-radius: var(--radius);
+    background: linear-gradient(135deg, #1a1204 0%, #0a0a12 60%);
+    border: 2px solid var(--gold); animation: chefaoGlow 2.4s ease-in-out infinite;
+    color: var(--text);
+  }
+  .chefao-banner .crown { font-size: 34px; filter: drop-shadow(0 0 6px rgba(255,201,60,.8)); }
+  .chefao-banner .txt { flex: 1; }
+  .chefao-banner .eyebrow { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: .12em; color: var(--gold); font-weight: 700; }
+  .chefao-banner h2 { margin: 2px 0 3px; font-size: 22px; color: var(--gold); letter-spacing: .04em; text-shadow: 0 0 12px rgba(255,201,60,.5); }
+  .chefao-banner p { margin: 0; font-size: 12.5px; color: var(--text-dim); text-transform: none; font-family: 'Lexend', sans-serif; }
+  .chefao-banner .arrow { font-size: 22px; color: var(--gold); }
+
+  .screen-header { display: flex; align-items: center; gap: 10px; margin: 16px 0 4px; }
+  .back-btn { border: 1px solid var(--border); background: var(--panel); color: var(--text); border-radius: var(--radius-sm); width: 36px; height: 36px; font-size: 15px; }
+  .screen-header h2 { margin: 0; font-size: 19px; }
+  .screen-header small { display: block; color: var(--text-dim); font-size: 11px; text-transform: none; font-family: 'Lexend', sans-serif; }
+
+  .topic-row { display: flex; align-items: center; gap: 12px; width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: var(--panel); padding: 13px; margin-top: 10px; color: var(--text); text-align: left; }
+  .topic-row.done { border-color: var(--good); }
+  .topic-num { width: 34px; height: 34px; border-radius: var(--radius-sm); background: var(--panel-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 14px; flex: 0 0 auto; }
+  .topic-row.done .topic-num { background: var(--good); color: #05230f; border-color: var(--good); }
+  .topic-  body {
+    margin: 0; 
+    background: #4a9c5c; 
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 16px, rgba(0,0,0,.1) 16px, rgba(0,0,0,.1) 32px),
+      repeating-linear-gradient(90deg, transparent, transparent 16px, rgba(0,0,0,.1) 16px, rgba(0,0,0,.1) 32px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0px, transparent 1px);
+    background-size: 32px 32px, 32px 32px, 100% 100%;
+    color: var(--text);
+    font-family: 'Lexend', sans-serif; line-height: 1.6;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .topic-body strong { display: block; font-size: 14.5px; }
+  .topic-body small { color: var(--text-dim); font-size: 11.5px; }
+  .topic-row .chev { color: var(--text-dim); font-size: 16px; }
+
+  .ranked-row { margin-top: 14px; border-top: 3px solid var(--gold); }
+  .ranked-row.locked { opacity: .5; }
+  .ranked-row .topic-num { background: var(--gold); color: #241a00; border-color: var(--gold); }
+  .ranked-row.locked .topic-num { background: var(--panel-2); color: var(--text-dim); }
+
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; margin-top: 14px; }
+  .card h3 { margin: 0 0 10px; font-size: 15px; color: var(--tone); }
+  .chunk-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .chunk-list li { font-size: 14.5px; }
+  .example-box { margin-top: 12px; background: var(--panel-2); border-radius: var(--radius-sm); padding: 11px 13px; font-size: 13.5px; }
+  .example-box span { display: block; font-family: 'Rajdhani', sans-serif; font-size: 10.5px; letter-spacing: .08em; color: var(--tone); font-weight: 700; margin-bottom: 4px; }
+
+  .ghost-toggle { display: inline-flex; align-items: center; gap: 6px; border: 1px dashed var(--border); background: transparent; color: var(--text-dim); border-radius: 999px; padding: 7px 12px; font-size: 12px; margin-top: 12px; }
+  .rap-box { margin-top: 10px; border-radius: var(--radius); border: 1px dashed var(--border); background: var(--panel-2); padding: 14px; }
+  .rap-box .rap-title { font-size: 12px; color: var(--text-dim); margin: 0 0 8px; text-transform: none; font-family: 'Lexend', sans-serif; }
+  .rap-lines { margin: 0 0 10px; padding: 0; list-style: none; font-size: 13px; color: var(--text-dim); }
+  .rap-lines li { padding: 2px 0; }
+  .icon-btn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border); background: var(--panel-2); color: var(--text); border-radius: var(--radius-sm); padding: 7px 12px; font-size: 12.5px; font-weight: 600; margin-top: 8px; margin-right: 8px; }
+  .icon-btn.active { border-color: var(--good); color: var(--good); }
+
+  .primary-btn { width: 100%; margin-top: 16px; border: none; border-radius: var(--radius-sm); background: var(--tone); color: #06070c; font-weight: 700; font-family: 'Rajdhani', sans-serif; text-transform: uppercase; letter-spacing: .04em; font-size: 15px; padding: 14px; }
+  .primary-btn:disabled { opacity: .4; }
+  .ghost-btn { width: 100%; margin-top: 8px; border: 1px solid var(--border); background: transparent; color: var(--text); border-radius: var(--radius-sm); padding: 12px; font-weight: 600; font-size: 13.5px; }
+
+  .lives-row { display: flex; align-items: center; gap: 10px; margin: 14px 0 6px; }
+  .lives { display: flex; gap: 5px; }
+  .life { width: 16px; height: 16px; background: var(--bad); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+  .life.lost { background: var(--border); }
+  .qcount { margin-left: auto; font-family: 'Rajdhani', sans-serif; font-weight: 700; color: var(--text-dim); font-size: 13px; }
+
+  .question-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-top: 8px; }
+  .question-card p.prompt { margin: 0 0 12px; font-size: 15px; font-weight: 600; }
+  .options { display: flex; flex-direction: column; gap: 9px; }
+  .option-btn { display: flex; align-items: center; gap: 10px; text-align: left; border: 1px solid var(--border); background: var(--panel-2); color: var(--text); border-radius: var(--radius-sm); padding: 11px 13px; font-size: 14px; }
+  .option-btn .letter { width: 22px; height: 22px; border-radius: 6px; background: var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700; flex: 0 0 auto; }
+  .option-btn.correct { border-color: var(--good); background: color-mix(in srgb, var(--good) 18%, var(--panel-2)); }
+  .option-btn.correct .letter { background: var(--good); color: #06210f; }
+  .option-btn.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 18%, var(--panel-2)); }
+  .option-btn.wrong .letter { background: var(--bad); color: #2c0303; }
+  .option-btn:disabled { opacity: .9; }
+
+  .solution-box { margin-top: 12px; border-radius: var(--radius-sm); padding: 13px 14px; font-size: 13.5px; }
+  .solution-box.ok { background: color-mix(in srgb, var(--good) 14%, var(--panel)); border: 1px solid var(--good); }
+  .solution-box.no { background: color-mix(in srgb, var(--bad) 14%, var(--panel)); border: 1px solid var(--bad); }
+  .solution-box strong { display: block; font-family: 'Rajdhani', sans-serif; text-transform: uppercase; letter-spacing: .04em; font-size: 12px; margin-bottom: 6px; }
+  .solution-box ol { margin: 0; padding-left: 18px; }
+  .solution-box li { margin-bottom: 3px; }
+
+  .result-banner { margin-top: 14px; border-radius: var(--radius); padding: 18px; text-align: center; }
+  .result-banner.win { background: color-mix(in srgb, var(--good) 16%, var(--panel)); border: 1px solid var(--good); }
+  .result-banner.lose { background: color-mix(in srgb, var(--bad) 16%, var(--panel)); border: 1px solid var(--bad); }
+  .result-banner h3 { margin: 0 0 4px; font-size: 20px; }
+  .result-banner p { margin: 0; font-size: 13px; color: var(--text-dim); font-family: 'Lexend', sans-serif; text-transform: none; }
+
+  .recap-item { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; margin-top: 8px; font-size: 12.5px; background: var(--panel-2); }
+  .recap-item strong { display: block; font-size: 13px; margin-bottom: 3px; }
+  .recap-item ol { margin: 6px 0 0; padding-left: 18px; }
+  .recap-correct { display: block; color: #3ddc84; font-weight: 600; margin: 2px 0 4px; }
+  .round-badge { background: var(--accent, #ff3b5c); color: #10121a; font-weight: 800; font-size: 11px; letter-spacing: .04em; padding: 3px 10px; border-radius: 999px; }
+
+  .empty-note { text-align: center; color: var(--text-dim); font-size: 13.5px; padding: 26px 10px; }
+  .monster-row { display: flex; align-items: center; gap: 12px; width: 100%; border-radius: var(--radius); border: 1px solid var(--border); border-top: 3px solid var(--bad); background: var(--panel); padding: 12px; margin-top: 9px; color: var(--text); text-align: left; }
+  .monster-row .info { flex: 1; }
+  .monster-row .info strong { display: block; font-size: 13.5px; }
+  .monster-row .info small { color: var(--text-dim); }
+
+  .toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--panel); border: 1px solid var(--gold); color: var(--text); padding: 9px 16px; border-radius: 999px; font-size: 12.5px; font-weight: 700; z-index: 50; font-family: 'Rajdhani', sans-serif; letter-spacing: .03em; }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+</style>
+<style id="next-themes">html{--bg:#080d1b;--panel:#111d32;--panel-2:#192943;--border:#314762;--pt:#ef7dbd;--mat:#69d5ff;background:var(--bg);color-scheme:dark}body{background:var(--bg);background-image:none}</style><link rel="stylesheet" href="assets/modules.css">
+<link rel="icon" type="image/svg+xml" href="assets/explorer.svg">
+</head>
+<body>
+  <div id="app" class="app"></div>
+  <script src="assets/new-subjects.js"></script>
+  <script src="assets/curriculum.js"></script>
+  <script src="assets/exams.js"></script>
+  <script src="assets/boss.js"></script>
+  <script src="assets/study-resources.js"></script>
+<script src="assets/reading-check.js"></script>
+<script src="assets/modules.js"></script>
+  <script>
+  (function () {
+    "use strict";
+
+    /* ---------------- CONTEÚDO ---------------- */
+
+    var RANKS = [
+      { name: "Bronze", min: 0, color: "#a97142" },
+      { name: "Prata", min: 150, color: "#b9c0c9" },
+      { name: "Ouro", min: 400, color: "#e8b923" },
+      { name: "Platina", min: 800, color: "#4fd8c4" },
+      { name: "Diamante", min: 1500, color: "#7c8cff" },
+      { name: "Mestre", min: 3000, color: "#ff5cf0" }
+    ];
+    function rankFor(xp) {
+      var r = RANKS[0];
+      for (var i = 0; i < RANKS.length; i++) if (xp >= RANKS[i].min) r = RANKS[i];
+      return r;
+    }
+    function nextRank(xp) {
+      for (var i = 0; i < RANKS.length; i++) if (RANKS[i].min > xp) return RANKS[i];
+      return null;
+    }
+
+    var COMING_SOON_SUBJECTS = [
+      { id: "bio", name: "Biologia", tag: "CIÊNCIAS DA NATUREZA", toneHex: "#3ddc84" },
+      { id: "geo", name: "Geografia", tag: "CIÊNCIAS HUMANAS", toneHex: "#ffa53d" },
+      { id: "hist", name: "História", tag: "CIÊNCIAS HUMANAS", toneHex: "#d98cff" },
+      { id: "quifis", name: "Química e Física", tag: "CIÊNCIAS DA NATUREZA", toneHex: "#ffe14d" }
+    ];
+
+    var OFFICIAL_EXAMS = [
+      { year: 2026, semester: "1º semestre", url: "https://fatweb.s3.amazonaws.com/vestibulinhoetec/gabarito/20261176943/A-CADERNO-VESTIBULINHO-1SEM2026.pdf" },
+      { year: 2026, semester: "2º semestre", url: "https://fatweb.s3.amazonaws.com/vestibulinhoetec/gabarito/20262210689/A-CADERNO-VESTIBULINHO-2SEM2026.pdf" }
+    ];
+    var OFFICIAL_PORTAL = "https://vestibulinho.etec.sp.gov.br/provas-gabaritos/";
+
+    var SUBJECTS = [
+      {
+        id: "pt", name: "Português", tag: "LÍNGUA PORTUGUESA",
+        toneHex: "#ff3b5c",
+        topics: [
+          {
+            id: "interpretacao", title: "Interpretação e inferência",
+            explain: ["O texto não conta tudo de forma direta.", "Você junta as pistas e chega à ideia escondida.", "Isso se chama inferência.", "Não é chute. É conclusão com prova no texto."],
+            example: "Se uma campanha diz “a cidade também é sua casa”, a ideia escondida é: cuide do espaço público como cuida da sua casa.",
+            rapTitle: "Detetive do Texto",
+            rap: ["Não chuto resposta, eu junto pista", "Palavra que repete, o texto já revista", "O que tá escrito é só metade do caminho", "A outra metade eu leio sozinho"],
+            pool: [
+              { prompt: "Uma notícia informa que uma praça recebeu árvores e bancos. O objetivo mais provável da ação é:", options: ["Aumentar a circulação de carros", "Melhorar o uso coletivo e o conforto do espaço", "Reduzir a quantidade de moradores", "Impedir atividades ao ar livre"], answer: 1, solution: ["Árvores e bancos indicam foco em conforto e convivência coletiva.", "Não há nada no enunciado sobre carros, moradores ou proibições."] },
+              { prompt: "Em uma campanha que afirma “a cidade também é sua casa”, a mensagem principal é:", options: ["Defender o cuidado coletivo com o espaço público", "Proibir a circulação de pessoas", "Comparar casas particulares", "Anunciar uma venda de imóveis"], answer: 0, solution: ["A comparação cidade = casa pede o mesmo cuidado que se tem em casa.", "Isso aponta para cuidado coletivo com o espaço público."] },
+              { prompt: "Uma conclusão é uma inferência válida quando:", options: ["Repete uma palavra do texto", "É sustentada por pistas e informações do texto", "Apresenta uma opinião sem evidência", "Contradiz o assunto principal"], answer: 1, solution: ["Inferência exige apoio no texto.", "Opinião sem prova ou contradição ao texto não é inferência válida."] },
+              { prompt: "Ao relacionar árvores e conforto térmico em uma notícia, o leitor pode concluir que:", options: ["A vegetação pode reduzir o aquecimento do ambiente", "As árvores aumentam a temperatura", "O texto fala apenas de decoração", "O conforto não depende do espaço"], answer: 0, solution: ["A relação árvore + conforto térmico aponta para redução de calor.", "As demais opções contradizem essa relação."] },
+              { prompt: "Quando o texto afirma que uma medida “pode reduzir” um problema, o verbo indica:", options: ["Certeza absoluta", "Possibilidade", "Ordem", "Proibição"], answer: 1, solution: ["O verbo 'pode' expressa possibilidade, não uma garantia."] },
+              { prompt: "Para localizar a ideia principal de um parágrafo, é mais útil observar:", options: ["A informação que organiza as demais", "A palavra com mais letras", "A última pontuação", "Somente os nomes próprios"], answer: 0, solution: ["A ideia principal é a que dá sentido e organiza as demais frases do parágrafo."] },
+              { prompt: "Uma inferência inadequada é aquela que:", options: ["Relaciona pistas do texto", "Retoma uma informação explícita", "Acrescenta uma conclusão sem apoio textual", "Resume a ideia central"], answer: 2, solution: ["Inferência inadequada é a que 'inventa' algo que o texto não sustenta."] },
+              { prompt: "Se um texto apresenta um problema e depois uma solução, sua organização é principalmente:", options: ["Problema e proposta", "Lista alfabética", "Descrição de personagem", "Comparação de tamanhos"], answer: 0, solution: ["Essa estrutura (problema → solução) é chamada de problema e proposta."] },
+              { prompt: "Ao identificar o público-alvo de um cartaz, o leitor observa principalmente:", options: ["A intenção e o contexto de circulação", "A quantidade de vogais", "O tamanho da página", "A ordem das letras"], answer: 0, solution: ["Público-alvo se identifica pelo contexto e pela intenção comunicativa do texto."] },
+              { prompt: "Uma pergunta retórica em uma campanha costuma servir para:", options: ["Estimular a reflexão do leitor", "Informar uma medida exata", "Dar uma ordem matemática", "Indicar o autor do texto"], answer: 0, solution: ["Pergunta retórica não espera resposta literal — ela provoca reflexão."] },
+              { prompt: "Um anúncio afirma: “Sua economia começa aqui.” A mensagem sugere que o produto:", options: ["É caro", "Ajuda a economizar dinheiro", "É destinado a empresas", "Não tem preço"], answer: 1, solution: ["A palavra 'economia' liga o produto à ideia de economizar dinheiro."] },
+              { prompt: "Em um texto que descreve etapas numeradas de um processo, a organização é:", options: ["Sequencial", "Comparativa", "Argumentativa", "Descritiva de personagem"], answer: 0, solution: ["Etapas numeradas indicam uma sequência de ações no tempo."] },
+              { prompt: "Se um texto usa muitos dados e números para defender uma ideia, ele é predominantemente:", options: ["Narrativo", "Argumentativo com base em dados", "Poético", "Ficcional"], answer: 1, solution: ["Dados e números servem como prova em textos argumentativos."] },
+              { prompt: "Uma manchete que pergunta “Até quando vamos esperar?” revela um tom de:", options: ["Indiferença", "Cobrança e urgência", "Comemoração", "Dúvida científica"], answer: 1, solution: ["A pergunta sugere impaciência e cobrança por uma ação/resposta."] },
+              { prompt: "Quando um texto cita uma fonte especializada, o objetivo principal é:", options: ["Confundir o leitor", "Dar credibilidade à informação", "Encerrar o texto", "Mudar de assunto"], answer: 1, solution: ["Citar especialistas reforça a confiabilidade do que está sendo dito."] },
+              { prompt: "Um texto que apresenta primeiro um fato e depois a opinião do autor sobre ele mistura:", options: ["Fato e opinião", "Dois fatos", "Duas opiniões", "Nenhum dos dois"], answer: 0, solution: ["Distinguir o que é fato (verificável) do que é opinião (ponto de vista) é uma habilidade central de leitura."] },
+              { prompt: "Em uma tirinha, o humor da última cena costuma vir de:", options: ["Uma quebra de expectativa", "Uma repetição do início", "Um erro de impressão", "Uma explicação direta da piada"], answer: 0, solution: ["O efeito cômico geralmente surge quando o final surpreende o que o leitor esperava."] },
+              { prompt: "Um infográfico com ícones e poucas palavras tem como objetivo principal:", options: ["Aprofundar teoricamente o tema", "Facilitar a compreensão rápida de dados", "Substituir toda explicação escrita", "Confundir propositalmente o leitor"], answer: 1, solution: ["Infográficos priorizam clareza visual e rapidez na transmissão da informação."] },
+              { prompt: "Se um anúncio de emprego pede “experiência comprovada”, o público-alvo provável é:", options: ["Candidatos iniciantes", "Candidatos com histórico profissional", "Apenas estudantes", "Apenas aposentados"], answer: 1, solution: ["'Experiência comprovada' indica que se busca alguém com histórico de trabalho na área."] },
+              { prompt: "Uma notícia que usa a expressão “segundo especialistas ouvidos pela reportagem” está:", options: ["Inventando uma opinião própria", "Atribuindo a informação a uma fonte", "Negando o fato relatado", "Ignorando o assunto"], answer: 1, solution: ["A expressão indica que a informação vem de fontes consultadas, não do jornalista."] },
+              { prompt: "Em um texto que compara vantagens e desvantagens de duas opções, a organização predominante é:", options: ["Comparação", "Narração", "Descrição de cenário", "Poema"], answer: 0, solution: ["Apresentar prós e contras de itens lado a lado caracteriza um texto comparativo."] },
+            ]
+          },
+          {
+            id: "conectivos", title: "Coesão e conectivos",
+            explain: ["Conectivos ligam ideias.", "Cada um tem um trabalho diferente.", "Porém = oposição. Porque = causa.", "Portanto = conclusão. Para que = objetivo."],
+            example: "“Treinou bastante, porém ainda revisou os erros.” — porém mostra que uma ideia contrasta com a outra.",
+            rapTitle: "Liga os Fios",
+            rap: ["Porém vira o jogo, é oposição", "Porque é motivo, é explicação", "Portanto fecha, é a conclusão final", "Para que é objetivo, é o plano principal"],
+            pool: [
+              { prompt: "Em “Estudou bastante, porém ainda revisou os erros”, “porém” indica:", options: ["Causa", "Oposição", "Finalidade", "Conclusão"], answer: 1, solution: ["'Porém' contrapõe duas ideias — é conectivo de oposição."] },
+              { prompt: "Em “faltou à aula porque estava doente”, “porque” introduz:", options: ["Uma causa", "Uma oposição", "Uma condição", "Uma comparação"], answer: 0, solution: ["'Porque' explica o motivo da falta — é causa."] },
+              { prompt: "Qual conectivo mantém a ideia de oposição? “O texto era curto, ___ exigia atenção.”", options: ["portanto", "porque", "mas", "para que"], answer: 2, solution: ["'Mas' é o único das opções que expressa oposição/contraste."] },
+              { prompt: "Em “Treine para que a leitura fique mais rápida”, a expressão destacada indica:", options: ["Finalidade", "Causa", "Oposição", "Tempo"], answer: 0, solution: ["'Para que' introduz o objetivo da ação — finalidade."] },
+              { prompt: "Em “o resultado melhorou, portanto o método funcionou”, “portanto” introduz:", options: ["Uma conclusão", "Uma causa", "Uma oposição", "Uma condição"], answer: 0, solution: ["'Portanto' fecha um raciocínio — é conectivo de conclusão."] },
+              { prompt: "Qual palavra poderia substituir “entretanto” sem mudar a relação?", options: ["Assim", "Porém", "Porque", "Para"], answer: 1, solution: ["'Entretanto' e 'porém' têm o mesmo valor de oposição."] },
+              { prompt: "Em “revisou para que não repetisse o erro”, a expressão indica:", options: ["Finalidade", "Tempo", "Oposição", "Consequência"], answer: 0, solution: ["Indica o objetivo da revisão — finalidade."] },
+              { prompt: "O conectivo “além disso” acrescenta uma ideia de:", options: ["Adição", "Dúvida", "Contraste", "Causa"], answer: 0, solution: ["'Além disso' soma uma nova informação — é adição."] },
+              { prompt: "Complete: “Chegou atrasado ___ o ônibus quebrou.”", options: ["portanto", "porque", "mas", "para que"], answer: 1, solution: ["'Porque' introduz a causa do atraso."] },
+              { prompt: "Em “o projeto avançou, embora ainda precise de ajustes”, “embora” introduz:", options: ["Concessão", "Causa", "Conclusão", "Finalidade"], answer: 0, solution: ["'Embora' admite um contraponto sem anular a ideia principal — é concessão."] },
+              { prompt: "Em “Estudou muito; contudo, ficou nervoso na prova”, “contudo” expressa:", options: ["Adição", "Oposição", "Causa", "Tempo"], answer: 1, solution: ["'Contudo' tem o mesmo valor de 'porém': oposição."] },
+              { prompt: "O conectivo “assim que” indica principalmente relação de:", options: ["Tempo", "Oposição", "Adição", "Dúvida"], answer: 0, solution: ["'Assim que' marca o momento em que algo ocorre — tempo."] },
+              { prompt: "Em “Não estudou, por isso foi mal na prova”, “por isso” expressa:", options: ["Consequência", "Oposição", "Condição", "Finalidade"], answer: 0, solution: ["'Por isso' liga uma causa ao seu efeito — consequência."] },
+              { prompt: "Em “Caso chova, o evento será adiado”, “caso” introduz uma ideia de:", options: ["Condição", "Causa", "Tempo", "Conclusão"], answer: 0, solution: ["'Caso' indica uma condição para que o evento seja adiado."] },
+              { prompt: "Complete com o conectivo mais adequado: “Ele é tímido, ___ se saiu bem na apresentação.”", options: ["porque", "mas", "para que", "portanto"], answer: 1, solution: ["'Mas' contrapõe ser tímido e se sair bem — oposição."] },
+              { prompt: "Em “Estude bastante ou você não vai passar”, o conectivo “ou” estabelece relação de:", options: ["Alternância", "Adição", "Causa", "Tempo"], answer: 0, solution: ["'Ou' apresenta duas possibilidades que se excluem — é conectivo de alternância."] },
+              { prompt: "Em “à medida que estudava, ficava mais confiante”, a expressão destacada indica:", options: ["Proporção", "Oposição", "Finalidade", "Condição"], answer: 0, solution: ["'À medida que' liga duas ações que crescem juntas — relação de proporção."] },
+              { prompt: "Complete: “___ chovesse, o passeio seria mantido.” (ideia de concessão)", options: ["Porque", "Ainda que", "Portanto", "Assim que"], answer: 1, solution: ["'Ainda que' introduz uma concessão: mesmo com o obstáculo, a ação se mantém."] },
+              { prompt: "Em “Estudou tanto que passou em primeiro lugar”, a expressão “tanto que” indica:", options: ["Consequência", "Causa", "Condição", "Tempo"], answer: 0, solution: ["'Tanto que' liga uma intensidade a seu efeito — é conectivo de consequência."] },
+              { prompt: "O conectivo “ou seja” tem função de:", options: ["Explicar/retificar o que foi dito", "Introduzir uma condição", "Indicar tempo", "Negar a ideia anterior"], answer: 0, solution: ["'Ou seja' retoma a ideia anterior explicando-a com outras palavras."] },
+              { prompt: "Em “Desde que chegou, não parou de trabalhar”, “desde que” tem valor de:", options: ["Tempo", "Condição", "Concessão", "Finalidade"], answer: 0, solution: ["Aqui 'desde que' marca o momento inicial de uma ação contínua — é temporal."] },
+              { prompt: "Complete com o conectivo de condição: “___ você estude, vai passar.”", options: ["Embora", "Se", "Portanto", "Mas"], answer: 1, solution: ["'Se' introduz uma condição necessária para o resultado esperado."] },
+            ]
+          },
+          {
+            id: "sentido", title: "Sentido contextual",
+            explain: ["Uma palavra pode mudar de sentido.", "Depende do contexto ao redor dela.", "Não escolha o sinônimo mais comum sem pensar.", "Leia a frase inteira antes de decidir."],
+            example: "“O projeto criou raízes” não fala de plantas. Fala de algo que se firmou, que ficou estável.",
+            rapTitle: "Não É o Que Parece",
+            rap: ["Criou raiz não é jardim, plantação", "É ideia que pegou, virou tradição", "Contexto manda, não é só dicionário", "Leio a frase inteira, não caio fácil"],
+            pool: [
+              { prompt: "Em “a ideia criou raízes na comunidade”, a expressão significa que a ideia:", options: ["Foi esquecida rapidamente", "Foi plantada literalmente", "Foi aceita e se fortaleceu", "Causou um problema ambiental"], answer: 2, solution: ["'Criar raízes' em sentido figurado = firmar-se, fortalecer-se."] },
+              { prompt: "Em “o projeto criou raízes”, a palavra “raízes” foi usada em sentido:", options: ["Literal", "Metafórico", "Técnico", "Científico"], answer: 1, solution: ["Não há planta real envolvida — é uma metáfora de estabilidade."] },
+              { prompt: "Para descobrir o sentido de uma palavra, a estratégia mais segura é:", options: ["Ignorar a frase", "Usar sempre o primeiro sinônimo do dicionário", "Observar a palavra dentro do contexto", "Escolher a opção mais difícil"], answer: 2, solution: ["O contexto é sempre o guia mais confiável para o sentido de uma palavra."] },
+              { prompt: "Em “a notícia abriu portas para novos projetos”, “abriu portas” significa que a notícia:", options: ["Quebrou uma entrada", "Criou oportunidades", "Descreveu uma construção", "Fechou possibilidades"], answer: 1, solution: ["'Abrir portas', em sentido figurado, é criar oportunidades."] },
+              { prompt: "Em “a pesquisa lançou luz sobre o problema”, “lançou luz” significa:", options: ["Acendeu uma lâmpada", "Esclareceu o problema", "Escondeu os dados", "Mudou o horário"], answer: 1, solution: ["'Lançar luz' é esclarecer, tornar algo mais compreensível."] },
+              { prompt: "Em “ele tem um coração de pedra”, a expressão sugere alguém:", options: ["Sensível", "Insensível", "Cansado", "Distraído"], answer: 1, solution: ["'Coração de pedra' indica falta de sensibilidade — insensível."] },
+              { prompt: "O sentido de “rede” em “rede de transporte” é definido principalmente por:", options: ["O contexto", "O tamanho da palavra", "A posição no alfabeto", "A quantidade de sílabas"], answer: 0, solution: ["O contexto ('de transporte') define que 'rede' aqui é um sistema, não um objeto."] },
+              { prompt: "Uma palavra usada em sentido figurado produz um efeito de:", options: ["Ampliação ou associação de ideias", "Eliminação do contexto", "Cálculo exato", "Indicação de medida"], answer: 0, solution: ["Sentido figurado cria associações de ideias além do significado literal."] },
+              { prompt: "Em “o tempo voou durante a prova”, a expressão indica que o tempo:", options: ["Passou rapidamente", "Saiu voando literalmente", "Foi medido errado", "Parou completamente"], answer: 0, solution: ["'O tempo voou' é uma forma figurada de dizer que passou rápido."] },
+              { prompt: "A ironia ocorre quando o enunciado sugere:", options: ["Um sentido diferente do literal", "Uma medida exata", "Uma sequência numérica", "Uma definição de dicionário"], answer: 0, solution: ["Ironia é dizer uma coisa querendo comunicar o oposto ou algo diferente do literal."] },
+              { prompt: "Em “ele engoliu o choro”, a expressão significa que ele:", options: ["Chorou muito", "Conteve a emoção", "Comeu algo", "Ficou doente"], answer: 1, solution: ["'Engolir o choro' é conter uma emoção — sentido figurado."] },
+              { prompt: "Em “a notícia pegou fogo nas redes”, “pegou fogo” quer dizer que a notícia:", options: ["Foi apagada", "Se espalhou rapidamente", "Foi ignorada", "Causou um incêndio real"], answer: 1, solution: ["'Pegar fogo' aqui significa se espalhar com rapidez."] },
+              { prompt: "Em “ele é a cara do pai”, a expressão indica:", options: ["Semelhança física", "Diferença total", "Uma máscara", "Uma pintura"], answer: 0, solution: ["'Ser a cara de alguém' indica parecença física."] },
+              { prompt: "Em “guardou a raiva no peito”, a expressão sugere que a pessoa:", options: ["Expressou a raiva imediatamente", "Reprimiu o sentimento", "Esqueceu o sentimento", "Comemorou"], answer: 1, solution: ["'Guardar no peito' é reprimir, conter um sentimento."] },
+              { prompt: "A palavra “verde” em “ele está verde no assunto” significa:", options: ["Com pouca cor", "Inexperiente", "Saudável", "Vegetariano"], answer: 1, solution: ["Em sentido figurado, 'verde' indica falta de experiência."] },
+              { prompt: "Em “o projeto emperrou no meio do caminho”, “emperrou” significa que o projeto:", options: ["Acelerou", "Travou, parou de avançar", "Foi cancelado", "Foi premiado"], answer: 1, solution: ["'Emperrar' em sentido figurado é travar, deixar de progredir."] },
+              { prompt: "Em “a empresa colheu os frutos do investimento”, a expressão indica que a empresa:", options: ["Plantou uma horta", "Obteve os resultados esperados", "Perdeu dinheiro", "Mudou de ramo"], answer: 1, solution: ["'Colher os frutos' é uma metáfora para receber o resultado positivo de um esforço."] },
+              { prompt: "Em “ele nadou de braçada na prova”, a expressão sugere que ele:", options: ["Teve muita dificuldade", "Foi muito bem, com facilidade", "Desistiu no meio", "Nadou literalmente"], answer: 1, solution: ["'Nadar de braçada' é fazer algo com facilidade e desenvoltura."] },
+              { prompt: "Em “a proposta caiu por terra”, o sentido da expressão é que a proposta:", options: ["Foi aceita", "Foi arquivada num terreno", "Fracassou, não se concretizou", "Ficou mais barata"], answer: 2, solution: ["'Cair por terra' significa não se realizar, fracassar."] },
+              { prompt: "Em “ele engoliu sapos durante a reunião”, a expressão indica que ele:", options: ["Comeu algo estranho", "Suportou situações desagradáveis calado", "Ficou doente", "Saiu da reunião com raiva"], answer: 1, solution: ["'Engolir sapos' é aguentar calado algo desagradável ou injusto."] },
+              { prompt: "Em “o debate esquentou nos minutos finais”, “esquentou” significa que o debate ficou:", options: ["Mais tenso e acalorado", "Mais silencioso", "Mais organizado", "Mais curto"], answer: 0, solution: ["'Esquentar', em sentido figurado, indica aumento de tensão ou intensidade."] },
+              { prompt: "Em “a ideia pegou carona no sucesso do produto anterior”, a expressão indica que a ideia:", options: ["Foi transportada de carro", "Se aproveitou do sucesso anterior para se destacar", "Foi rejeitada", "Surgiu antes do produto"], answer: 1, solution: ["'Pegar carona' em sentido figurado é se beneficiar de algo que já deu certo."] },
+            ]
+          },
+          {
+            id: "figuras", title: "Figuras de linguagem",
+            explain: ["Figuras de linguagem dão efeito especial ao texto.", "Metáfora compara sem usar 'como'. Comparação usa 'como'.", "Metonímia troca uma palavra por outra ligada a ela.", "Hipérbole é exagero. Eufemismo suaviza. Ironia diz o oposto."],
+            example: "“Ele é um leão em campo” é metáfora (compara sem 'como'). “Ele joga como um leão” é comparação (usa 'como').",
+            rapTitle: "Figura no Texto",
+            rap: ["Metáfora compara sem dizer 'como'", "Comparação usa a palavrinha, não escondo", "Hipérbole exagera pra impressionar", "Ironia diz uma coisa querendo o oposto passar"],
+            pool: [
+              { prompt: "Em “seus olhos são duas estrelas”, a figura de linguagem é:", options: ["Metáfora", "Comparação", "Metonímia", "Eufemismo"], answer: 0, solution: ["Não há conectivo 'como' — a comparação é direta, sem elo. Isso é metáfora."] },
+              { prompt: "Em “seus olhos brilham como estrelas”, a figura é:", options: ["Metáfora", "Comparação", "Hipérbole", "Ironia"], answer: 1, solution: ["O uso da palavra 'como' caracteriza a comparação (símile)."] },
+              { prompt: "Em “Brasília decidiu aumentar os impostos”, a figura usada é:", options: ["Metonímia (lugar pelo governo)", "Hipérbole", "Eufemismo", "Personificação"], answer: 0, solution: ["'Brasília' substitui 'o governo federal' — troca por proximidade, isto é, metonímia."] },
+              { prompt: "Em “chorei rios de lágrimas”, a figura de linguagem é:", options: ["Eufemismo", "Hipérbole", "Metonímia", "Antítese"], answer: 1, solution: ["'Rios de lágrimas' é um exagero proposital para intensificar a emoção — hipérbole."] },
+              { prompt: "Dizer “ele passou dessa para uma melhor” em vez de “ele morreu” é um exemplo de:", options: ["Eufemismo", "Hipérbole", "Ironia", "Metáfora"], answer: 0, solution: ["Eufemismo suaviza uma informação dura ou desagradável."] },
+              { prompt: "Em “Que ótimo, quebrei o celular novo!” (dito com pesar), a figura é:", options: ["Ironia", "Comparação", "Eufemismo", "Personificação"], answer: 0, solution: ["A ironia diz o oposto do que realmente se quer comunicar."] },
+              { prompt: "Em “o vento sussurrava segredos entre as árvores”, a figura é:", options: ["Personificação", "Metonímia", "Eufemismo", "Antítese"], answer: 0, solution: ["Dar ao vento a ação humana de 'sussurrar' é personificação."] },
+              { prompt: "Em “ele é gelo, ela é fogo”, a figura usada é:", options: ["Antítese", "Eufemismo", "Metonímia", "Comparação"], answer: 0, solution: ["A antítese aproxima ideias opostas para gerar contraste."] },
+              { prompt: "Em “tomei um copo d'água” (referindo-se ao conteúdo, não ao objeto), há:", options: ["Metonímia (recipiente pelo conteúdo)", "Hipérbole", "Ironia", "Personificação"], answer: 0, solution: ["Fala-se do copo, mas quer-se dizer a água contida nele — metonímia."] },
+              { prompt: "Em “são mil anos esperando o ônibus”, a figura é:", options: ["Hipérbole", "Eufemismo", "Metonímia", "Antítese"], answer: 0, solution: ["Não são mil anos de verdade — é exagero para expressar impaciência."] },
+              { prompt: "Em “o Brasil vai bem no futebol este ano” (referindo-se à seleção), há:", options: ["Metonímia (país pela equipe)", "Ironia", "Eufemismo", "Antítese"], answer: 0, solution: ["'Brasil' substitui 'a seleção brasileira' — metonímia por proximidade."] },
+              { prompt: "Em “ela tem um coração do tamanho do mundo”, a figura é:", options: ["Hipérbole", "Ironia", "Metonímia", "Eufemismo"], answer: 0, solution: ["Comparar o coração ao 'tamanho do mundo' é exagero para expressar generosidade."] },
+              { prompt: "Dizer que uma pessoa está “em situação delicada” em vez de “está falida” é:", options: ["Eufemismo", "Hipérbole", "Antítese", "Metáfora"], answer: 0, solution: ["'Situação delicada' suaviza uma realidade difícil — eufemismo."] },
+              { prompt: "Em “o mar é um espelho ao entardecer”, a figura é:", options: ["Metáfora", "Comparação", "Metonímia", "Eufemismo"], answer: 0, solution: ["Compara o mar a um espelho sem usar 'como' — metáfora."] },
+              { prompt: "Em “o mar parece um espelho ao entardecer”, a figura é:", options: ["Comparação", "Metáfora", "Ironia", "Antítese"], answer: 0, solution: ["A palavra 'parece' liga os termos, funcionando como elemento comparativo."] },
+              { prompt: "Em “ganhou uma nota vermelha” (referindo-se a uma nota baixa marcada em vermelho), há:", options: ["Metonímia (cor pela nota)", "Hipérbole", "Personificação", "Eufemismo"], answer: 0, solution: ["A cor associada substitui o conceito de nota baixa — metonímia."] },
+              { prompt: "Em “tenho um milhão de coisas pra fazer hoje”, a figura é:", options: ["Hipérbole", "Metáfora", "Eufemismo", "Metonímia"], answer: 0, solution: ["Não é literal — é exagero para expressar excesso de tarefas."] },
+              { prompt: "Em “ser ou não ser, eis a questão” (vida e morte lado a lado), o recurso predominante é:", options: ["Antítese", "Eufemismo", "Metonímia", "Hipérbole"], answer: 0, solution: ["Contrapor 'ser' e 'não ser' cria o contraste típico da antítese."] },
+              { prompt: "Em “as paredes ouviam a conversa”, a figura é:", options: ["Personificação", "Metonímia", "Eufemismo", "Hipérbole"], answer: 0, solution: ["Atribuir a capacidade de 'ouvir' a um objeto inanimado é personificação."] },
+              { prompt: "Reconhecer a ironia em um texto exige, principalmente:", options: ["Perceber o contexto e o tom por trás das palavras", "Buscar o sentido no dicionário", "Contar o número de palavras", "Ignorar o restante do texto"], answer: 0, solution: ["A ironia só se percebe quando se entende o contexto, não pelo sentido literal das palavras."] },
+              { prompt: "Em “trabalhou feito uma formiga o dia inteiro”, a figura é:", options: ["Comparação", "Metáfora", "Metonímia", "Eufemismo"], answer: 0, solution: ["O uso de 'feito' (equivalente a 'como') liga os dois termos — é comparação."] },
+            ]
+          },
+          {
+            id: "sintaxe", title: "Sintaxe — sujeito, predicado e complementos",
+            explain: ["Sujeito é quem pratica ou sofre a ação do verbo.", "Predicado é tudo o que se diz sobre o sujeito.", "Objeto direto completa o verbo sem preposição.", "Objeto indireto completa o verbo com preposição."],
+            example: "Em “O aluno entregou o trabalho ao professor”: sujeito = o aluno; objeto direto = o trabalho; objeto indireto = ao professor.",
+            rapTitle: "Quem Faz e O Que Se Diz",
+            rap: ["Sujeito é quem faz, quem pratica a ação", "Predicado é o resto, é toda explicação", "Objeto direto não tem preposição", "Indireto sempre pede uma ligação"],
+            pool: [
+              { prompt: "Em “Os alunos terminaram a prova cedo”, o sujeito é:", options: ["Os alunos", "A prova", "Terminaram", "Cedo"], answer: 0, solution: ["'Os alunos' é quem pratica a ação de terminar — é o sujeito da oração."] },
+              { prompt: "Em “Choveu bastante ontem à noite”, o sujeito é:", options: ["Inexistente (oração sem sujeito)", "Bastante", "Ontem", "À noite"], answer: 0, solution: ["Verbos que indicam fenômenos da natureza (chover, nevar) formam orações sem sujeito."] },
+              { prompt: "Em “O professor entregou as provas aos alunos”, o objeto direto é:", options: ["O professor", "As provas", "Aos alunos", "Entregou"], answer: 1, solution: ["'As provas' completa o verbo 'entregou' sem preposição — objeto direto."] },
+              { prompt: "Na mesma frase, “aos alunos” é:", options: ["Objeto indireto", "Objeto direto", "Sujeito", "Predicativo"], answer: 0, solution: ["'Aos alunos' completa o verbo com a preposição 'a' — objeto indireto."] },
+              { prompt: "Em “Maria parece cansada hoje”, “cansada” é classificada como:", options: ["Predicativo do sujeito", "Objeto direto", "Objeto indireto", "Adjunto adverbial"], answer: 0, solution: ["'Cansada' atribui uma característica ao sujeito por meio do verbo de ligação 'parece'."] },
+              { prompt: "Em “Precisa-se de funcionários”, o sujeito da oração é:", options: ["Indeterminado", "Funcionários", "Precisa-se", "Inexistente"], answer: 0, solution: ["O 'se' associado a verbo transitivo indireto indica sujeito indeterminado."] },
+              { prompt: "Em “Ele comprou um carro novo”, o predicado é do tipo:", options: ["Verbal", "Nominal", "Verbo-nominal", "Sem predicado"], answer: 0, solution: ["Há apenas verbo de ação ('comprou') com complemento — predicado verbal."] },
+              { prompt: "Em “Ele chegou cansado da viagem”, o predicado é do tipo:", options: ["Verbo-nominal", "Nominal", "Verbal", "Sem predicado"], answer: 0, solution: ["Há verbo de ação ('chegou') e uma característica do sujeito ('cansado') ao mesmo tempo — verbo-nominal."] },
+              { prompt: "Em “A cidade é bonita à noite”, o predicado é:", options: ["Nominal", "Verbal", "Verbo-nominal", "Inexistente"], answer: 0, solution: ["O verbo de ligação 'é' apenas liga o sujeito a uma característica — predicado nominal."] },
+              { prompt: "Em “Almoçamos tarde hoje”, o sujeito da oração é:", options: ["Oculto/desinencial (nós)", "Tarde", "Hoje", "Inexistente"], answer: 0, solution: ["A terminação verbal '-amos' já indica o sujeito 'nós', mesmo sem aparecer na frase."] },
+              { prompt: "Em “Existem muitos problemas a resolver”, o verbo “existem”:", options: ["É impessoal quando usado no singular ('existe')", "Sempre concorda no plural", "Nunca tem sujeito", "É sempre transitivo direto"], answer: 0, solution: ["'Existir' concorda normalmente com o sujeito; a forma impessoal ocorre com 'haver', não com 'existir'."] },
+              { prompt: "Em “Ela entregou o presente para o irmão”, o termo “para o irmão” funciona como:", options: ["Objeto indireto", "Objeto direto", "Sujeito", "Predicativo"], answer: 0, solution: ["Complementa o verbo por meio de preposição — objeto indireto."] },
+              { prompt: "Em “O time venceu o campeonato com facilidade”, “com facilidade” é:", options: ["Adjunto adverbial de modo", "Objeto direto", "Objeto indireto", "Sujeito"], answer: 0, solution: ["Indica o modo como a ação ocorreu — adjunto adverbial de modo."] },
+              { prompt: "Em “A casa de meus avós é enorme”, “de meus avós” é:", options: ["Adjunto adnominal", "Objeto direto", "Predicativo", "Objeto indireto"], answer: 0, solution: ["Especifica o substantivo 'casa', funcionando como adjunto adnominal."] },
+              { prompt: "Em “O jogo foi cancelado pela chuva”, o sujeito da oração é:", options: ["O jogo", "A chuva", "Inexistente", "Cancelado"], answer: 0, solution: ["Na voz passiva, quem sofre a ação (o jogo) é o sujeito da oração."] },
+              { prompt: "Em “Faz dois anos que ele se formou”, o verbo “faz” indica:", options: ["Tempo decorrido — oração sem sujeito", "Sujeito 'dois anos'", "Sujeito oculto 'ele'", "Predicativo"], answer: 0, solution: ["'Fazer' indicando tempo decorrido é impessoal, sem sujeito."] },
+              { prompt: "Em “Ninguém avisou os passageiros”, o sujeito é:", options: ["Ninguém", "Os passageiros", "Avisou", "Inexistente"], answer: 0, solution: ["'Ninguém' é quem pratica (ou nega) a ação — é o sujeito, mesmo sendo indefinido."] },
+              { prompt: "Em “Aluga-se apartamento”, o “se” indica:", options: ["Voz passiva sintética", "Sujeito indeterminado", "Objeto direto", "Predicativo"], answer: 0, solution: ["Com verbo transitivo direto ('alugar' + objeto), o 'se' forma voz passiva sintética: 'apartamento é alugado'."] },
+              { prompt: "Em “Two alunos, o José e a Ana, venceram a gincana”, o sujeito é classificado como:", options: ["Composto", "Simples", "Oculto", "Indeterminado"], answer: 0, solution: ["Há dois núcleos (José e Ana) exercendo a função de sujeito — sujeito composto."] },
+              { prompt: "Em “Comprei dois livros e uma caneta”, o objeto direto é:", options: ["Dois livros e uma caneta", "Comprei", "Nenhum objeto", "Dois livros apenas"], answer: 0, solution: ["Todo o complemento sem preposição que completa 'comprei' forma o objeto direto composto."] },
+            ]
+          },
+          {
+            id: "morfologia", title: "Classes de palavras",
+            explain: ["Substantivo nomeia seres, coisas e ideias.", "Adjetivo dá qualidade ao substantivo.", "Verbo indica ação, estado ou fenômeno.", "Advérbio modifica o verbo, o adjetivo ou outro advérbio."],
+            example: "Em “O menino esperto correu rapidamente”: substantivo = menino; adjetivo = esperto; verbo = correu; advérbio = rapidamente.",
+            rapTitle: "Cada Palavra no Seu Lugar",
+            rap: ["Substantivo nomeia, dá nome à coisa", "Adjetivo qualifica, dá a característica", "Verbo é ação, é estado, é o que acontece", "Advérbio modifica, intensifica, esclarece"],
+            pool: [
+              { prompt: "Na frase “A garota inteligente resolveu o problema rapidamente”, o adjetivo é:", options: ["Inteligente", "Garota", "Resolveu", "Rapidamente"], answer: 0, solution: ["'Inteligente' atribui uma qualidade ao substantivo 'garota' — é adjetivo."] },
+              { prompt: "Na mesma frase, o advérbio é:", options: ["Rapidamente", "Inteligente", "Garota", "Problema"], answer: 0, solution: ["'Rapidamente' modifica o verbo 'resolveu', indicando modo — é advérbio."] },
+              { prompt: "A palavra “felicidade” é classificada como:", options: ["Substantivo abstrato", "Substantivo concreto", "Adjetivo", "Advérbio"], answer: 0, solution: ["Nomeia um sentimento/ideia, que não existe fisicamente por si só — substantivo abstrato."] },
+              { prompt: "A palavra “mesa” é classificada como:", options: ["Substantivo concreto", "Substantivo abstrato", "Adjetivo", "Verbo"], answer: 0, solution: ["Nomeia algo que existe fisicamente e pode ser tocado — substantivo concreto."] },
+              { prompt: "Em “Ele nunca chega atrasado”, a palavra “nunca” é:", options: ["Advérbio de negação/tempo", "Adjetivo", "Substantivo", "Pronome"], answer: 0, solution: ["'Nunca' modifica o verbo indicando frequência/tempo negado — é advérbio."] },
+              { prompt: "Em “Aquele carro é muito veloz”, a palavra “muito” classifica-se como:", options: ["Advérbio de intensidade", "Adjetivo", "Substantivo", "Pronome demonstrativo"], answer: 0, solution: ["'Muito' intensifica o adjetivo 'veloz' — é advérbio de intensidade."] },
+              { prompt: "Na frase “Comprei aquele”, a palavra “aquele” é:", options: ["Pronome demonstrativo", "Adjetivo", "Substantivo", "Advérbio"], answer: 0, solution: ["Substitui um substantivo já mencionado, indicando distância — pronome demonstrativo."] },
+              { prompt: "Em “O carro amarelo está na garagem”, “amarelo” é:", options: ["Adjetivo", "Substantivo", "Advérbio", "Pronome"], answer: 0, solution: ["Qualifica o substantivo 'carro' — é adjetivo."] },
+              { prompt: "A palavra “correr” pertence à classe:", options: ["Verbo", "Substantivo", "Adjetivo", "Advérbio"], answer: 0, solution: ["Indica uma ação — é verbo, mesmo no infinitivo."] },
+              { prompt: "Em “Ela mora perto daqui”, “perto” classifica-se como:", options: ["Advérbio de lugar", "Adjetivo", "Substantivo", "Pronome"], answer: 0, solution: ["Modifica o verbo 'mora' indicando lugar — é advérbio."] },
+              { prompt: "A palavra “rapidez” é um exemplo de substantivo formado a partir de:", options: ["Um adjetivo (rápido → rapidez)", "Um verbo", "Um advérbio", "Uma preposição"], answer: 0, solution: ["'Rapidez' deriva do adjetivo 'rápido', transformado em substantivo abstrato."] },
+              { prompt: "Em “Alguém deixou a porta aberta”, “alguém” é classificado como:", options: ["Pronome indefinido", "Substantivo", "Adjetivo", "Advérbio"], answer: 0, solution: ["Refere-se a uma pessoa não identificada — pronome indefinido."] },
+              { prompt: "Em “Ele estudou bastante para a prova”, “bastante” funciona como:", options: ["Advérbio de intensidade", "Adjetivo", "Substantivo", "Pronome"], answer: 0, solution: ["Modifica o verbo 'estudou', indicando intensidade — é advérbio."] },
+              { prompt: "Na frase “Que livro interessante!”, “que” classifica-se como:", options: ["Pronome/advérbio exclamativo", "Substantivo", "Adjetivo", "Verbo"], answer: 0, solution: ["Em frases exclamativas, 'que' reforça a exclamação, sem valor de conjunção."] },
+              { prompt: "Em “A vitória foi merecida”, “vitória” é classificada como:", options: ["Substantivo abstrato", "Substantivo concreto", "Adjetivo", "Verbo"], answer: 0, solution: ["Nomeia um conceito/resultado, sem existência física — substantivo abstrato."] },
+              { prompt: "Em “Ele é o mais rápido da equipe”, “mais rápido” está no grau:", options: ["Superlativo relativo", "Comparativo", "Positivo", "Diminutivo"], answer: 0, solution: ["'O mais rápido' destaca alguém em relação a um grupo — superlativo relativo de superioridade."] },
+              { prompt: "Em “Ele é tão rápido quanto o irmão”, o grau do adjetivo é:", options: ["Comparativo de igualdade", "Superlativo", "Positivo", "Comparativo de inferioridade"], answer: 0, solution: ["'Tão... quanto' compara duas pessoas em condição de igualdade."] },
+              { prompt: "Em “Livrinho” (referindo-se a um livro pequeno), o sufixo indica grau:", options: ["Diminutivo", "Aumentativo", "Superlativo", "Comparativo"], answer: 0, solution: ["O sufixo '-inho' reduz a ideia do substantivo — grau diminutivo."] },
+              { prompt: "A palavra “sobre”, em “o livro está sobre a mesa”, é classificada como:", options: ["Preposição", "Advérbio", "Substantivo", "Conjunção"], answer: 0, solution: ["Liga 'livro' a 'mesa' indicando relação de lugar — é preposição."] },
+              { prompt: "Em “Trabalhador, ele nunca falta ao serviço”, “trabalhador” funciona nessa frase como:", options: ["Adjetivo (característica atribuída a 'ele')", "Substantivo simples", "Verbo", "Advérbio"], answer: 0, solution: ["Apesar de poder ser substantivo em outros contextos, aqui qualifica 'ele' — é adjetivo."] },
+            ]
+          },
+          {
+            id: "concordancia", title: "Concordância verbal e nominal",
+            explain: ["Concordância verbal: o verbo combina com o sujeito.", "Sujeito composto antes do verbo pede verbo no plural.", "Concordância nominal: artigo, adjetivo e substantivo combinam em gênero e número.", "'Bastante' varia; 'é bom/proibido' fica invariável antes de substantivo sem artigo."],
+            example: "Em “A maioria dos alunos chegou cedo”: o verbo concorda com “a maioria” (singular), não com “alunos”.",
+            rapTitle: "Combinando as Palavras",
+            rap: ["O verbo escuta o sujeito e vai atrás", "Se o sujeito é plural, o verbo também vai mais", "Substantivo e adjetivo têm que combinar", "Gênero e número sempre no mesmo lugar"],
+            pool: [
+              { prompt: "“A maioria dos alunos ___ cedo.” Complete corretamente:", options: ["chegou", "chegaram", "chega", "chegam (obrigatório)"], answer: 0, solution: ["O núcleo do sujeito é 'a maioria' (singular); o verbo concorda com ele, não com 'alunos'."] },
+              { prompt: "“Fazem dois meses que ele viajou” está:", options: ["Errado — o certo é 'Faz dois meses'", "Correto", "Ambíguo", "Depende do contexto"], answer: 0, solution: ["'Fazer' indicando tempo decorrido é impessoal e fica sempre no singular: 'Faz dois meses'."] },
+              { prompt: "“Houveram muitos problemas na reunião” está:", options: ["Errado — o certo é 'Houve muitos problemas'", "Correto", "Aceitável em qualquer contexto", "Depende da região"], answer: 0, solution: ["'Haver' no sentido de existir é impessoal, sempre no singular: 'houve'."] },
+              { prompt: "“Eu e você ___ ao show amanhã.” Complete:", options: ["iremos", "irei", "vai", "foi"], answer: 0, solution: ["Sujeito composto com 'eu' pede a 1ª pessoa do plural: 'iremos'."] },
+              { prompt: "“Ela mesma ___ o problema.” Complete com concordância correta:", options: ["resolveu", "resolveram", "resolvem", "resolvi"], answer: 0, solution: ["'Ela mesma' reforça o sujeito no singular; o verbo acompanha no singular."] },
+              { prompt: "“As meninas ficaram meio ___ com a notícia.” Complete:", options: ["assustadas", "assustada", "assustado", "assustados"], answer: 0, solution: ["O adjetivo concorda em gênero e número com 'as meninas': feminino plural."] },
+              { prompt: "Em “Seguem anexos os documentos solicitados”, a concordância de “anexos” está:", options: ["Correta — concorda com 'documentos' (masc. plural)", "Errada, deveria ser 'anexo'", "Errada, deveria ser 'anexa'", "Incorreta em qualquer caso"], answer: 0, solution: ["'Anexo' funciona como adjetivo e deve concordar com o substantivo a que se refere."] },
+              { prompt: "“É proibido entrada de visitantes” ou “É proibida a entrada de visitantes”? A forma correta é:", options: ["É proibida a entrada (com artigo, concorda)", "É proibido entrada (sempre invariável)", "Ambas incorretas", "Depende da região"], answer: 0, solution: ["Com artigo antes do substantivo, 'proibido/a' concorda normalmente com ele."] },
+              { prompt: "“Bastante” em “Ela comeu bastantes frutas” está:", options: ["Errado — o certo é 'bastantes frutas' está correto na verdade (concorda como adjetivo)", "Sempre invariável", "Nunca pode concordar", "Só existe no singular"], answer: 0, solution: ["Quando 'bastante' funciona como adjetivo (equivalente a 'muitas'), ele varia: 'bastantes frutas'."] },
+              { prompt: "“Menos alunos compareceram hoje” — a palavra “menos”:", options: ["É sempre invariável", "Concorda com 'alunos'", "Vira 'menas' no plural", "Depende do verbo"], answer: 0, solution: ["'Menos' é sempre invariável em português padrão, mesmo diante de substantivo plural."] },
+              { prompt: "“Um e outro aluno ___ o exercício.” Complete a concordância verbal usual:", options: ["fez", "fizeram", "faz (só se refere a um)", "fazem"], answer: 0, solution: ["Com a estrutura 'um e outro' + substantivo singular, o verbo tende a ficar no singular."] },
+              { prompt: "“A gente ___ ao cinema no sábado.” Complete corretamente:", options: ["foi", "fomos", "iremos", "vamos (formal com 'a gente' fica no singular)"], answer: 0, solution: ["'A gente' equivale a 'nós', mas exige verbo na 3ª pessoa do singular."] },
+              { prompt: "“Meio-dia e meia” está correto porque “meia” concorda com:", options: ["Hora (substantivo feminino subentendido)", "Meio-dia (masculino)", "Nada, é sempre invariável", "O verbo da frase"], answer: 0, solution: ["'Meia' concorda com 'hora', substantivo feminino que fica subentendido na expressão."] },
+              { prompt: "Em “Precisa-se de professores qualificados”, a concordância de “qualificados” está:", options: ["Correta, concorda com 'professores'", "Errada, deveria ser singular", "Errada, deveria ser feminino", "Incorreta em qualquer caso"], answer: 0, solution: ["O adjetivo concorda em gênero e número com o substantivo que qualifica: 'professores' (masc. plural)."] },
+              { prompt: "“Vossa Senhoria está satisfeito” — a concordância correta com pronomes de tratamento é:", options: ["Vossa Senhoria está satisfeito (verbo na 3ª pessoa, adjetivo pode ir no gênero da pessoa referida)", "Vossa Senhoria estais satisfeito", "Vossa Senhoria estão satisfeitos", "Nenhuma das opções"], answer: 0, solution: ["Pronomes de tratamento pedem verbo na 3ª pessoa, mesmo se referindo ao interlocutor direto."] },
+              { prompt: "“Os Estados Unidos ___ suas fronteiras fechadas.” Complete:", options: ["mantêm", "mantém", "mantem", "manteve"], answer: 0, solution: ["Nomes próprios plurais de países pedem verbo no plural: 'mantêm' (com acento circunflexo, 3ª pl.)."] },
+              { prompt: "“Aluga-se casas na praia” apresenta um problema de:", options: ["Concordância — o certo é 'Alugam-se casas'", "Regência", "Pontuação", "Ortografia"], answer: 0, solution: ["Com o 'se' de voz passiva, o verbo deve concordar com o sujeito paciente: 'casas'."] },
+              { prompt: "“Ela própria ___ decidiu viajar.” Complete a concordância:", options: ["decidiu", "decidiram", "decidem", "decidi"], answer: 0, solution: ["'Ela própria' reforça o sujeito no singular; o verbo permanece no singular."] },
+              { prompt: "“Um dos alunos ___ a resposta certa.” Complete:", options: ["sabia", "sabiam", "sabem", "saber"], answer: 0, solution: ["O núcleo do sujeito é 'um' (singular), mesmo com 'dos alunos' logo depois."] },
+              { prompt: "Em “A criança e o cachorro ___ no parque”, a forma correta do verbo é:", options: ["brincavam", "brincava", "brinca", "brincou"], answer: 0, solution: ["Sujeito composto (criança + cachorro) exige verbo no plural."] },
+            ]
+          },
+          {
+            id: "ortografia", title: "Ortografia e acentuação",
+            explain: ["Acento agudo/circunflexo marca a sílaba tônica de certas palavras.", "Palavras oxítonas, paroxítonas e proparoxítonas têm regras próprias.", "Homônimas soam igual, mas têm sentido/escrita diferentes (ex: mas/mais).", "Parônimas têm grafia parecida, mas sentido diferente (ex: cumprimento/comprimento)."],
+            example: "“Ele fez um cumprimento educado” (saudação) x “o comprimento da mesa” (medida) — parônimas que não podem ser trocadas.",
+            rapTitle: "Acento no Lugar Certo",
+            rap: ["Proparoxítona sempre tem acento", "Paroxítona tem regra, presta atenção", "Oxítona acentua terminada em a, e, o", "Cada palavra tem seu jeito, seu tom"],
+            pool: [
+              { prompt: "A palavra “médico” é classificada quanto à tonicidade como:", options: ["Proparoxítona", "Paroxítona", "Oxítona", "Monossílaba"], answer: 0, solution: ["A sílaba tônica é a antepenúltima ('mé') — proparoxítona, e por isso sempre acentuada."] },
+              { prompt: "A palavra “café” é classificada como:", options: ["Oxítona", "Paroxítona", "Proparoxítona", "Átona"], answer: 0, solution: ["A sílaba tônica é a última ('fé') — oxítona terminada em 'e', por isso acentuada."] },
+              { prompt: "A palavra “fácil” é classificada como:", options: ["Paroxítona", "Oxítona", "Proparoxítona", "Monossílaba"], answer: 0, solution: ["A sílaba tônica é a penúltima ('fá') — paroxítona terminada em 'l', por isso acentuada."] },
+              { prompt: "Assinale o par correto de homônimas usadas adequadamente:", options: ["Ele mas ela não veio / Ele quer mais bolo", "Ele mas veio / Ele quer mas bolo", "Ele mais ela não veio / Ele quer mas bolo", "Nenhuma correta"], answer: 0, solution: ["'Mas' indica oposição; 'mais' indica quantidade — não podem ser trocadas."] },
+              { prompt: "A frase correta é:", options: ["Ele fez um belo cumprimento ao chefe", "Ele fez um belo comprimento ao chefe", "Ele mediu o cumprimento da sala", "Nenhuma das opções"], answer: 0, solution: ["'Cumprimento' (com U) é saudação; 'comprimento' (com O) é medida — são parônimas."] },
+              { prompt: "“Ele __ na loja ontem” — qual forma completa corretamente com o verbo 'ver'?", options: ["viu", "vio", "veu", "vi"], answer: 0, solution: ["A forma correta do pretérito perfeito de 'ver' na 3ª pessoa do singular é 'viu'."] },
+              { prompt: "Assinale a grafia correta:", options: ["Excesso", "Ecesso", "Exceso", "Ecceso"], answer: 0, solution: ["A grafia correta é com 'xc': 'excesso'."] },
+              { prompt: "Assinale a grafia correta:", options: ["Beneficente", "Beneficiente", "Benefissente", "Beneficênte"], answer: 0, solution: ["A grafia correta, relacionada a 'benefício', é 'beneficente'."] },
+              { prompt: "Em “ele __ (verbo 'ter') razão”, no presente, a forma correta é:", options: ["tem", "tém", "teem", "têm (só no plural)"], answer: 0, solution: ["No singular, 'ele tem' não leva acento; o acento circunflexo aparece só no plural: 'eles têm'."] },
+              { prompt: "Assinale a forma correta de acentuação:", options: ["Você também vem?", "Voce tambem vem?", "Você tambem vêm?", "Voce também vêm?"], answer: 0, solution: ["'Você' e 'também' são oxítonas terminadas em vogal seguida de 'm/til' que recebem acento agudo."] },
+              { prompt: "Assinale o par corretamente empregado:", options: ["Ele há de vencer / Há duas semanas", "Ele a de vencer / A duas semanas", "Ele há de vencer / A duas semanas", "Ele a de vencer / Há duas semanas"], answer: 0, solution: ["'Há' (verbo haver) indica existência/tempo passado; não confundir com a preposição 'a'."] },
+              { prompt: "Assinale a grafia correta:", options: ["Ansiedade", "Anciedade", "Ansciedade", "Ansiedade (com 'ç')"], answer: 0, solution: ["A grafia correta é 'ansiedade', sem cedilha."] },
+              { prompt: "Em “ele pode chegar tarde”, para indicar passado, a forma correta é:", options: ["pôde (com acento, indicando passado)", "pode (sem acento, sempre)", "podeu", "podia (única forma aceita)"], answer: 0, solution: ["'Pôde' (acento circunflexo) é pretérito perfeito; 'pode' (sem acento) é presente."] },
+              { prompt: "Assinale a frase com o parônimo correto:", options: ["Ele tem discrição ao falar dos outros", "Ele tem discreção ao falar dos outros", "Ele tem discrissão ao falar dos outros", "Nenhuma correta"], answer: 0, solution: ["'Discrição' (qualidade de ser discreto) é a grafia correta; 'descrição' seria outra palavra, com sentido de relatar."] },
+              { prompt: "Assinale a palavra que significa 'departamento ou parte de um todo':", options: ["Seção", "Sessão", "Cessão", "Secção (nunca usada no Brasil)"], answer: 0, solution: ["'Seção' é parte/departamento de algo; 'sessão' é período de uma reunião/espetáculo; 'cessão' é ato de ceder."] },
+              { prompt: "Assinale a frase corretamente acentuada:", options: ["Ninguém sabia da questão até o público saber", "Ninguem sabia da questao até o público saber", "Ninguém sabia da questão até o publico saber", "Ninguem sabia da questão até o público saber"], answer: 0, solution: ["'Ninguém' e 'questão' são oxítonas terminadas em ditongo nasal e recebem acento; 'público' é proparoxítona e também é acentuada."] },
+              { prompt: "A forma correta é:", options: ["Previsto", "Previnto", "Prevesto", "Preveusto"], answer: 0, solution: ["O particípio correto do verbo 'prever' é 'previsto'."] },
+              { prompt: "Assinale a grafia correta:", options: ["Privilégio", "Previlégio", "Privilégeo", "Previlégeo"], answer: 0, solution: ["A grafia correta é 'privilégio', com 'i' na primeira sílaba."] },
+              { prompt: "“Ele __ (verbo 'trazer') o material amanhã” — forma correta no futuro:", options: ["trará", "traerá", "trazerá", "traira"], answer: 0, solution: ["O futuro do verbo 'trazer' é irregular: 'trará' (e não 'trazerá')."] },
+              { prompt: "Sobre pessoas que chegaram da Itália e passaram a viver no Brasil, o verbo correto é:", options: ["Imigraram (entraram no Brasil)", "Emigraram (entraram no Brasil)", "Migraram-se", "Transportaram-se"], answer: 0, solution: ["'Imigrar' é entrar em um país para nele viver; 'emigrar' é sair do país de origem — o ponto de vista aqui é o de quem chega ao Brasil."] },
+            ]
+          }
+        ]
+      },
+      {
+        id: "mat", name: "Matemática", tag: "RACIOCÍNIO LÓGICO-MATEMÁTICO",
+        toneHex: "#00d1ff",
+        topics: [
+          {
+            id: "porcentagem", title: "Porcentagem",
+            explain: ["Porcentagem é uma fração de cem.", "30% é o mesmo que 0,30.", "Para achar 30% de um valor, multiplique por 0,30.", "Desconto tira. Aumento soma."],
+            example: "30% de 240 = 0,30 × 240 = 72. Se o valor aumenta 30%, o novo total é 240 + 72 = 312.",
+            rapTitle: "Cem Por Cento Certo",
+            rap: ["Porcentagem é fração de cem", "Multiplica pelo total, acha a parte", "Desconto tira, aumento bota a mais", "Confere o resultado antes de fechar"],
+            pool: [
+              { prompt: "Uma mochila custa R$ 160 e está com 25% de desconto. Qual é o preço final?", options: ["R$ 120", "R$ 125", "R$ 135", "R$ 140"], answer: 0, solution: ["25% de 160 = 0,25 × 160 = 40", "Preço final = 160 − 40 = R$ 120"] },
+              { prompt: "25% de R$ 160 corresponde a:", options: ["R$ 20", "R$ 30", "R$ 40", "R$ 60"], answer: 2, solution: ["25% = 0,25", "0,25 × 160 = 40"] },
+              { prompt: "15% de 200 corresponde a:", options: ["15", "30", "45", "60"], answer: 1, solution: ["15% = 0,15", "0,15 × 200 = 30"] },
+              { prompt: "Um desconto de 10% em R$ 250 equivale a:", options: ["R$ 10", "R$ 15", "R$ 25", "R$ 35"], answer: 2, solution: ["10% = 0,10", "0,10 × 250 = 25"] },
+              { prompt: "Uma população de 500 pessoas cresce 20%. O aumento é de:", options: ["20", "50", "100", "120"], answer: 2, solution: ["20% = 0,20", "0,20 × 500 = 100"] },
+              { prompt: "Depois de reduzir R$ 80 em 25%, o valor passa a ser:", options: ["R$ 55", "R$ 60", "R$ 65", "R$ 75"], answer: 1, solution: ["25% de 80 = 0,25 × 80 = 20", "80 − 20 = 60"] },
+              { prompt: "A fração equivalente a 40% é:", options: ["1/4", "2/5", "3/5", "4/5"], answer: 1, solution: ["40% = 40/100", "Simplificando por 20: 2/5"] },
+              { prompt: "Se 75% de uma turma corresponde a 24 alunos, a turma toda tem:", options: ["30", "32", "36", "40"], answer: 1, solution: ["75% é 3/4 da turma", "3/4 do total = 24 → total = 24 ÷ 3 × 4 = 32"] },
+              { prompt: "10% de 350 é igual a:", options: ["3,5", "35", "350", "3.500"], answer: 1, solution: ["10% = 0,10", "0,10 × 350 = 35"] },
+              { prompt: "Se um produto de R$ 90 aumenta 10%, o novo preço é:", options: ["R$ 91", "R$ 99", "R$ 100", "R$ 108"], answer: 1, solution: ["10% de 90 = 9", "90 + 9 = 99"] },
+              { prompt: "Uma loja aumenta em 50% um produto que custava R$ 40. Qual o novo preço?", options: ["R$ 50", "R$ 55", "R$ 60", "R$ 70"], answer: 2, solution: ["50% de 40 = 20", "40 + 20 = 60"] },
+              { prompt: "Em um total de 80 questões, um aluno acertou 90%. Quantas ele acertou?", options: ["68", "70", "72", "76"], answer: 2, solution: ["90% = 0,9", "0,9 × 80 = 72"] },
+              { prompt: "Se 20% de um número é 30, esse número é:", options: ["120", "150", "160", "180"], answer: 1, solution: ["20% do número = 30", "número = 30 ÷ 0,20 = 150"] },
+              { prompt: "Uma dívida de R$ 500 recebe juros de 5% ao mês. Após um mês, o valor total é:", options: ["R$ 505", "R$ 515", "R$ 520", "R$ 525"], answer: 3, solution: ["5% de 500 = 25", "500 + 25 = 525"] },
+              { prompt: "Em uma promoção “leve 3, pague 2”, o desconto é de aproximadamente:", options: ["20%", "25%", "33%", "50%"], answer: 2, solution: ["Paga-se 2 de 3 → paga-se 2/3 do valor", "Desconto = 1/3 ≈ 33%"] },
+              { prompt: "Um celular custava R$ 1.200 e agora custa R$ 900. O desconto foi de:", options: ["20%", "25%", "30%", "35%"], answer: 1, solution: ["Desconto = 1200 − 900 = 300", "300 ÷ 1200 = 0,25 = 25%"] },
+              { prompt: "Se 12% de um valor é R$ 60, esse valor é:", options: ["R$ 400", "R$ 480", "R$ 500", "R$ 600"], answer: 2, solution: ["12% do valor = 60", "valor = 60 ÷ 0,12 = 500"] },
+              { prompt: "Um investimento de R$ 2.000 rende 8% ao ano. Após um ano, o total é:", options: ["R$ 2.080", "R$ 2.160", "R$ 2.800", "R$ 2.160,80"], answer: 1, solution: ["8% de 2000 = 160", "2000 + 160 = 2.160"] },
+              { prompt: "Uma loja aumentou os preços em 8% e depois dará 8% de desconto sobre o novo preço. Um produto de R$ 100 termina custando:", options: ["Exatamente R$ 100", "Menos que R$ 100", "Mais que R$ 100", "R$ 108"], answer: 1, solution: ["Aumento: 100 × 1,08 = 108", "Desconto: 108 × 0,92 = 99,36 — menos que o valor original, pois os 8% incidem sobre bases diferentes"] },
+              { prompt: "Se 60% dos alunos de uma turma de 40 pessoas são meninas, o número de meninas é:", options: ["20", "22", "24", "26"], answer: 2, solution: ["60% = 0,60", "0,60 × 40 = 24"] },
+              { prompt: "Uma conta de R$ 300 tem multa de 2% ao mês de atraso. Após 3 meses de atraso, a multa total (simples) é de:", options: ["R$ 6", "R$ 12", "R$ 18", "R$ 24"], answer: 2, solution: ["2% de 300 = 6 por mês", "6 × 3 = 18"] },
+            ]
+          },
+          {
+            id: "razao", title: "Razão e proporção",
+            explain: ["Duas grandezas variam juntas, na mesma relação.", "Organize os dados em colunas.", "Grandezas do mesmo tipo ficam na mesma coluna.", "Depois é só multiplicar em cruz."],
+            example: "Se 4 cadernos custam R$ 32, então 1 custa R$ 8, e 7 custam 7 × 8 = R$ 56.",
+            rapTitle: "Regra de Três, Sem Estresse",
+            rap: ["Duas grandezas andam de mãozinha dada", "Organiza a tabela, cada coisa no seu lugar", "Multiplica cruzado quando é direto assim", "Regra de três é manter a igualdade"],
+            pool: [
+              { prompt: "Se 3 litros de tinta cobrem 18 m², quantos m² serão cobertos por 5 litros na mesma proporção?", options: ["24 m²", "27 m²", "30 m²", "36 m²"], answer: 2, solution: ["18 ÷ 3 = 6 m² por litro", "5 × 6 = 30 m²"] },
+              { prompt: "Se 3 litros cobrem 18 m², 1 litro cobre:", options: ["3 m²", "6 m²", "9 m²", "12 m²"], answer: 1, solution: ["18 ÷ 3 = 6 m²"] },
+              { prompt: "Se 5 cadernos custam R$ 45, 8 cadernos custam:", options: ["R$ 64", "R$ 72", "R$ 80", "R$ 90"], answer: 1, solution: ["45 ÷ 5 = 9 por caderno", "8 × 9 = 72"] },
+              { prompt: "Uma torneira enche 12 litros em 3 minutos. Em 5 minutos, enche:", options: ["15 L", "18 L", "20 L", "24 L"], answer: 2, solution: ["12 ÷ 3 = 4 L por minuto", "5 × 4 = 20 L"] },
+              { prompt: "Um ônibus percorre 240 km em 4 horas. Sua velocidade média é:", options: ["40 km/h", "50 km/h", "60 km/h", "80 km/h"], answer: 2, solution: ["240 ÷ 4 = 60 km/h"] },
+              { prompt: "Uma escala 1:100 indica que 1 cm no desenho representa:", options: ["1 cm real", "10 cm reais", "100 cm reais", "1.000 cm reais"], answer: 2, solution: ["Escala 1:100 → 1 cm representa 100 cm reais"] },
+              { prompt: "Se 2 kg de fruta custam R$ 14, 5 kg custam:", options: ["R$ 28", "R$ 30", "R$ 35", "R$ 42"], answer: 2, solution: ["14 ÷ 2 = 7 por kg", "5 × 7 = 35"] },
+              { prompt: "Um carro percorre 180 km com 15 litros. A média é de:", options: ["10 km/L", "12 km/L", "15 km/L", "20 km/L"], answer: 1, solution: ["180 ÷ 15 = 12 km por litro"] },
+              { prompt: "Se 6 caixas acomodam 48 objetos, cada caixa acomoda:", options: ["6", "8", "10", "12"], answer: 1, solution: ["48 ÷ 6 = 8"] },
+              { prompt: "Se 9 caixas pesam 27 kg, cada caixa pesa:", options: ["2 kg", "3 kg", "4 kg", "6 kg"], answer: 1, solution: ["27 ÷ 9 = 3"] },
+              { prompt: "Uma receita para 4 pessoas usa 300 g de arroz. Para 10 pessoas, quantos gramas são necessários?", options: ["600 g", "650 g", "700 g", "750 g"], answer: 3, solution: ["300 ÷ 4 = 75 g por pessoa", "10 × 75 = 750 g"] },
+              { prompt: "Uma impressora imprime 45 páginas em 9 minutos. Quantas páginas imprime em 15 minutos, na mesma velocidade?", options: ["60", "65", "70", "75"], answer: 3, solution: ["45 ÷ 9 = 5 páginas por minuto", "15 × 5 = 75"] },
+              { prompt: "Dois números estão na razão 3:5. Se o menor vale 12, o maior vale:", options: ["15", "18", "20", "24"], answer: 2, solution: ["12 ÷ 3 = 4 (valor de 1 parte)", "5 × 4 = 20"] },
+              { prompt: "Uma mistura usa 2 partes de água para 3 partes de suco. Em 20 litros de mistura, quantos litros são de suco?", options: ["8 L", "10 L", "12 L", "14 L"], answer: 2, solution: ["Total de partes = 2 + 3 = 5", "Suco = 3/5 de 20 = 12 L"] },
+              { prompt: "Uma máquina produz 150 peças em 6 horas. Mantendo o ritmo, em 10 horas produz:", options: ["200", "225", "250", "275"], answer: 2, solution: ["150 ÷ 6 = 25 peças por hora", "10 × 25 = 250"] },
+              { prompt: "Uma planta cresce 4 cm a cada 5 dias. Em 20 dias, mantendo o ritmo, ela cresce:", options: ["12 cm", "14 cm", "16 cm", "18 cm"], answer: 2, solution: ["4 ÷ 5 = 0,8 cm por dia", "20 × 0,8 = 16 cm"] },
+              { prompt: "Em uma planta baixa, 2 cm representam 3 m reais. Um cômodo de 6 cm no desenho mede na realidade:", options: ["6 m", "7 m", "8 m", "9 m"], answer: 3, solution: ["2 cm → 3 m, então 1 cm → 1,5 m", "6 cm → 6 × 1,5 = 9 m"] },
+              { prompt: "8 operários constroem um muro em 12 dias. Trabalhando no mesmo ritmo, 4 operários levariam (grandezas inversamente proporcionais):", options: ["6 dias", "16 dias", "20 dias", "24 dias"], answer: 3, solution: ["Menos operários demoram mais: é proporção inversa", "8 × 12 = 4 × x → x = 96 ÷ 4 = 24 dias"] },
+              { prompt: "Um automóvel gasta 8 litros para percorrer 96 km. Para percorrer 156 km, gastará aproximadamente:", options: ["11 L", "12 L", "13 L", "14 L"], answer: 2, solution: ["96 ÷ 8 = 12 km por litro", "156 ÷ 12 = 13 L"] },
+              { prompt: "Se 4 pintores pintam uma casa em 9 dias, trabalhando no mesmo ritmo, 6 pintores levariam:", options: ["4 dias", "5 dias", "6 dias", "7 dias"], answer: 2, solution: ["Mais pintores, menos dias: proporção inversa", "4 × 9 = 6 × x → x = 36 ÷ 6 = 6 dias"] },
+              { prompt: "Dois números estão na razão 2:7. Se a soma deles é 45, o menor número é:", options: ["8", "9", "10", "12"], answer: 2, solution: ["Total de partes = 2 + 7 = 9", "Cada parte = 45 ÷ 9 = 5", "Menor número = 2 × 5 = 10"] },
+            ]
+          },
+          {
+            id: "area", title: "Área e perímetro",
+            explain: ["Perímetro é o contorno da figura.", "Área é o espaço dentro dela.", "Retângulo: área = base × altura.", "Retângulo: perímetro = 2 × (base + altura)."],
+            example: "Um retângulo de 8 m por 5 m tem perímetro 26 m e área 40 m².",
+            rapTitle: "Contorno e Superfície",
+            rap: ["Perímetro é a borda, é o contorno todo", "Área é o miolo, é o espaço, é o modo", "Desenha a figura antes de sair calculando", "Confere a unidade, m² não é m"],
+            pool: [
+              { prompt: "Qual é a área de um terreno retangular com 12 m de comprimento e 7 m de largura?", options: ["19 m²", "38 m²", "72 m²", "84 m²"], answer: 3, solution: ["Área = comprimento × largura", "12 × 7 = 84 m²"] },
+              { prompt: "Um retângulo de 12 m por 7 m tem área de:", options: ["19 m²", "38 m²", "72 m²", "84 m²"], answer: 3, solution: ["12 × 7 = 84 m²"] },
+              { prompt: "Um triângulo com base 10 cm e altura 6 cm tem área de:", options: ["16 cm²", "30 cm²", "60 cm²", "120 cm²"], answer: 1, solution: ["Área do triângulo = (base × altura) ÷ 2", "(10 × 6) ÷ 2 = 30"] },
+              { prompt: "Um quadrado com lado 6 cm tem perímetro de:", options: ["12 cm", "18 cm", "24 cm", "36 cm"], answer: 2, solution: ["Perímetro do quadrado = 4 × lado", "4 × 6 = 24"] },
+              { prompt: "Uma sala de 4 m por 3 m será revestida. A área é:", options: ["7 m²", "12 m²", "14 m²", "24 m²"], answer: 1, solution: ["4 × 3 = 12 m²"] },
+              { prompt: "Se o perímetro de um quadrado é 32 cm, seu lado mede:", options: ["4 cm", "6 cm", "8 cm", "16 cm"], answer: 2, solution: ["lado = perímetro ÷ 4", "32 ÷ 4 = 8"] },
+              { prompt: "Um quadrado de lado 9 m tem área de:", options: ["18 m²", "36 m²", "72 m²", "81 m²"], answer: 3, solution: ["Área = lado × lado", "9 × 9 = 81"] },
+              { prompt: "O perímetro de um quadrado de lado 9 m é:", options: ["18 m", "27 m", "36 m", "81 m"], answer: 2, solution: ["4 × 9 = 36"] },
+              { prompt: "Um cubo de aresta 3 cm tem volume:", options: ["9 cm³", "18 cm³", "27 cm³", "36 cm³"], answer: 2, solution: ["Volume do cubo = aresta³", "3 × 3 × 3 = 27"] },
+              { prompt: "A unidade mais adequada para a área de uma folha de papel é:", options: ["km²", "m²", "cm²", "L"], answer: 2, solution: ["Para objetos pequenos, cm² é a unidade de área mais adequada."] },
+              { prompt: "Um retângulo tem perímetro de 30 cm e base 9 cm. A altura mede:", options: ["4 cm", "5 cm", "6 cm", "7 cm"], answer: 2, solution: ["Perímetro = 2 × (base + altura)", "30 ÷ 2 = 15 → base + altura = 15", "altura = 15 − 9 = 6 cm"] },
+              { prompt: "Um campo retangular mede 100 m por 60 m. Qual é a área?", options: ["1.600 m²", "3.200 m²", "6.000 m²", "16.000 m²"], answer: 2, solution: ["100 × 60 = 6.000 m²"] },
+              { prompt: "Um piso quadrado tem área de 49 m². O lado desse piso mede:", options: ["6 m", "7 m", "8 m", "9 m"], answer: 1, solution: ["lado × lado = 49", "7 × 7 = 49 → lado = 7 m"] },
+              { prompt: "Um jardim retangular tem 8 m de largura e perímetro de 36 m. O comprimento é:", options: ["8 m", "10 m", "12 m", "14 m"], answer: 1, solution: ["36 ÷ 2 = 18 → comprimento + largura = 18", "comprimento = 18 − 8 = 10 m"] },
+              { prompt: "Um triângulo com área 40 cm² tem base 8 cm. A altura mede:", options: ["5 cm", "8 cm", "10 cm", "16 cm"], answer: 2, solution: ["Área × 2 = base × altura", "40 × 2 = 80", "altura = 80 ÷ 8 = 10 cm"] },
+              { prompt: "Um trapézio tem bases de 6 cm e 10 cm e altura de 4 cm. Sua área é:", options: ["24 cm²", "32 cm²", "40 cm²", "64 cm²"], answer: 1, solution: ["Área do trapézio = (base maior + base menor) × altura ÷ 2", "(10 + 6) × 4 ÷ 2 = 64 ÷ 2 = 32 cm²"] },
+              { prompt: "Um losango tem diagonais de 8 cm e 6 cm. Sua área é:", options: ["14 cm²", "24 cm²", "36 cm²", "48 cm²"], answer: 1, solution: ["Área do losango = (diagonal maior × diagonal menor) ÷ 2", "(8 × 6) ÷ 2 = 24 cm²"] },
+              { prompt: "Uma caixa retangular (paralelepípedo) tem 4 m de comprimento, 3 m de largura e 2 m de altura. Seu volume é:", options: ["9 m³", "18 m³", "24 m³", "36 m³"], answer: 2, solution: ["Volume = comprimento × largura × altura", "4 × 3 × 2 = 24 m³"] },
+              { prompt: "Um terreno quadrado tem 400 m² de área. Seu perímetro é:", options: ["40 m", "60 m", "80 m", "100 m"], answer: 2, solution: ["lado × lado = 400 → lado = 20 m", "perímetro = 4 × 20 = 80 m"] },
+              { prompt: "Um paralelogramo tem base 12 cm e altura 5 cm. Sua área é:", options: ["17 cm²", "34 cm²", "60 cm²", "85 cm²"], answer: 2, solution: ["Área do paralelogramo = base × altura", "12 × 5 = 60 cm²"] },
+              { prompt: "Se dobrarmos o lado de um quadrado, sua área fica:", options: ["2 vezes maior", "3 vezes maior", "4 vezes maior", "Igual"], answer: 2, solution: ["Área = lado²; se o lado dobra, a área multiplica por 2² = 4"] },
+            ]
+          },
+          {
+            id: "equacoes", title: "Equações do 1º grau",
+            explain: ["Uma equação é como uma balança.", "O que você faz de um lado, faz do outro.", "O objetivo é isolar o x.", "No final, confira substituindo o valor encontrado."],
+            example: "Em 2x + 4 = 12: primeiro tira o 4 dos dois lados (2x = 8), depois divide por 2 (x = 4).",
+            rapTitle: "Isola o X",
+            rap: ["Equação é balança, dois lados iguais", "O que eu faço aqui, faço lá atrás", "Isola o x, deixa ele sozinho", "Confere o resultado no fim do caminho"],
+            pool: [
+              { prompt: "Resolva: x + 7 = 15. O valor de x é:", options: ["6", "7", "8", "9"], answer: 2, solution: ["x = 15 − 7", "x = 8"] },
+              { prompt: "Resolva: 2x = 18. O valor de x é:", options: ["7", "8", "9", "10"], answer: 2, solution: ["x = 18 ÷ 2", "x = 9"] },
+              { prompt: "Resolva: 3x − 5 = 16. O valor de x é:", options: ["5", "6", "7", "8"], answer: 1, solution: ["3x = 16 + 5 = 21", "x = 21 ÷ 3 = 7"] },
+              { prompt: "Resolva: x/4 = 9. O valor de x é:", options: ["13", "24", "36", "45"], answer: 2, solution: ["x = 9 × 4 = 36"] },
+              { prompt: "A soma de um número com 12 é 30. Esse número é:", options: ["16", "18", "20", "22"], answer: 1, solution: ["x + 12 = 30", "x = 30 − 12 = 18"] },
+              { prompt: "O dobro de um número menos 6 é igual a 20. Esse número é:", options: ["10", "12", "13", "14"], answer: 2, solution: ["2x − 6 = 20", "2x = 26", "x = 13"] },
+              { prompt: "Resolva: 5x + 3 = 2x + 18.", options: ["3", "4", "5", "6"], answer: 2, solution: ["5x − 2x = 18 − 3", "3x = 15", "x = 5"] },
+              { prompt: "Um número somado ao triplo dele é igual a 40. Esse número é:", options: ["8", "9", "10", "12"], answer: 2, solution: ["x + 3x = 40", "4x = 40", "x = 10"] },
+              { prompt: "A idade de Marcos é o dobro da de seu irmão. Juntas somam 27 anos. A idade do irmão é:", options: ["7", "8", "9", "10"], answer: 2, solution: ["x + 2x = 27", "3x = 27", "x = 9"] },
+              { prompt: "Resolva: 4(x − 2) = 20.", options: ["5", "6", "7", "8"], answer: 2, solution: ["4x − 8 = 20", "4x = 28", "x = 7"] },
+              { prompt: "Um retângulo tem largura x e comprimento (x + 3). Se o perímetro é 26, x vale:", options: ["4", "5", "6", "7"], answer: 1, solution: ["2 × (x + x + 3) = 26", "2x + 3 = 13", "2x = 10 → x = 5"] },
+              { prompt: "Resolva: 7x = 4x + 21.", options: ["5", "6", "7", "8"], answer: 2, solution: ["7x − 4x = 21", "3x = 21", "x = 7"] },
+              { prompt: "A metade de um número mais 5 é igual a 12. Esse número é:", options: ["10", "12", "14", "16"], answer: 2, solution: ["x/2 + 5 = 12", "x/2 = 7", "x = 14"] },
+              { prompt: "Resolva: 2x + 3(x + 1) = 18.", options: ["2", "3", "4", "5"], answer: 1, solution: ["2x + 3x + 3 = 18", "5x = 15", "x = 3"] },
+              { prompt: "Em uma loja, 3 camisetas iguais mais uma calça de R$ 60 somam R$ 210. Qual o preço de cada camiseta?", options: ["R$ 40", "R$ 45", "R$ 50", "R$ 55"], answer: 2, solution: ["210 − 60 = 150 (total das camisetas)", "150 ÷ 3 = 50"] },
+              { prompt: "Resolva: 3(x + 2) = 2x + 11.", options: ["3", "4", "5", "6"], answer: 2, solution: ["3x + 6 = 2x + 11", "3x − 2x = 11 − 6", "x = 5"] },
+              { prompt: "A soma de três números consecutivos é 45. O menor deles é:", options: ["13", "14", "15", "16"], answer: 1, solution: ["x + (x+1) + (x+2) = 45", "3x + 3 = 45", "x = 14"] },
+              { prompt: "Resolva: 6x − 4 = 3x + 11.", options: ["3", "4", "5", "6"], answer: 2, solution: ["6x − 3x = 11 + 4", "3x = 15", "x = 5"] },
+              { prompt: "Pedro tem o dobro da idade de Ana. Juntos somam 42 anos. A idade de Ana é:", options: ["12", "14", "16", "18"], answer: 1, solution: ["x + 2x = 42", "3x = 42", "x = 14"] },
+              { prompt: "Resolva: (x + 4)/2 = 9.", options: ["10", "12", "14", "16"], answer: 2, solution: ["x + 4 = 18", "x = 14"] },
+              { prompt: "Um número diminuído de 8 é igual à metade dele mesmo. Esse número é:", options: ["12", "14", "16", "18"], answer: 2, solution: ["x − 8 = x/2", "2x − 16 = x", "x = 16"] },
+            ]
+          },
+          {
+            id: "estatistica", title: "Estatística — média, moda e mediana",
+            explain: ["Média: soma tudo e divide pela quantidade.", "Moda: o valor que mais aparece.", "Mediana: o valor do meio, depois de ordenar.", "Gráficos mostram esses números de forma visual."],
+            example: "Nas notas 4, 6 e 8: a média é (4 + 6 + 8) ÷ 3 = 6.",
+            rapTitle: "Média, Moda e Mediana",
+            rap: ["Média é somar tudo e dividir igual", "Moda é o valor repetido, sinal", "Mediana é o do meio, depois de ordenar", "Lê o gráfico com calma antes de julgar"],
+            pool: [
+              { prompt: "As notas de um aluno foram 6, 7, 8 e 9. A média é:", options: ["6,5", "7", "7,5", "8"], answer: 2, solution: ["Soma = 6+7+8+9 = 30", "Média = 30 ÷ 4 = 7,5"] },
+              { prompt: "Em um conjunto de dados 4, 4, 6, 8, 8, 8, a moda é:", options: ["4", "6", "7", "8"], answer: 3, solution: ["Moda é o valor que mais se repete", "8 aparece 3 vezes"] },
+              { prompt: "Na sequência 2, 5, 7, 9, 12, a mediana é:", options: ["5", "7", "9", "12"], answer: 1, solution: ["Com 5 valores ordenados, a mediana é o do meio", "2, 5, 7, 9, 12 → o do meio é 7"] },
+              { prompt: "As idades de 5 amigos são 10, 12, 12, 15, 16. A moda é:", options: ["10", "12", "15", "16"], answer: 1, solution: ["12 aparece duas vezes, mais que as outras"] },
+              { prompt: "A média de 5, 10 e 15 é:", options: ["8", "9", "10", "12"], answer: 2, solution: ["Soma = 30", "30 ÷ 3 = 10"] },
+              { prompt: "Na sequência 4, 6, 8, 10 (4 valores), a mediana é:", options: ["6", "7", "8", "9"], answer: 1, solution: ["Com 4 valores, a mediana é a média dos dois do meio", "(6 + 8) ÷ 2 = 7"] },
+              { prompt: "Um gráfico de barras mostra vendas: Jan = 20, Fev = 35, Mar = 25. O mês de maior venda foi:", options: ["Janeiro", "Fevereiro", "Março", "Empate"], answer: 1, solution: ["35 é o maior valor entre os três meses"] },
+              { prompt: "As notas de uma prova foram 3, 5, 5, 7, 10. A moda é:", options: ["3", "5", "7", "10"], answer: 1, solution: ["5 aparece duas vezes, mais que as outras"] },
+              { prompt: "A média de 4 provas com notas 6, 7, 8 e 7 é:", options: ["6,5", "7", "7,5", "8"], answer: 1, solution: ["Soma = 6+7+8+7 = 28", "28 ÷ 4 = 7"] },
+              { prompt: "Em um gráfico, as vendas caíram de 100 para 80 unidades. A queda percentual foi de:", options: ["10%", "15%", "20%", "25%"], answer: 2, solution: ["Queda = 100 − 80 = 20", "20 ÷ 100 = 20%"] },
+              { prompt: "Na lista 1, 2, 2, 3, 4, 4, 4, 5, a moda é:", options: ["2", "3", "4", "5"], answer: 2, solution: ["4 aparece 3 vezes, mais que qualquer outro valor"] },
+              { prompt: "A mediana de 3, 8, 1, 9, 5 é:", options: ["3", "5", "8", "9"], answer: 1, solution: ["Ordenando: 1, 3, 5, 8, 9", "O valor do meio é 5"] },
+              { prompt: "Se a média de 3 números é 8, e dois deles são 6 e 9, o terceiro número é:", options: ["7", "8", "9", "10"], answer: 2, solution: ["Soma total = 8 × 3 = 24", "24 − 6 − 9 = 9"] },
+              { prompt: "Um gráfico de pizza mostra 50% futebol, 30% vôlei e o resto basquete. A porcentagem de basquete é:", options: ["10%", "15%", "20%", "25%"], answer: 2, solution: ["100% − 50% − 30% = 20%"] },
+              { prompt: "As temperaturas da semana foram 20, 22, 22, 25, 26. A moda é:", options: ["20", "22", "25", "26"], answer: 1, solution: ["22 aparece duas vezes, mais que as outras"] },
+              { prompt: "As notas de 6 provas foram 5, 6, 7, 8, 9, 9. A média é:", options: ["6,5", "7", "7,3", "8"], answer: 2, solution: ["Soma = 5+6+7+8+9+9 = 44", "Média = 44 ÷ 6 ≈ 7,3"] },
+              { prompt: "Na sequência 3, 3, 3, 7, 9, 9, a moda é:", options: ["3", "7", "9", "Bimodal (3 e 9)"], answer: 3, solution: ["3 e 9 aparecem o mesmo número de vezes (mais que 7) — a distribuição é bimodal"] },
+              { prompt: "A mediana de 12, 15, 11, 20, 18, 9 (6 valores) é:", options: ["13,5", "14,5", "15", "15,5"], answer: 0, solution: ["Ordenando: 9, 11, 12, 15, 18, 20", "Mediana = (12 + 15) ÷ 2 = 13,5"] },
+              { prompt: "Se a média de 4 números é 15 e três deles são 10, 14 e 18, o quarto número é:", options: ["16", "18", "20", "22"], answer: 1, solution: ["Soma total = 15 × 4 = 60", "60 − 10 − 14 − 18 = 18"] },
+              { prompt: "Em um gráfico de barras, a barra mais alta representa:", options: ["O menor valor", "O maior valor", "A média dos valores", "A mediana dos valores"], answer: 1, solution: ["A altura da barra é proporcional ao valor — a mais alta é o maior valor."] },
+              { prompt: "Um gráfico de pizza mostra 4 fatias: 25%, 25%, 30% e uma última. A última fatia representa:", options: ["10%", "15%", "20%", "30%"], answer: 2, solution: ["100% − 25% − 25% − 30% = 20%"] },
+            ]
+          },
+          {
+            id: "potenciacao", title: "Potenciação e radiciação",
+            explain: ["Potência é multiplicação repetida da base.", "Expoente negativo vira fração (inverte a base).", "Raiz quadrada desfaz o quadrado de um número.", "Multiplicar potências de mesma base: soma os expoentes."],
+            example: "2³ = 2 × 2 × 2 = 8. Já √64 = 8, porque 8 × 8 = 64.",
+            rapTitle: "Potência na Veia",
+            rap: ["Expoente diz quantas vezes multiplicar", "Base repetida, não tem erro, não tem azar", "Raiz quadrada desfaz o quadrado igual", "Confere: número vezes ele mesmo é o total"],
+            pool: [
+              { prompt: "O valor de 3⁴ é:", options: ["12", "27", "64", "81"], answer: 3, solution: ["3⁴ = 3 × 3 × 3 × 3 = 81"] },
+              { prompt: "O valor de 2⁵ é:", options: ["10", "16", "32", "64"], answer: 2, solution: ["2⁵ = 2 × 2 × 2 × 2 × 2 = 32"] },
+              { prompt: "O valor de √81 é:", options: ["7", "8", "9", "10"], answer: 2, solution: ["9 × 9 = 81, logo √81 = 9"] },
+              { prompt: "O valor de √144 é:", options: ["10", "11", "12", "13"], answer: 2, solution: ["12 × 12 = 144, logo √144 = 12"] },
+              { prompt: "O valor de 5⁰ é:", options: ["0", "1", "5", "Indefinido"], answer: 1, solution: ["Todo número diferente de zero elevado a 0 é igual a 1"] },
+              { prompt: "O valor de 2⁻² é:", options: ["-4", "-2", "1/4", "4"], answer: 2, solution: ["Expoente negativo inverte a base: 2⁻² = 1/2² = 1/4"] },
+              { prompt: "Simplificando 2³ × 2⁴, obtemos:", options: ["2⁷", "2¹²", "4⁷", "4¹²"], answer: 0, solution: ["Multiplicação de potências de mesma base: soma os expoentes", "2³ × 2⁴ = 2^(3+4) = 2⁷"] },
+              { prompt: "Simplificando 5⁶ ÷ 5², obtemos:", options: ["5³", "5⁴", "5⁸", "5¹²"], answer: 1, solution: ["Divisão de potências de mesma base: subtrai os expoentes", "5⁶ ÷ 5² = 5^(6−2) = 5⁴"] },
+              { prompt: "O valor de (2³)² é:", options: ["2⁵", "2⁶", "4³", "8²"], answer: 1, solution: ["Potência de potência: multiplica os expoentes", "(2³)² = 2^(3×2) = 2⁶ = 64"] },
+              { prompt: "O valor de √(25 × 4) é:", options: ["10", "14", "20", "100"], answer: 0, solution: ["25 × 4 = 100", "√100 = 10"] },
+              { prompt: "A notação científica de 3.400.000 é:", options: ["3,4 × 10⁵", "3,4 × 10⁶", "34 × 10⁵", "0,34 × 10⁷"], answer: 1, solution: ["Move-se a vírgula até restar um único dígito antes dela: 3,4", "Foram 6 casas deslocadas → ×10⁶"] },
+              { prompt: "O valor de (-3)² é:", options: ["-9", "-6", "6", "9"], answer: 3, solution: ["Expoente par elimina o sinal negativo: (-3) × (-3) = 9"] },
+              { prompt: "O valor de (-2)³ é:", options: ["-8", "-6", "6", "8"], answer: 0, solution: ["Expoente ímpar mantém o sinal negativo: (-2)×(-2)×(-2) = -8"] },
+              { prompt: "O valor de ∛27 (raiz cúbica de 27) é:", options: ["2", "3", "4", "9"], answer: 1, solution: ["3 × 3 × 3 = 27, logo ∛27 = 3"] },
+              { prompt: "Um valor de 10⁻³ em decimal é igual a:", options: ["0,001", "0,01", "0,1", "1000"], answer: 0, solution: ["10⁻³ = 1/10³ = 1/1000 = 0,001"] },
+              { prompt: "Simplificando √50, obtemos:", options: ["5√2", "2√5", "10√5", "25√2"], answer: 0, solution: ["50 = 25 × 2", "√50 = √25 × √2 = 5√2"] },
+              { prompt: "O valor aproximado de √2 é:", options: ["1,21", "1,41", "1,61", "2,41"], answer: 1, solution: ["√2 é um número irracional, aproximadamente 1,41"] },
+              { prompt: "Para racionalizar 1/√2, multiplica-se por:", options: ["√2/√2", "2/2", "1/2", "√2"], answer: 0, solution: ["Multiplicar por √2/√2 elimina a raiz do denominador: 1/√2 × √2/√2 = √2/2"] },
+              { prompt: "O valor de 4^(1/2) é:", options: ["2", "4", "8", "16"], answer: 0, solution: ["Expoente fracionário 1/2 equivale a raiz quadrada: 4^(1/2) = √4 = 2"] },
+              { prompt: "O valor de 100⁻¹ é:", options: ["-100", "-1", "1/100", "100"], answer: 2, solution: ["Expoente -1 inverte o número: 100⁻¹ = 1/100"] },
+            ]
+          },
+          {
+            id: "produtos_notaveis", title: "Produtos notáveis e fatoração",
+            explain: ["Quadrado da soma: (a+b)² = a² + 2ab + b².", "Quadrado da diferença: (a−b)² = a² − 2ab + b².", "Diferença de quadrados: a² − b² = (a+b)(a−b).", "Fatorar é o processo inverso: transformar soma em produto."],
+            example: "(x + 3)² = x² + 6x + 9, usando a regra a² + 2ab + b² com a=x e b=3.",
+            rapTitle: "Produto Notável, Nada Casual",
+            rap: ["Quadrado da soma: dois termos ao quadrado, e o dobro no meio", "Diferença de quadrados vira produto, não tem segredo", "Fatorar é desmontar, achar o que tá escondido", "Confere expandindo de volta, prova o resultado obtido"],
+            pool: [
+              { prompt: "Desenvolvendo (x + 5)², obtemos:", options: ["x² + 25", "x² + 5x + 25", "x² + 10x + 25", "x² + 10x + 5"], answer: 2, solution: ["(a+b)² = a² + 2ab + b²", "x² + 2(x)(5) + 5² = x² + 10x + 25"] },
+              { prompt: "Desenvolvendo (x − 4)², obtemos:", options: ["x² − 16", "x² − 8x + 16", "x² − 4x + 16", "x² + 8x + 16"], answer: 1, solution: ["(a−b)² = a² − 2ab + b²", "x² − 2(x)(4) + 4² = x² − 8x + 16"] },
+              { prompt: "Desenvolvendo (x + 3)(x − 3), obtemos:", options: ["x² − 9", "x² + 9", "x² − 6x + 9", "x² + 6x − 9"], answer: 0, solution: ["Produto da soma pela diferença: (a+b)(a−b) = a² − b²", "x² − 3² = x² − 9"] },
+              { prompt: "Fatorando x² − 25, obtemos:", options: ["(x+5)(x−5)", "(x−5)²", "(x+5)²", "x(x−25)"], answer: 0, solution: ["É diferença de quadrados: x² − 5² = (x+5)(x−5)"] },
+              { prompt: "Fatorando x² + 8x + 16, obtemos:", options: ["(x+4)²", "(x+8)²", "(x−4)²", "(x+4)(x−4)"], answer: 0, solution: ["Trinômio quadrado perfeito: x² + 2(x)(4) + 4² = (x+4)²"] },
+              { prompt: "Fatorando 3x + 3y, obtemos:", options: ["3(x+y)", "3xy", "x + y", "3x·3y"], answer: 0, solution: ["Fator comum em evidência: 3x + 3y = 3(x+y)"] },
+              { prompt: "Fatorando x² − 6x + 9, obtemos:", options: ["(x−3)²", "(x+3)²", "(x−9)(x+1)", "(x−3)(x+3)"], answer: 0, solution: ["Trinômio quadrado perfeito: x² − 2(x)(3) + 3² = (x−3)²"] },
+              { prompt: "O valor de 102² usando produtos notáveis (102 = 100+2) é:", options: ["10.404", "10.204", "10.044", "10.400"], answer: 0, solution: ["(100+2)² = 100² + 2(100)(2) + 2² = 10.000 + 400 + 4 = 10.404"] },
+              { prompt: "O valor de 98 × 102 usando produtos notáveis (100−2)(100+2) é:", options: ["9.596", "9.996", "9.896", "10.004"], answer: 1, solution: ["(100−2)(100+2) = 100² − 2² = 10.000 − 4 = 9.996"] },
+              { prompt: "Fatorando ax + ay + bx + by (agrupamento), obtemos:", options: ["(a+b)(x+y)", "a(x+y) + b", "(a+x)(b+y)", "abxy"], answer: 0, solution: ["Agrupa-se: a(x+y) + b(x+y) = (a+b)(x+y)"] },
+              { prompt: "Simplificando a fração algébrica (x²−9)/(x+3), para x ≠ −3, obtemos:", options: ["x − 3", "x + 3", "x² − 3", "x − 9"], answer: 0, solution: ["x² − 9 = (x+3)(x−3)", "(x+3)(x−3)/(x+3) = x − 3"] },
+              { prompt: "Desenvolvendo (2x + 3)², obtemos:", options: ["4x² + 12x + 9", "2x² + 6x + 9", "4x² + 9", "4x² + 6x + 9"], answer: 0, solution: ["(a+b)² com a=2x, b=3: (2x)² + 2(2x)(3) + 3² = 4x² + 12x + 9"] },
+              { prompt: "Fatorando 4x² − 9, obtemos:", options: ["(2x+3)(2x−3)", "(2x−3)²", "(2x+3)²", "(4x+3)(x−3)"], answer: 0, solution: ["Diferença de quadrados: (2x)² − 3² = (2x+3)(2x−3)"] },
+              { prompt: "O trinômio x² + 5x + 6 fatora-se como:", options: ["(x+2)(x+3)", "(x+1)(x+6)", "(x+5)(x+1)", "(x+6)(x−1)"], answer: 0, solution: ["Busca-se dois números que somem 5 e multipliquem 6: 2 e 3 → (x+2)(x+3)"] },
+              { prompt: "O trinômio x² − 5x + 6 fatora-se como:", options: ["(x−2)(x−3)", "(x+2)(x+3)", "(x−6)(x+1)", "(x−1)(x−6)"], answer: 0, solution: ["Dois números que somem −5 e multipliquem 6: −2 e −3 → (x−2)(x−3)"] },
+              { prompt: "Racionalizando a expressão, x² − y² é sempre igual a:", options: ["(x+y)(x−y)", "(x−y)²", "(x+y)²", "x² + y²"], answer: 0, solution: ["Essa é justamente a fórmula da diferença de quadrados"] },
+              { prompt: "Desenvolvendo (a − b)(a + b), o resultado é sempre:", options: ["a² − b²", "a² + b²", "a² − 2ab + b²", "a² + 2ab − b²"], answer: 0, solution: ["Produto da soma pela diferença resulta na diferença de quadrados"] },
+              { prompt: "Fatorando 2x² + 4x, obtemos:", options: ["2x(x+2)", "x(2x+4)", "2(x²+2x)", "4x(x+1)"], answer: 0, solution: ["Fator comum 2x em evidência: 2x² + 4x = 2x(x+2)"] },
+              { prompt: "Se x² − 4 = 0, então x vale:", options: ["2 ou −2", "Apenas 2", "Apenas −2", "4 ou −4"], answer: 0, solution: ["x² − 4 = (x+2)(x−2) = 0", "x = 2 ou x = −2"] },
+              { prompt: "Desenvolvendo (x − 1)², obtemos:", options: ["x² − 2x + 1", "x² − 1", "x² + 2x + 1", "x² − x + 1"], answer: 0, solution: ["(a−b)² = a² − 2ab + b²", "x² − 2(x)(1) + 1² = x² − 2x + 1"] },
+            ]
+          },
+          {
+            id: "sistemas", title: "Sistema de equações do 1º grau",
+            explain: ["Sistema é um conjunto de duas equações com duas incógnitas.", "Método da substituição: isola uma incógnita e substitui na outra equação.", "Método da adição: soma as equações pra eliminar uma incógnita.", "A solução é o par (x, y) que satisfaz as duas equações ao mesmo tempo."],
+            example: "x + y = 10 e x − y = 2. Somando: 2x = 12, x = 6. Substituindo: 6 + y = 10, y = 4.",
+            rapTitle: "Duas Equações, Uma Solução",
+            rap: ["Duas equações, duas incógnitas no jogo", "Soma ou substitui, escolhe o modo", "Uma some, a outra fica sozinha", "Acha o par que serve nas duas, sem rodeio"],
+            pool: [
+              { prompt: "Resolvendo x + y = 10 e x − y = 2, o valor de x é:", options: ["4", "5", "6", "7"], answer: 2, solution: ["Somando as equações: 2x = 12", "x = 6"] },
+              { prompt: "Na mesma questão, o valor de y é:", options: ["2", "3", "4", "5"], answer: 2, solution: ["Substituindo x=6 em x+y=10: 6+y=10", "y = 4"] },
+              { prompt: "Resolvendo x + y = 9 e x = 2y, o valor de y é:", options: ["2", "3", "4", "5"], answer: 1, solution: ["Substituindo x=2y na primeira: 2y + y = 9", "3y = 9 → y = 3"] },
+              { prompt: "Resolvendo 2x + y = 11 e x − y = 1, o valor de x é:", options: ["3", "4", "5", "6"], answer: 1, solution: ["Somando as equações: 3x = 12", "x = 4"] },
+              { prompt: "A soma de dois números é 20 e a diferença entre eles é 4. O maior número é:", options: ["10", "11", "12", "13"], answer: 2, solution: ["x + y = 20, x − y = 4", "Somando: 2x = 24 → x = 12"] },
+              { prompt: "Resolvendo 3x + 2y = 16 e x = y + 2, o valor de y é:", options: ["1", "2", "3", "4"], answer: 1, solution: ["Substituindo x=y+2: 3(y+2) + 2y = 16", "3y + 6 + 2y = 16 → 5y = 10 → y = 2"] },
+              { prompt: "Dois lápis e uma caneta custam R$ 8. Um lápis e uma caneta custam R$ 5. O preço do lápis é:", options: ["R$ 2", "R$ 3", "R$ 4", "R$ 5"], answer: 1, solution: ["2x + y = 8 e x + y = 5", "Subtraindo: x = 3"] },
+              { prompt: "Na mesma questão, o preço da caneta é:", options: ["R$ 1", "R$ 2", "R$ 3", "R$ 4"], answer: 1, solution: ["x + y = 5, com x = 3 → y = 2"] },
+              { prompt: "Resolvendo x + 2y = 12 e 2x + y = 9, o valor de x é:", options: ["1", "2", "3", "4"], answer: 1, solution: ["Multiplicando a primeira por 2: 2x + 4y = 24", "Subtraindo a segunda: 3y = 15 → y = 5, x = 12−10 = 2"] },
+              { prompt: "Um sistema com x + y = 8 e 2x + 2y = 16 tem:", options: ["Infinitas soluções (equações equivalentes)", "Nenhuma solução", "Solução única", "Apenas x = 0"], answer: 0, solution: ["A segunda equação é a primeira multiplicada por 2 — são a mesma reta, infinitas soluções"] },
+              { prompt: "A idade de Ana somada à de Bia é 30. A diferença entre elas é 6. A idade de Ana (a mais velha) é:", options: ["16", "17", "18", "19"], answer: 2, solution: ["a + b = 30, a − b = 6", "Somando: 2a = 36 → a = 18"] },
+              { prompt: "Resolvendo 4x − y = 10 e x + y = 5, o valor de x é:", options: ["1", "2", "3", "4"], answer: 2, solution: ["Somando as equações: 5x = 15", "x = 3"] },
+              { prompt: "Em uma prova com 20 questões, cada acerto vale 5 pontos e cada erro tira 2 pontos. Se todas foram respondidas e a pontuação final foi 72, o número de acertos foi:", options: ["14", "15", "16", "17"], answer: 2, solution: ["acertos + erros = 20; 5·acertos − 2·erros = 72", "Substituindo erros = 20 − a: 5a − 2(20−a) = 72 → 7a = 112 → a = 16"] },
+              { prompt: "O sistema x + y = 4 e x + y = 9 tem:", options: ["Nenhuma solução (retas paralelas)", "Solução única", "Infinitas soluções", "x = 0 e y = 0"], answer: 0, solution: ["Mesma soma não pode dar dois resultados diferentes — sistema impossível, sem solução"] },
+              { prompt: "Resolvendo x − y = 3 e x + y = 11, o valor de y é:", options: ["3", "4", "5", "6"], answer: 1, solution: ["Somando: 2x = 14 → x = 7", "Substituindo: 7 + y = 11 → y = 4"] },
+              { prompt: "Se 3 balas e 2 chicletes custam R$ 7, e 1 bala e 1 chiclete custam R$ 3, o preço da bala é:", options: ["R$ 1", "R$ 2", "R$ 3", "R$ 4"], answer: 0, solution: ["3x+2y=7 e x+y=3 → y=3−x", "3x+2(3−x)=7 → x+6=7 → x=1"] },
+              { prompt: "Resolvendo x/2 + y = 7 e x − y = 2, o valor de x é:", options: ["4", "5", "6", "7"], answer: 2, solution: ["Da segunda: y = x−2", "x/2 + x − 2 = 7 → 3x/2 = 9 → x = 6"] },
+              { prompt: "Em um sistema, se o método da substituição resulta em “0 = 5”, isso indica que o sistema:", options: ["É impossível (sem solução)", "Tem infinitas soluções", "Tem solução única x=0", "Foi resolvido corretamente com y=5"], answer: 0, solution: ["Uma igualdade falsa (0=5) mostra que as equações são incompatíveis — não há solução comum"] },
+              { prompt: "A soma de dois números é 15 e um é o triplo do outro. O menor número é:", options: ["3,75", "4", "4,25", "5"], answer: 0, solution: ["x + 3x = 15 → 4x = 15 → x = 3,75"] },
+              { prompt: "Resolvendo 2x + 3y = 16 e x = y + 3, o valor de y é:", options: ["1", "2", "3", "4"], answer: 1, solution: ["Substituindo: 2(y+3) + 3y = 16", "2y+6+3y=16 → 5y=10 → y=2"] },
+            ]
+          },
+          {
+            id: "geometria", title: "Geometria — ângulos e polígonos",
+            explain: ["Ângulos complementares somam 90°. Suplementares somam 180°.", "A soma dos ângulos internos de um triângulo é sempre 180°.", "Polígono de n lados: soma dos ângulos internos = (n−2) × 180°.", "Ângulos opostos pelo vértice são sempre iguais."],
+            example: "Em um triângulo, dois ângulos medem 50° e 60°. O terceiro é 180° − 50° − 60° = 70°.",
+            rapTitle: "Ângulo Certo",
+            rap: ["Triângulo sempre soma cento e oitenta", "Complementar é noventa, isso é o que conta", "Suplementar fecha no meia-volta, cento e oitenta", "Polígono soma (n menos 2) vezes cento e oitenta"],
+            pool: [
+              { prompt: "Um triângulo tem ângulos de 40° e 70°. O terceiro ângulo mede:", options: ["60°", "70°", "80°", "90°"], answer: 1, solution: ["180° − 40° − 70° = 70°"] },
+              { prompt: "Dois ângulos são complementares. Se um deles mede 35°, o outro mede:", options: ["45°", "55°", "65°", "145°"], answer: 1, solution: ["Complementares somam 90°: 90° − 35° = 55°"] },
+              { prompt: "Dois ângulos são suplementares. Se um deles mede 110°, o outro mede:", options: ["60°", "70°", "80°", "90°"], answer: 1, solution: ["Suplementares somam 180°: 180° − 110° = 70°"] },
+              { prompt: "A soma dos ângulos internos de um pentágono (5 lados) é:", options: ["360°", "450°", "540°", "720°"], answer: 2, solution: ["(n−2) × 180° = (5−2) × 180° = 3 × 180° = 540°"] },
+              { prompt: "A soma dos ângulos internos de um hexágono (6 lados) é:", options: ["540°", "630°", "720°", "900°"], answer: 2, solution: ["(6−2) × 180° = 4 × 180° = 720°"] },
+              { prompt: "Cada ângulo interno de um quadrado mede:", options: ["60°", "90°", "120°", "180°"], answer: 1, solution: ["Um quadrado tem 4 ângulos retos, cada um de 90°"] },
+              { prompt: "Um triângulo equilátero tem cada ângulo interno medindo:", options: ["45°", "60°", "90°", "100°"], answer: 1, solution: ["180° ÷ 3 = 60°, pois os três ângulos são iguais"] },
+              { prompt: "Duas retas paralelas cortadas por uma transversal formam ângulos correspondentes que são:", options: ["Iguais", "Suplementares", "Complementares", "Sempre 90°"], answer: 0, solution: ["Ângulos correspondentes em retas paralelas cortadas por uma transversal são sempre congruentes (iguais)."] },
+              { prompt: "Ângulos opostos pelo vértice são:", options: ["Sempre iguais", "Sempre complementares", "Sempre suplementares", "Sempre diferentes"], answer: 0, solution: ["Ângulos opostos pelo vértice (formados por duas retas que se cruzam) são sempre congruentes."] },
+              { prompt: "Um ângulo reto mede:", options: ["45°", "90°", "180°", "360°"], answer: 1, solution: ["Por definição, um ângulo reto mede exatamente 90°."] },
+              { prompt: "Um ângulo raso mede:", options: ["90°", "120°", "180°", "270°"], answer: 2, solution: ["O ângulo raso corresponde a uma linha reta, medindo 180°."] },
+              { prompt: "Um triângulo isósceles tem dois ângulos de 50° cada. O terceiro mede:", options: ["70°", "80°", "90°", "100°"], answer: 1, solution: ["180° − 50° − 50° = 80°"] },
+              { prompt: "Cada ângulo externo de um polígono regular de n lados mede:", options: ["360°/n", "180°/n", "(n−2)×180°/n", "90°/n"], answer: 0, solution: ["A soma de todos os ângulos externos de qualquer polígono convexo é sempre 360°; dividido por n lados iguais dá 360°/n"] },
+              { prompt: "Cada ângulo externo de um hexágono regular mede:", options: ["45°", "60°", "72°", "90°"], answer: 1, solution: ["360° ÷ 6 = 60°"] },
+              { prompt: "Um polígono regular tem ângulos internos de 108° cada. Esse polígono é um:", options: ["Pentágono", "Hexágono", "Quadrado", "Octógono"], answer: 0, solution: ["Ângulo interno de pentágono regular = 540° ÷ 5 = 108°"] },
+              { prompt: "Em um triângulo retângulo, um dos ângulos agudos mede 35°. O outro ângulo agudo mede:", options: ["45°", "55°", "65°", "75°"], answer: 1, solution: ["O ângulo reto já ocupa 90°; os outros dois somam 90°: 90° − 35° = 55°"] },
+              { prompt: "A soma dos ângulos internos de qualquer quadrilátero é:", options: ["180°", "270°", "360°", "540°"], answer: 2, solution: ["(4−2) × 180° = 2 × 180° = 360°"] },
+              { prompt: "Um losango tem um ângulo de 70°. O ângulo adjacente a ele (do outro lado) mede:", options: ["70°", "90°", "110°", "180°"], answer: 2, solution: ["Ângulos adjacentes em um paralelogramo são suplementares: 180° − 70° = 110°"] },
+              { prompt: "Um relógio marca 3 horas em ponto. O ângulo entre os ponteiros das horas e dos minutos é:", options: ["60°", "75°", "90°", "120°"], answer: 2, solution: ["Às 3 horas, o ponteiro das horas está no 3 e o dos minutos no 12 — formam um ângulo reto de 90°."] },
+              { prompt: "Se dois ângulos de um triângulo medem 90° e 45°, o triângulo é classificado como:", options: ["Retângulo e isósceles", "Equilátero", "Obtusângulo", "Escaleno não retângulo"], answer: 0, solution: ["O terceiro ângulo é 180−90−45=45°; dois ângulos iguais (45°) tornam o triângulo isósceles, além de retângulo."] },
+            ]
+          },
+          {
+            id: "probabilidade", title: "Probabilidade",
+            explain: ["Probabilidade = casos favoráveis ÷ casos possíveis.", "O resultado sempre fica entre 0 (impossível) e 1 (certeza).", "Pode-se expressar como fração, decimal ou porcentagem.", "Eventos independentes: multiplica-se as probabilidades."],
+            example: "Em um dado de 6 faces, a chance de sair o número 4 é 1/6, pois há 1 caso favorável em 6 possíveis.",
+            rapTitle: "Chance é Conta",
+            rap: ["Favorável sobre possível, essa é a lei", "Zero é nunca, um é certeza, eu já sei", "Se são dois eventos que não se misturam", "Multiplica as chances, e as contas se afinam"],
+            pool: [
+              { prompt: "Ao lançar um dado de 6 faces, a probabilidade de sair um número par é:", options: ["1/6", "1/3", "1/2", "2/3"], answer: 2, solution: ["Números pares: 2, 4, 6 → 3 casos favoráveis em 6 possíveis = 3/6 = 1/2"] },
+              { prompt: "Em um baralho de 52 cartas, a probabilidade de tirar um Ás é:", options: ["1/52", "1/26", "1/13", "4/13"], answer: 2, solution: ["Há 4 ases em 52 cartas: 4/52 = 1/13"] },
+              { prompt: "Uma urna tem 5 bolas vermelhas e 3 azuis. A probabilidade de tirar uma bola azul é:", options: ["3/8", "3/5", "5/8", "1/3"], answer: 0, solution: ["Total de bolas = 5+3 = 8", "Favoráveis (azuis) = 3 → 3/8"] },
+              { prompt: "Ao lançar uma moeda duas vezes, a probabilidade de sair 'cara' nas duas é:", options: ["1/2", "1/3", "1/4", "1/8"], answer: 2, solution: ["Eventos independentes: 1/2 × 1/2 = 1/4"] },
+              { prompt: "Em uma rifa com 200 números, comprando 1 bilhete, a chance de ganhar é:", options: ["1/100", "1/150", "1/200", "1/250"], answer: 2, solution: ["1 bilhete favorável entre 200 possíveis: 1/200"] },
+              { prompt: "A probabilidade de um evento impossível é:", options: ["0", "0,5", "1", "Depende do evento"], answer: 0, solution: ["Um evento que nunca ocorre tem probabilidade 0."] },
+              { prompt: "A probabilidade de um evento certo (que sempre ocorre) é:", options: ["0", "0,5", "1", "Indefinida"], answer: 2, solution: ["Um evento que sempre acontece tem probabilidade 1 (ou 100%)."] },
+              { prompt: "Em uma turma de 30 alunos, 12 são meninas. Sorteando um aluno ao acaso, a probabilidade de ser menino é:", options: ["12/30", "18/30", "2/5", "3/5"], answer: 1, solution: ["Meninos = 30 − 12 = 18", "Probabilidade = 18/30 = 3/5, que é o mesmo que a fração 18/30"] },
+              { prompt: "Ao lançar dois dados, a probabilidade de a soma dar exatamente 2 é:", options: ["1/36", "1/12", "1/6", "2/36"], answer: 0, solution: ["Só há uma combinação que soma 2: (1,1)", "1 caso favorável em 36 possíveis (6×6) = 1/36"] },
+              { prompt: "Uma caixa tem 4 bolas numeradas de 1 a 4. Tirando uma bola, a chance de sair um número maior que 2 é:", options: ["1/4", "1/2", "3/4", "1"], answer: 1, solution: ["Favoráveis: 3 e 4 → 2 casos em 4 possíveis = 2/4 = 1/2"] },
+              { prompt: "A probabilidade de um evento, expressa como 0,25, corresponde em porcentagem a:", options: ["2,5%", "25%", "40%", "250%"], answer: 1, solution: ["0,25 × 100 = 25%"] },
+              { prompt: "Em uma roleta com 8 setores iguais numerados de 1 a 8, a chance de cair em um número múltiplo de 3 é:", options: ["1/8", "1/4", "3/8", "1/2"], answer: 1, solution: ["Múltiplos de 3 entre 1 e 8: apenas 3 e 6 → 2 casos favoráveis em 8 possíveis", "2/8 = 1/4"] },
+              { prompt: "Se a probabilidade de chover amanhã é 30%, a probabilidade de NÃO chover é:", options: ["30%", "50%", "70%", "100%"], answer: 2, solution: ["A soma das probabilidades complementares é 100%: 100% − 30% = 70%"] },
+              { prompt: "Ao retirar uma carta de um baralho de 52, a probabilidade de ser carta vermelha (copas ou ouros) é:", options: ["1/4", "1/2", "1/3", "2/3"], answer: 1, solution: ["26 cartas vermelhas em 52 totais: 26/52 = 1/2"] },
+              { prompt: "Uma moeda é lançada 3 vezes. O número total de resultados possíveis (cara/coroa) é:", options: ["3", "6", "8", "9"], answer: 2, solution: ["Cada lançamento tem 2 resultados; 2 × 2 × 2 = 8 combinações possíveis"] },
+              { prompt: "Em um grupo de 10 pessoas, sorteando 1 para representar o grupo, a probabilidade de uma pessoa específica ser sorteada é:", options: ["1/5", "1/10", "1/9", "1/100"], answer: 1, solution: ["1 caso favorável (a pessoa específica) em 10 possíveis: 1/10"] },
+              { prompt: "Uma urna com 4 bolas verdes e 6 vermelhas. Retirando uma bola, a chance de NÃO ser verde é:", options: ["4/10", "6/10", "4/6", "1/10"], answer: 1, solution: ["Não-verde = vermelha = 6 em 10: 6/10"] },
+              { prompt: "Em um sorteio com reposição, a probabilidade de acertar duas vezes seguidas um número entre 5 possíveis é:", options: ["1/5", "1/10", "1/25", "2/5"], answer: 2, solution: ["Eventos independentes com reposição: 1/5 × 1/5 = 1/25"] },
+              { prompt: "A soma de todas as probabilidades possíveis de um experimento é sempre:", options: ["0", "0,5", "1", "Depende do experimento"], answer: 2, solution: ["A soma das probabilidades de todos os resultados possíveis de um experimento é sempre igual a 1 (100%)."] },
+              { prompt: "Ao lançar um dado, a probabilidade de sair um número menor que 5 é:", options: ["1/3", "1/2", "2/3", "5/6"], answer: 2, solution: ["Favoráveis: 1, 2, 3, 4 → 4 casos em 6 possíveis = 4/6 = 2/3"] },
+            ]
+          }
+        ]
+      }
+    ];
+
+    var SUPPLEMENTAL = {"interpretacao": [{"prompt": "Leia: “Lia levou um guarda-chuva porque a previsão indicava chuva.” Por que Lia levou o objeto?", "options": ["Para se proteger da chuva prevista", "Para comprar um presente", "Porque já estava nevando", "Para medir o vento"], "answer": 0, "solution": ["O texto apresenta a previsão de chuva como motivo."]}, {"prompt": "Leia: “Embora o ônibus atrasasse, Rui chegou antes da reunião.” Qual fato é explícito?", "options": ["Rui perdeu a reunião", "Rui chegou antes da reunião", "Rui foi de bicicleta", "A reunião foi cancelada"], "answer": 1, "solution": ["A chegada antes da reunião está afirmada diretamente."]}, {"prompt": "Leia: “O chão estava molhado e havia gotas na janela.” Sem outras informações, qual hipótese é compatível?", "options": ["É impossível ter chovido", "A cidade está sem água", "Pode ter chovido", "O chão está seco"], "answer": 2, "solution": ["Os sinais permitem a hipótese de chuva, mas não a tornam certeza."]}, {"prompt": "Leia: “Ana emprestou seu livro a Bia, que prometeu devolvê-lo amanhã.” O que será devolvido?", "options": ["A promessa", "Ana", "Bia", "O livro"], "answer": 3, "solution": ["O pronome em devolvê-lo retoma livro."]}], "conectivos": [{"prompt": "Em “Estudou bastante, portanto compreendeu o assunto”, portanto indica:", "options": ["Conclusão", "Oposição", "Alternância", "Tempo"], "answer": 0, "solution": ["Portanto apresenta uma conclusão."]}, {"prompt": "Complete com ideia de oposição: “Queria sair, ___ estava chovendo.”", "options": ["porque", "mas", "portanto", "quando"], "answer": 1, "solution": ["Mas introduz contraste entre a vontade e a situação."]}, {"prompt": "Em “Treine para que melhore”, para que expressa:", "options": ["Causa", "Comparação", "Finalidade", "Concessão"], "answer": 2, "solution": ["Melhorar é a finalidade do treino."]}, {"prompt": "Em “Ou lemos agora ou lemos depois”, ou...ou indica:", "options": ["Consequência", "Explicação", "Adição", "Alternância"], "answer": 3, "solution": ["A construção oferece alternativas."]}], "sentido": [{"prompt": "Em “O comentário foi uma ducha fria”, ducha fria significa:", "options": ["Uma decepção", "Um banho literal", "Uma festa", "Uma corrida"], "answer": 0, "solution": ["No uso figurado, expressa frustração ou desânimo."]}, {"prompt": "Em “A notícia correu pelo bairro”, correu significa:", "options": ["Praticou esporte", "Espalhou-se", "Caiu", "Foi escondida"], "answer": 1, "solution": ["O verbo indica divulgação rápida."]}, {"prompt": "Em “Ele tem um coração de pedra”, a expressão sugere:", "options": ["Doença confirmada", "Generosidade", "Insensibilidade", "Velocidade"], "answer": 2, "solution": ["A metáfora associa pedra à dureza emocional."]}, {"prompt": "Em “A negociação chegou a um ponto morto”, ponto morto indica:", "options": ["Uma vitória", "Uma localização exata", "Uma viagem", "Um impasse"], "answer": 3, "solution": ["A expressão indica ausência de avanço."]}], "figuras": [{"prompt": "Em “Esperei uma eternidade”, há principalmente:", "options": ["Hipérbole", "Eufemismo", "Onomatopeia", "Metonímia"], "answer": 0, "solution": ["Eternidade exagera o tempo da espera."]}, {"prompt": "Em “O vento sussurrou na janela”, ocorre:", "options": ["Antítese", "Personificação", "Comparação", "Pleonasmo"], "answer": 1, "solution": ["Sussurrar é uma ação humana atribuída ao vento."]}, {"prompt": "Em “Seus olhos brilham como estrelas”, ocorre:", "options": ["Metonímia", "Eufemismo", "Comparação", "Ironia"], "answer": 2, "solution": ["Como estabelece comparação explícita."]}, {"prompt": "Em “Era alegria e tristeza ao mesmo tempo”, ocorre:", "options": ["Onomatopeia", "Hipérbole", "Metáfora", "Antítese"], "answer": 3, "solution": ["Alegria e tristeza são ideias opostas."]}], "sintaxe": [{"prompt": "Em “Os jovens organizaram a feira”, o núcleo do sujeito é:", "options": ["jovens", "organizaram", "feira", "Os"], "answer": 0, "solution": ["O sujeito é Os jovens; seu núcleo é jovens."]}, {"prompt": "Em “Marina comprou um caderno”, um caderno funciona como:", "options": ["Sujeito", "Objeto direto", "Vocativo", "Predicativo"], "answer": 1, "solution": ["Completa comprou sem preposição exigida."]}, {"prompt": "Em “O aluno precisa de ajuda”, de ajuda funciona como:", "options": ["Sujeito", "Objeto direto", "Objeto indireto", "Vocativo"], "answer": 2, "solution": ["Precisar exige a preposição de nesse sentido."]}, {"prompt": "Em “Lucas, feche a porta”, Lucas funciona como:", "options": ["Objeto direto", "Predicado", "Adjunto adverbial", "Vocativo"], "answer": 3, "solution": ["Lucas é a pessoa chamada."]}], "morfologia": [{"prompt": "Na frase “A casa é ampla”, ampla é:", "options": ["Adjetivo", "Verbo", "Preposição", "Pronome"], "answer": 0, "solution": ["Ampla atribui uma característica à casa."]}, {"prompt": "Na frase “Nós viajamos ontem”, nós é:", "options": ["Substantivo", "Pronome pessoal", "Artigo", "Advérbio"], "answer": 1, "solution": ["Nós indica as pessoas que falam."]}, {"prompt": "Na frase “O gato dormiu”, o é:", "options": ["Verbo", "Numeral", "Artigo definido", "Adjetivo"], "answer": 2, "solution": ["O determina o substantivo gato."]}, {"prompt": "Na frase “Pedro chegou cedo”, cedo é:", "options": ["Artigo", "Pronome", "Substantivo", "Advérbio de tempo"], "answer": 3, "solution": ["Cedo modifica chegou, indicando tempo."]}], "concordancia": [{"prompt": "Qual frase está correta na norma-padrão?", "options": ["Faz dois anos que estudo aqui.", "Fazem dois anos que estudo aqui.", "Fazem tempo que estudo aqui.", "Fazem um ano que estudo aqui."], "answer": 0, "solution": ["Fazer indicando tempo decorrido é impessoal e fica no singular."]}, {"prompt": "Qual frase tem concordância correta?", "options": ["Haviam muitos alunos.", "Havia muitos alunos.", "Houveram muitos alunos.", "Haviam um aluno."], "answer": 1, "solution": ["Haver com sentido de existir é impessoal."]}, {"prompt": "Complete: “As portas estavam ___.”", "options": ["aberto", "aberta", "abertas", "abertos"], "answer": 2, "solution": ["O adjetivo concorda com portas: feminino plural."]}, {"prompt": "Qual frase está correta?", "options": ["Os estudantes chegou.", "As estudantes chegou.", "O estudante chegaram.", "Os estudantes chegaram."], "answer": 3, "solution": ["Sujeito e verbo concordam no plural."]}], "ortografia": [{"prompt": "Qual palavra está grafada corretamente?", "options": ["Privilégio", "Previlegio", "Priviléjio", "Previlejio"], "answer": 0, "solution": ["A grafia correta é privilégio."]}, {"prompt": "Complete: “Ele passou ___ porque estava doente.”", "options": ["mau", "mal", "mál", "máu"], "answer": 1, "solution": ["Mal é advérbio; opõe-se a bem."]}, {"prompt": "Qual palavra é uma proparoxítona?", "options": ["Café", "Papel", "Lâmpada", "Fácil"], "answer": 2, "solution": ["Lâm-pa-da tem tonicidade na antepenúltima sílaba."]}, {"prompt": "Qual palavra está escrita corretamente?", "options": ["Geito", "Jêito", "Geitto", "Jeito"], "answer": 3, "solution": ["Jeito é escrito com j e não tem acento."]}], "porcentagem": [{"prompt": "Um produto de R$ 240 recebe desconto de 25%. Qual é o preço final em reais?", "options": ["180", "240", "60", "300"], "answer": 0, "solution": ["Desconto: 240/4 = 60. Preço: 240 − 60 = 180."]}, {"prompt": "Um produto de R$ 280 recebe desconto de 25%. Qual é o preço final em reais?", "options": ["210", "280", "70", "350"], "answer": 0, "solution": ["Desconto: 280/4 = 70. Preço: 280 − 70 = 210."]}, {"prompt": "Um produto de R$ 320 recebe desconto de 25%. Qual é o preço final em reais?", "options": ["240", "320", "80", "400"], "answer": 0, "solution": ["Desconto: 320/4 = 80. Preço: 320 − 80 = 240."]}, {"prompt": "Um produto de R$ 360 recebe desconto de 25%. Qual é o preço final em reais?", "options": ["270", "360", "90", "450"], "answer": 0, "solution": ["Desconto: 360/4 = 90. Preço: 360 − 90 = 270."]}], "razao": [{"prompt": "Uma receita usa 2 xícaras de farinha para 3 de leite. Com 6 xícaras de farinha, quantas xícaras de leite mantêm a proporção?", "options": ["9", "6", "10", "3"], "answer": 0, "solution": ["O fator de multiplicação é 3; 3 × 3 = 9."]}, {"prompt": "Uma receita usa 2 xícaras de farinha para 3 de leite. Com 8 xícaras de farinha, quantas xícaras de leite mantêm a proporção?", "options": ["12", "8", "13", "4"], "answer": 0, "solution": ["O fator de multiplicação é 4; 3 × 4 = 12."]}, {"prompt": "Uma receita usa 2 xícaras de farinha para 3 de leite. Com 10 xícaras de farinha, quantas xícaras de leite mantêm a proporção?", "options": ["15", "10", "16", "5"], "answer": 0, "solution": ["O fator de multiplicação é 5; 3 × 5 = 15."]}, {"prompt": "Uma receita usa 2 xícaras de farinha para 3 de leite. Com 12 xícaras de farinha, quantas xícaras de leite mantêm a proporção?", "options": ["18", "12", "19", "6"], "answer": 0, "solution": ["O fator de multiplicação é 6; 3 × 6 = 18."]}], "area": [{"prompt": "Qual é o perímetro, em centímetros, de um retângulo de 7 cm por 3 cm?", "options": ["20", "21", "10", "17"], "answer": 0, "solution": ["Perímetro = 2 × (7 + 3) = 20 cm."]}, {"prompt": "Qual é o perímetro, em centímetros, de um retângulo de 8 cm por 4 cm?", "options": ["24", "32", "12", "20"], "answer": 0, "solution": ["Perímetro = 2 × (8 + 4) = 24 cm."]}, {"prompt": "Qual é o perímetro, em centímetros, de um retângulo de 9 cm por 5 cm?", "options": ["28", "45", "14", "23"], "answer": 0, "solution": ["Perímetro = 2 × (9 + 5) = 28 cm."]}, {"prompt": "Qual é o perímetro, em centímetros, de um retângulo de 10 cm por 6 cm?", "options": ["32", "60", "16", "26"], "answer": 0, "solution": ["Perímetro = 2 × (10 + 6) = 32 cm."]}], "equacoes": [{"prompt": "Resolva: 4x + 7 = 39.", "options": ["8", "9", "6", "32"], "answer": 0, "solution": ["4x = 32; x = 8."]}, {"prompt": "Resolva: 4x + 7 = 43.", "options": ["9", "10", "7", "36"], "answer": 0, "solution": ["4x = 36; x = 9."]}, {"prompt": "Resolva: 4x + 7 = 47.", "options": ["10", "11", "8", "40"], "answer": 0, "solution": ["4x = 40; x = 10."]}, {"prompt": "Resolva: 4x + 7 = 51.", "options": ["11", "12", "9", "44"], "answer": 0, "solution": ["4x = 44; x = 11."]}], "estatistica": [{"prompt": "Qual é a mediana de 7, 14, 10, 9 e 12?", "options": ["10", "11", "9", "12"], "answer": 0, "solution": ["Em ordem: 7, 9, 10, 12, 14. O valor central é 10."]}, {"prompt": "Qual é a mediana de 8, 15, 11, 10 e 13?", "options": ["11", "12", "10", "13"], "answer": 0, "solution": ["Em ordem: 8, 10, 11, 13, 15. O valor central é 11."]}, {"prompt": "Qual é a mediana de 9, 16, 12, 11 e 14?", "options": ["12", "13", "11", "14"], "answer": 0, "solution": ["Em ordem: 9, 11, 12, 14, 16. O valor central é 12."]}, {"prompt": "Qual é a mediana de 10, 17, 13, 12 e 15?", "options": ["13", "14", "12", "15"], "answer": 0, "solution": ["Em ordem: 10, 12, 13, 15, 17. O valor central é 13."]}], "potenciacao": [{"prompt": "Qual é a raiz quadrada positiva de 49?", "options": ["7", "6", "8", "14"], "answer": 0, "solution": ["7 × 7 = 49."]}, {"prompt": "Qual é a raiz quadrada positiva de 64?", "options": ["8", "7", "9", "16"], "answer": 0, "solution": ["8 × 8 = 64."]}, {"prompt": "Qual é a raiz quadrada positiva de 81?", "options": ["9", "8", "10", "18"], "answer": 0, "solution": ["9 × 9 = 81."]}, {"prompt": "Qual é a raiz quadrada positiva de 100?", "options": ["10", "9", "11", "20"], "answer": 0, "solution": ["10 × 10 = 100."]}], "produtos_notaveis": [{"prompt": "Qual é a expansão de (x + 6)²?", "options": ["x² + 12x + 36", "x² + 36", "x² + 6x + 36", "x² − 12x + 36"], "answer": 0, "solution": ["(x+a)² = x² + 2ax + a²; a = 6."]}, {"prompt": "Qual é a expansão de (x + 7)²?", "options": ["x² + 14x + 49", "x² + 49", "x² + 7x + 49", "x² − 14x + 49"], "answer": 0, "solution": ["(x+a)² = x² + 2ax + a²; a = 7."]}, {"prompt": "Qual é a expansão de (x + 8)²?", "options": ["x² + 16x + 64", "x² + 64", "x² + 8x + 64", "x² − 16x + 64"], "answer": 0, "solution": ["(x+a)² = x² + 2ax + a²; a = 8."]}, {"prompt": "Qual é a expansão de (x + 9)²?", "options": ["x² + 18x + 81", "x² + 81", "x² + 9x + 81", "x² − 18x + 81"], "answer": 0, "solution": ["(x+a)² = x² + 2ax + a²; a = 9."]}], "sistemas": [{"prompt": "No sistema x + y = 10 e x − y = 4, qual é o valor de x?", "options": ["7", "3", "10", "1"], "answer": 0, "solution": ["Somando as equações: 2x = 14; x = 7."]}, {"prompt": "No sistema x + y = 12 e x − y = 4, qual é o valor de x?", "options": ["8", "4", "12", "1"], "answer": 0, "solution": ["Somando as equações: 2x = 16; x = 8."]}, {"prompt": "No sistema x + y = 14 e x − y = 4, qual é o valor de x?", "options": ["9", "5", "14", "1"], "answer": 0, "solution": ["Somando as equações: 2x = 18; x = 9."]}, {"prompt": "No sistema x + y = 16 e x − y = 4, qual é o valor de x?", "options": ["10", "6", "16", "1"], "answer": 0, "solution": ["Somando as equações: 2x = 20; x = 10."]}], "geometria": [{"prompt": "Dois ângulos internos de um triângulo medem 40° e 65°. Quanto mede o terceiro?", "options": ["75", "90", "100", "120"], "answer": 0, "solution": ["A soma é 180°; 180 − 40 − 65 = 75°."]}, {"prompt": "Dois ângulos internos de um triângulo medem 45° e 65°. Quanto mede o terceiro?", "options": ["70", "90", "100", "120"], "answer": 0, "solution": ["A soma é 180°; 180 − 45 − 65 = 70°."]}, {"prompt": "Dois ângulos internos de um triângulo medem 50° e 65°. Quanto mede o terceiro?", "options": ["65", "90", "100", "120"], "answer": 0, "solution": ["A soma é 180°; 180 − 50 − 65 = 65°."]}, {"prompt": "Dois ângulos internos de um triângulo medem 55° e 65°. Quanto mede o terceiro?", "options": ["60", "90", "100", "120"], "answer": 0, "solution": ["A soma é 180°; 180 − 55 − 65 = 60°."]}], "probabilidade": [{"prompt": "Uma caixa contém 2 fichas azuis e 10 brancas. Qual é a probabilidade de retirar uma azul ao acaso?", "options": ["2/12", "10/12", "2/10", "1/12"], "answer": 0, "solution": ["São 2 casos favoráveis em 12 fichas equiprováveis."]}, {"prompt": "Uma caixa contém 3 fichas azuis e 9 brancas. Qual é a probabilidade de retirar uma azul ao acaso?", "options": ["3/12", "9/12", "3/9", "1/12"], "answer": 0, "solution": ["São 3 casos favoráveis em 12 fichas equiprováveis."]}, {"prompt": "Uma caixa contém 4 fichas azuis e 8 brancas. Qual é a probabilidade de retirar uma azul ao acaso?", "options": ["4/12", "8/12", "4/8", "1/12"], "answer": 0, "solution": ["São 4 casos favoráveis em 12 fichas equiprováveis."]}, {"prompt": "Uma caixa contém 5 fichas azuis e 7 brancas. Qual é a probabilidade de retirar uma azul ao acaso?", "options": ["5/12", "7/12", "5/7", "1/12"], "answer": 0, "solution": ["São 5 casos favoráveis em 12 fichas equiprováveis."]}]};
+    SUBJECTS.forEach(function(s){s.topics.forEach(function(t){t.pool=t.pool.concat(SUPPLEMENTAL[t.id]||[]);});});
+    SUBJECTS = SUBJECTS.concat(window.NEXT_SUBJECTS || []);
+    COMING_SOON_SUBJECTS = [];
+    var DUEL_SIZE = 12;
+    var PASS_SCORE = 10;
+    var LIVES_MAX = 3;
+    var STORAGE_KEY = "rota-etec-v2";
+
+    /* ---------------- ESTADO ---------------- */
+
+    function defaultState() {
+      return { xp: 0, coins: 0, streak: 0, lastDate: null, completed: {}, rankedCleared: {}, wrongLog: {}, usedIdx: {}, mode: "jogo", theme: "base", solvedKeys: {}, examDrafts: {}, examResults: {}, bossResults: [] };
+    }
+    var storageAvailable = true;
+    var state = loadState();
+    function loadState() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return defaultState();
+        return Object.assign(defaultState(), JSON.parse(raw));
+      } catch (e) { storageAvailable=false; return defaultState(); }
+    }
+    function saveState() { if(window.NextAccounts)window.NextAccounts.onSave(); try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) { storageAvailable=false; if(document.getElementById("storage-warning")) document.getElementById("storage-warning").hidden=false; } }
+    function localDate(d) {return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+    function todayStr() { return localDate(new Date()); }
+    (function bumpStreak() {
+      var today = todayStr();
+      if (state.lastDate === today) return;
+      var y = new Date(); y.setDate(y.getDate() - 1);
+      var yStr = localDate(y);
+      state.streak = (state.lastDate === yStr) ? state.streak + 1 : 1;
+      state.lastDate = today;
+      saveState();
+    })();
+
+    function findSubject(id) { return SUBJECTS.filter(function (s) { return s.id === id; })[0]; }
+    function findTopic(subjectId, topicId) {
+      var s = findSubject(subjectId);
+      return s ? s.topics.filter(function (t) { return t.id === topicId; })[0] : null;
+    }
+    function topicKey(subjectId, topicId) { return subjectId + "-" + topicId; }
+    function isTopicDone(subjectId, topicId) { return !!state.completed[topicKey(subjectId, topicId)]; }
+    function subjectDoneCount(subject) { return subject.topics.filter(function (t) { return isTopicDone(subject.id, t.id); }).length; }
+    function subjectFullyDone(subject) { return subjectDoneCount(subject) === subject.topics.length; }
+
+    /* ---------------- ÁUDIO ---------------- */
+
+    function speak(text) {
+      try {
+        window.speechSynthesis.cancel();
+        var u = new SpeechSynthesisUtterance(text);
+        u.lang = "pt-BR"; u.rate = 0.95;
+        window.speechSynthesis.speak(u);
+      } catch (e) {}
+    }
+    var audioCtx = null;
+    function getCtx() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); return audioCtx; }
+    var beatTimer = null;
+    function toggleBeat(btn) {
+      if (beatTimer) { clearInterval(beatTimer); beatTimer = null; btn.textContent = "🥁 Tocar batida"; btn.classList.remove("active"); return; }
+      var ctx = getCtx(); var step = 0; var interval = (60 / 92) * 1000 / 2;
+      function kick() {
+        var o = ctx.createOscillator(); var g = ctx.createGain();
+        o.frequency.setValueAtTime(120, ctx.currentTime);
+        o.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.15);
+        g.gain.setValueAtTime(0.9, ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+        o.connect(g); g.connect(ctx.destination); o.start(); o.stop(ctx.currentTime + 0.2);
+      }
+      function hat() {
+        var bufferSize = ctx.sampleRate * 0.04;
+        var buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        var data = buffer.getChannelData(0);
+        for (var i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * 0.3;
+        var src = ctx.createBufferSource(); src.buffer = buffer;
+        var g = ctx.createGain(); g.gain.setValueAtTime(0.35, ctx.currentTime);
+        src.connect(g); g.connect(ctx.destination); src.start();
+      }
+      beatTimer = setInterval(function () { if (step % 4 === 0) kick(); if (step % 2 === 1) hat(); step = (step + 1) % 8; }, interval);
+      btn.textContent = "⏹ Parar batida"; btn.classList.add("active");
+    }
+
+    /* ---------------- LÓGICA DE PERGUNTAS ---------------- */
+
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+      return a;
+    }
+
+    function pickFreshIndices(key, poolLength, count) {
+      var used = state.usedIdx[key] || [];
+      var all = []; for (var i = 0; i < poolLength; i++) all.push(i);
+      var avail = all.filter(function (i) { return used.indexOf(i) === -1; });
+      var chosen;
+      if (avail.length >= count) {
+        chosen = shuffle(avail).slice(0, count);
+      } else {
+        chosen = avail.slice();
+        var freshPool = shuffle(all.filter(function (i) { return chosen.indexOf(i) === -1; }));
+        chosen = chosen.concat(freshPool.slice(0, count - chosen.length));
+        used = [];
+      }
+      state.usedIdx[key] = used.concat(chosen);
+      if (state.usedIdx[key].length >= poolLength) state.usedIdx[key] = [];
+      saveState();
+      return chosen;
+    }
+
+    function shuffleOptions(q) {
+      var opts = q.options.map(function (opt, idx) { return { opt: opt, orig: idx }; });
+      opts = shuffle(opts);
+      return {
+        prompt: q.prompt,
+        sourceKey: JSON.stringify([q.prompt,q.options]),
+        solution: q.solution,
+        options: opts.map(function (o) { return o.opt; }),
+        answer: opts.findIndex(function (o) { return o.orig === q.answer; })
+      };
+    }
+
+    function buildDuel(pool, count, keyForFreshness) {
+      var idxs = keyForFreshness ? pickFreshIndices(keyForFreshness, pool.length, count) : shuffle(pool.map(function (_, i) { return i; })).slice(0, count);
+      return idxs.map(function (i) { return shuffleOptions(pool[i]); });
+    }
+
+    /* ---------------- NAVEGAÇÃO / DUELO ---------------- */
+
+    var view = { name: "home" };
+    var duel = null;
+
+    function go(v) { view = v; duel = null; render(); window.scrollTo(0, 0); }
+
+    function topicUnlocked(subjectId, topicId) { var s=findSubject(subjectId); if(!s)return false;var i=s.topics.findIndex(function(t){return t.id===topicId;});return i>=0&&(i===0||isTopicDone(subjectId,s.topics[i-1].id)||isTopicDone(subjectId,topicId)); }
+    function startTopicDuel(subjectId, topicId) {
+      if(!topicUnlocked(subjectId,topicId)){toast("Domine o tópico anterior com 10 acertos para avançar.");return;}
+      var topic = findTopic(subjectId, topicId);
+      var key = topicKey(subjectId, topicId);
+      var questions = buildDuel(topic.pool, Math.min(DUEL_SIZE, topic.pool.length), key);
+      duel = { subjectId: subjectId, topicId: topicId, isRanked: false, questions: questions, index: 0, round: 1, correctCount: 0, wrongThisRound: [], phase: "asking" };
+      view = { name: "duel" };
+      render(); window.scrollTo(0, 0);
+    }
+
+    function startNextRound() {
+      if(!duel||duel.phase!=="roundResult")return;
+      var topic = findTopic(duel.subjectId, duel.topicId);
+      var key = topicKey(duel.subjectId, duel.topicId);
+      var previous = duel.questions.map(function(q){return q.sourceKey;});
+      var available = topic.pool.filter(function(q){return previous.indexOf(JSON.stringify([q.prompt,q.options])) === -1;});
+      if (available.length < DUEL_SIZE) { toast("Banco insuficiente para 12 perguntas diferentes."); return; }
+      duel.questions = shuffle(available).slice(0, DUEL_SIZE).map(shuffleOptions);
+      duel.correctCount = 0;
+      duel.index = 0;
+      duel.selected = null;
+      duel.wrongThisRound = [];
+      duel.round = (duel.round || 1) + 1;
+      duel.phase = "asking";
+      render(); window.scrollTo(0, 0);
+    }
+
+    function startRankedDuel(subjectId) {
+      var subject = findSubject(subjectId);
+      if(!subject||!subjectFullyDone(subject)){toast("Domine os tópicos para liberar a ranqueada.");return;}
+      var pool = [];
+      subject.topics.forEach(function (t) { pool = pool.concat(t.pool); });
+      var questions = shuffle(pool).slice(0, 15).map(shuffleOptions);
+      duel = { subjectId: subjectId, topicId: null, isRanked: true, isRevanche: false, questions: questions, index: 0, lives: LIVES_MAX, correctCount: 0, wrongPrompts: [], phase: "asking" };
+      view = { name: "duel" };
+      render(); window.scrollTo(0, 0);
+    }
+
+    function answerQuestion(optIndex) {
+      if (!duel || duel.phase !== "asking") return;
+      if(!duel || !Number.isInteger(optIndex)) return;
+      var q = duel.questions[duel.index];
+      if(optIndex<0||optIndex>=q.options.length)return;
+      duel.selected = optIndex;
+      var correct = optIndex === q.answer;
+      if (correct) { duel.correctCount++; if(!state.solvedKeys) state.solvedKeys={}; var solvedKey=duel.subjectId+"|"+q.sourceKey; if(!state.solvedKeys[solvedKey]){state.solvedKeys[solvedKey]=true;state.xp+=10;} }
+      else if (duel.isRanked) { duel.lives--; duel.wrongPrompts.push(q.prompt); }
+      else { duel.wrongThisRound.push(q); }
+      saveState();
+      duel.phase = "feedback";
+      render();
+    }
+
+    function nextQuestion() {
+      if(!duel||duel.phase!=="feedback")return;
+      if (duel.isRanked) {
+        if (duel.lives <= 0) {
+          duel.phase = "defeat";
+          applyDuelEnd(false);
+        } else if (duel.index === duel.questions.length - 1) {
+          duel.phase = "victory";
+          applyDuelEnd(true);
+        } else {
+          duel.index++;
+          duel.phase = "asking";
+          duel.selected = null;
+        }
+      } else {
+        if (duel.index === duel.questions.length - 1) {
+          if (duel.correctCount >= PASS_SCORE) {
+            duel.phase = "victory";
+            applyDuelEnd(true);
+          } else {
+            duel.phase = "roundResult";
+            var pendingKey=topicKey(duel.subjectId,duel.topicId);
+            state.wrongLog[pendingKey]=Array.from(new Set((state.wrongLog[pendingKey]||[]).concat(duel.wrongThisRound.map(function(q){return q.prompt;}))));
+            saveState();
+          }
+        } else {
+          duel.index++;
+          duel.phase = "asking";
+          duel.selected = null;
+        }
+      }
+      render();
+    }
+
+    var duelEndApplied = false;
+    function applyDuelEnd(passed) {
+      if (duelEndApplied) return;
+      duelEndApplied = true;
+      if (duel.isRanked) {
+        if (passed && !state.rankedCleared[duel.subjectId]) { state.rankedCleared[duel.subjectId] = true; state.coins += 100; toast("Ranqueada dominada!"); }
+      } else {
+        var key = topicKey(duel.subjectId, duel.topicId);
+        if (passed) {
+          if (!state.completed[key]) { state.completed[key] = true; state.coins += 30; toast("Tópico dominado!"); }
+          delete state.wrongLog[key];
+        } else {
+          var existing = state.wrongLog[key] || [];
+          duel.wrongPrompts.forEach(function (p) { if (existing.indexOf(p) === -1) existing.push(p); });
+          state.wrongLog[key] = existing;
+        }
+      }
+      saveState();
+    }
+
+    function retryDuel() {
+      duelEndApplied = false;
+      if (duel.isRanked) startRankedDuel(duel.subjectId);
+      else startTopicDuel(duel.subjectId, duel.topicId);
+    }
+
+    var toastTimer = null;
+    function toast(msg) {
+      var el = document.getElementById("toast");
+      if (!el) { el = document.createElement("div"); el.id = "toast"; el.className = "toast"; document.body.appendChild(el); }
+      el.textContent = msg; el.style.display = "block";
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { el.style.display = "none"; }, 2600);
+    }
+
+    function toggleReadingMode() {
+      state.mode = state.mode === "leitura" ? "jogo" : "leitura";
+      state.theme="base";state.mode="jogo";document.documentElement.setAttribute("data-mode", "jogo");
+      saveState(); render();
+    }
+
+    var rapOpen = {};
+    function toggleRap(subjectId, topicId) {
+      var k = topicKey(subjectId, topicId);
+      rapOpen[k] = !rapOpen[k];
+      render();
+    }
+
+    /* ---------------- RENDER ---------------- */
+
+    function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+
+    function renderTopbar() {
+      var r = rankFor(state.xp), nr = nextRank(state.xp);
+      var minimum = r.min || 0;
+      var progress = nr ? Math.max(0, Math.min(100, Math.round((state.xp-minimum)/(nr.min-minimum)*100))) : 100;
+      return '<header class="topbar"><div class="topbar-inner">' +
+        '<a class="brand-mini" aria-label="Next Level — início" href="#" onclick="RotaGame.go({name:\'home\'});return false;"><img class="brand-logo" src="assets/next-level-for-etec.png" width="1800" height="872" alt="Next Level for ETEC"></a>' +
+        '<div class="header-tools">' + (window.NextAccounts ? window.NextAccounts.nav() : '') + (window.NextMusic ? window.NextMusic.button() : '') + '</div>' +
+        '<div class="xp-panel" style="--rank-color:' + r.color + '"><div class="xp-caption"><span class="xp-total">' + state.xp + ' <small>XP farmados</small></span><span class="xp-rank">' + r.name + '</span></div><div class="xp-track" role="progressbar" aria-label="Progresso até o próximo rank" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + progress + '"><span style="width:' + progress + '%"></span></div><div class="xp-next">' + (nr ? 'Faltam ' + (nr.min-state.xp) + ' XP para ' + nr.name : 'Você chegou ao rank máximo') + '</div></div>' +
+        '</div></header>'; 
+    }
+
+    function renderHome() {
+      var monsterCount = Object.keys(state.wrongLog).filter(function (k) { return state.wrongLog[k].length > 0; }).length;
+      var html = '';
+      html += '<section class="hero"><h1>Seu futuro. Seu próximo nível.</h1><p>Escolha uma matéria. Entenda o assunto, pratique e farme XP.</p></section>';
+      html += '<div class="subjects">';
+      window.NEXT_CURRICULUM.forEach(function (subject) {
+        var done = 0;var marks={pt:'PT',mat:'∑',bio:'BIO',geo:'GEO',hist:'HIS',qui:'QUÍ',fis:'FÍS'};var mark=marks[subject.id]||subject.name.substring(0,3).toUpperCase();
+        html += (
+          '<button class="subject-card" style="--tone:' + subject.toneHex + '" onclick="RotaGame.go({name:\'subject\',subjectId:\'' + subject.id + '\'})">' +
+            '<div class="subject-emblem" aria-hidden="true">'+mark+'</div><div class="subject-info">' +
+              '<div class="subject-tag">' + ('ANÁLISE DAS PROVAS · ' + subject.percent.toFixed(1).replace('.',',') + '%') + '</div>' +
+              '<h2>' + subject.name + '</h2>' +
+              '<p>' + done + ' de ' + subject.topics.length + ' tópicos dominados</p><small class="subject-materials">Confira tópicos e materiais disponíveis</small>' +
+              '<div class="subject-stars">' + subject.topics.map(function (t) { return '<i class="' + (isTopicDone(subject.id, t.id) ? "on" : "") + '"></i>'; }).join('') + '</div>' +
+            '</div>' +
+            '<div class="subject-arrow">›</div>' +
+          '</button>'
+        );
+      });
+      COMING_SOON_SUBJECTS.forEach(function (subject) {
+        html += (
+          '<div class="subject-card" style="--tone:' + subject.toneHex + ';opacity:.55">' +
+            '<div style="flex:1">' +
+              '<div class="subject-tag">' + ('ANÁLISE DAS PROVAS · ' + subject.percent.toFixed(1).replace('.',',') + '%') + '</div>' +
+              '<h2>' + subject.name + '</h2>' +
+              '<p>Em construção — ainda não tem conteúdo verificado aqui</p>' +
+            '</div>' +
+            '<div class="subject-arrow">🔒</div>' +
+          '</div>'
+        );
+      });
+      html += '</div>';
+      html += '<button class="subject-card official-card challenge-card" style="--tone:#69d5ff" onclick="RotaGame.go({name:\'official\'})"><span class="subject-emblem exam-symbol" aria-hidden="true">▤</span><span class="subject-info"><span class="subject-tag">VESTIBULINHO ETEC</span><h2>ARENA ETEC</h2><p>Provas e gabaritos para treinar.</p><small class="subject-materials">PDF · Questões · Gabarito</small></span><span class="subject-arrow">›</span></button>';
+      html += '<button class="chefao-banner challenge-card" onclick="NextModules.startBoss(false)"><span class="crown">⚡</span><span class="txt"><span class="eyebrow">DESAFIO COMPLETO</span><h2>DESAFIO FINAL</h2><p>180 questões autorais, sete matérias e resoluções ao finalizar.</p></span><span class="arrow">›</span></button>';
+      html += '<p class="theme-card-note">34 tópicos · 891 perguntas de treino · 12 por rodada · avance com 10 acertos.</p>';
+      if (monsterCount > 0) html += '<button class="den-btn" onclick="RotaGame.go({name:\'den\'})">⚠ Pendências pra revisar <span class="count">' + monsterCount + '</span></button>';
+      return html;
+    }
+
+    function renderOfficial(){return window.NextModules.renderOfficial(view.examId);}
+    function renderSubject(subjectId) {
+      var subject = findSubject(subjectId);
+      var html = '';
+      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'home\'})">‹</button><div><h2>' + subject.name + '</h2><small>' + subject.tag + '</small></div></div>';
+      html += '<p class="module-intro">Os materiais existentes estão liberados para estudar. Abra um tópico para ver o resumo, a videoaula, a leitura e os exercícios. Os duelos avançam por etapas.</p>';
+      subject.topics.forEach(function (t, idx) {
+        var done = isTopicDone(subject.id, t.id);
+        var unlocked = topicUnlocked(subject.id,t.id);
+        html += (
+          '<button class="topic-row ' + (done ? "done" : "") + '" onclick="RotaGame.go({name:\'topic\',subjectId:\'' + subject.id + '\',topicId:\'' + t.id + '\'})">' +
+            '<div class="topic-num">' + (done ? "✔" : (idx + 1)) + '</div>' +
+            '<div class="topic-body"><strong>' + t.title + '</strong><small>' + ('Resumo, videoaula e exercícios · ' + t.pool.length + ' perguntas' + (!unlocked ? ' · duelo libera após o anterior' : '')) + '</small></div>' +
+            '<div class="chev">›</div>' +
+          '</button>'
+        );
+      });
+      var full = subjectFullyDone(subject);
+      var rankedDone = !!state.rankedCleared[subject.id];
+      html += (
+        '<button class="topic-row ranked-row ' + (full ? "" : "locked") + '" ' + (full ? ('onclick="RotaGame.startRanked(\'' + subject.id + '\')"') : '') + '>' +
+          '<div class="topic-num">' + (rankedDone ? "🏆" : "★") + '</div>' +
+          '<div class="topic-body"><strong>Prova Ranqueada</strong><small>' + (full ? (rankedDone ? "Vencida — pode repetir pra treinar" : "15 perguntas, misturando todos os tópicos") : "Domine todos os tópicos pra liberar") + '</small></div>' +
+          '<div class="chev">' + (full ? "›" : "🔒") + '</div>' +
+        '</button>'
+      );
+      return html;
+    }
+
+    function renderTopic(subjectId, topicId) {
+      var subject = findSubject(subjectId);
+      var t = findTopic(subjectId, topicId);
+      var done = isTopicDone(subjectId, topicId);
+      var html = '';
+      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'subject\',subjectId:\'' + subjectId + '\'})">‹</button><h2>' + t.title + '</h2></div>';
+      html += window.NextModules.renderStudyStart(subject.name, topicId);
+      html += '<div class="card" style="--tone:' + subject.toneHex + '"><h3>Resumo do tópico</h3><ul class="chunk-list">' + t.explain.map(function (l) { return '<li>' + esc(l) + '</li>'; }).join('') + '</ul>';
+      html += '<div class="example-box"><span>Exemplo</span>' + esc(t.example) + '</div>';
+      html += window.NextModules.renderStudyLinks(subject.name, topicId);
+      html += '</div>';
+      html += window.ReadingCheck.button(subjectId, topicId);
+      html += topicUnlocked(subjectId, topicId) ? '<button class="primary-btn" style="--tone:' + subject.toneHex + '" onclick="RotaGame.startTopic(\'' + subjectId + '\',\'' + topicId + '\')">' + (done ? "Duelar de novo" : "Iniciar duelo · " + Math.min(DUEL_SIZE, t.pool.length) + " perguntas · avance com 10 acertos") + '</button>' : '<div class="card duel-locked"><strong>Estude agora. O duelo vem depois.</strong><p>Acerte 10 de 12 no tópico anterior para liberar este duelo. O resumo, os links e a checagem de leitura já estão disponíveis.</p></div>';
+      return html;
+    }
+
+    function renderLives() {
+      var pips = '';
+      for (var i = 0; i < LIVES_MAX; i++) pips += '<span class="life ' + (i < duel.lives ? "" : "lost") + '"></span>';
+      return '<div class="lives-row"><div class="lives">' + pips + '</div><div class="qcount">' + (duel.index + 1) + ' / ' + duel.questions.length + '</div></div>';
+    }
+    function renderProgress() {
+      if (duel.isRanked) return renderLives();
+      var roundBadge = duel.round > 1 ? '<span class="round-badge">Rodada ' + duel.round + '</span>' : '';
+      return '<div class="lives-row">' + roundBadge + '<div class="qcount">' + (duel.index + 1) + ' / ' + duel.questions.length + '</div></div>';
+    }
+
+    function renderDuel() {
+      var subject = findSubject(duel.subjectId);
+      var title = duel.isRanked ? "Ranqueada · " + subject.name : findTopic(duel.subjectId, duel.topicId).title;
+      var backOnclick = duel.isRanked
+        ? ("RotaGame.go({name:'subject',subjectId:'" + duel.subjectId + "'})")
+        : ("RotaGame.go({name:'topic',subjectId:'" + duel.subjectId + "',topicId:'" + duel.topicId + "'})");
+      var html = '';
+      html += '<div class="screen-header"><button class="back-btn" onclick="' + backOnclick + '">‹</button><h2>' + title + '</h2></div>';
+
+      if (duel.phase === "roundResult") {
+        var n = duel.wrongThisRound.length;
+        html += '<div class="result-banner lose"><h3>Mais uma rodada</h3><p>Errou ' + n + ' pergunta' + (n > 1 ? "s" : "") + '. São necessários 10 acertos de 12. Revise antes de continuar:</p></div>';
+        html += '<div class="card"><h3>Pra revisar</h3>';
+        duel.wrongThisRound.forEach(function (q) {
+          html += '<div class="recap-item"><strong>' + esc(q.prompt) + '</strong><span class="recap-correct">Resposta certa: ' + esc(q.options[q.answer]) + '</span>' + (q.solution ? '<ol>' + q.solution.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol>' : '') + '</div>';
+        });
+        html += '</div>';
+        html += '<button class="primary-btn" style="--tone:' + subject.toneHex + '" onclick="RotaGame.nextRound()">Nova rodada · 12 perguntas diferentes</button>';
+        return html;
+      }
+
+      if (duel.phase === "victory" || duel.phase === "defeat") {
+        var passed = duel.phase === "victory";
+        var title = passed ? (duel.isRanked ? "Vitória!" : "Tópico dominado!") : "Você perdeu todas as vidas";
+        var sub = duel.isRanked
+          ? (duel.correctCount + ' de ' + duel.questions.length + ' certas' + (passed ? " · desafio dominado" : ""))
+          : (passed ? (duel.correctCount + " de 12 acertos" + (duel.round > 1 ? " (depois de " + duel.round + " rodadas)" : "") + " · tópico dominado") : "");
+        html += '<div class="result-banner ' + (passed ? "win" : "lose") + '"><h3>' + title + '</h3><p>' + sub + '</p></div>';
+        if (duel.isRanked && duel.wrongPrompts.length > 0) {
+          html += '<div class="card"><h3>Pra revisar</h3>';
+          duel.questions.forEach(function (q) {
+            if (duel.wrongPrompts.indexOf(q.prompt) !== -1) {
+              html += '<div class="recap-item"><strong>' + esc(q.prompt) + '</strong>' + (q.solution ? q.solution.map(function (s) { return esc(s); }).join(' · ') : '') + '</div>';
+            }
+          });
+          html += '</div>';
+        }
+        if (passed) html += '<button class="primary-btn" style="--tone:' + subject.toneHex + '" onclick="' + backOnclick + '">Continuar</button>';
+        else {
+          html += '<button class="primary-btn" style="--tone:' + subject.toneHex + '" onclick="RotaGame.retryDuel()">Tentar de novo (perguntas novas)</button>';
+          html += '<button class="ghost-btn" onclick="' + backOnclick + '">Voltar e estudar antes</button>';
+        }
+        return html;
+      }
+
+      html += renderProgress();
+      var q = duel.questions[duel.index];
+      html += '<div class="question-card"><p class="prompt">' + esc(q.prompt) + '</p><div class="options">';
+      q.options.forEach(function (opt, oi) {
+        var cls = "option-btn";
+        var disabled = duel.phase === "feedback";
+        if (disabled) {
+          if (oi === q.answer) cls += " correct";
+          else if (oi === duel.selected) cls += " wrong";
+        }
+        html += '<button class="' + cls + '" ' + (disabled ? "disabled" : 'onclick="RotaGame.answer(' + oi + ')"') + '><span class="letter">' + String.fromCharCode(65 + oi) + '</span>' + esc(opt) + '</button>';
+      });
+      html += '</div>';
+      if (duel.phase === "feedback") {
+        var ok = duel.selected === q.answer;
+        html += '<div class="solution-box ' + (ok ? "ok" : "no") + '"><strong>' + (ok ? "Certo — como resolve:" : "Errou — como resolve:") + '</strong><ol>' + (q.solution || []).map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ol><a href="https://drive.google.com/file/d/1zvz3NLCsSmid_rC-3qn1efbcdiBLoDI1/view?usp=drivesdk" target="_blank" rel="noopener">Registro da explicação ↗</a></div>';
+        var isLastStep = duel.lives <= 0 || duel.index === duel.questions.length - 1;
+        html += '<button class="primary-btn" style="--tone:' + subject.toneHex + '" onclick="RotaGame.nextQuestion()">' + (isLastStep ? "Ver resultado" : "Próxima pergunta") + '</button>';
+      }
+      html += '</div>';
+      return html;
+    }
+
+    function renderDen() {
+      var html = '';
+      html += '<div class="screen-header"><button class="back-btn" onclick="RotaGame.go({name:\'home\'})">‹</button><h2>Pendências</h2></div>';
+      var rows = [];
+      SUBJECTS.forEach(function (subject) {
+        subject.topics.forEach(function (t) {
+          var key = topicKey(subject.id, t.id);
+          var wrong = state.wrongLog[key] || [];
+          if (wrong.length > 0) rows.push({ subject: subject, topic: t, count: wrong.length });
+        });
+      });
+      if (rows.length === 0) html += '<p class="empty-note">Nada pendente. Quando você perder um duelo, o tópico aparece aqui pra revanche.</p>';
+      else rows.forEach(function (r) {
+        html += (
+          '<button class="monster-row" onclick="RotaGame.startRevanche(\'' + r.subject.id + '\',\'' + r.topic.id + '\')">' +
+            '<span class="info"><strong>' + r.topic.title + '</strong><small>' + r.count + ' pergunta' + (r.count > 1 ? "s" : "") + ' pra revisar</small></span>' +
+            '<span class="chev">›</span>' +
+          '</button>'
+        );
+      });
+      return html;
+    }
+
+    function render() {
+      state.theme="base";state.mode="jogo";document.documentElement.setAttribute("data-mode", "jogo");
+      document.documentElement.setAttribute("data-theme", "base");
+      var app = document.getElementById("app");
+      var body = "";
+      if (view.name === "home") body = renderHome();
+      else if (view.name === "subject") body = window.NextCurriculum.renderSubject(view.subjectId);
+      else if (view.name === "curriculumTopic") body = window.NextCurriculum.renderTopic(view.subjectId, view.topicId);
+      else if (view.name === "topic") body = renderTopic(view.subjectId, view.topicId);
+      else if (view.name === "duel") body = renderDuel();
+      else if (view.name === "den") body = renderDen();
+      else if (view.name === "official") body = renderOfficial();
+      else if (view.name === "readingCheck") body = window.ReadingCheck.render();
+      else if (view.name === "boss") body = window.NextModules.renderBoss();
+      else if(window.NextAccounts)body=window.NextAccounts.render(view);
+      if(view.name==="duel" && duel && duel.onlinePending)body+='<button class="primary-btn" onclick="NextAccounts.retrySync()">Sincronizar rodada</button>';
+      if(window.NextMusic)window.NextMusic.scene(view.name);
+      app.innerHTML = renderTopbar() + body + '<p id="storage-warning" '+(storageAvailable?'hidden':'')+' role="status">O navegador bloqueou o salvamento. Mantenha a página aberta para preservar esta sessão.</p>';
+    }
+
+    window.NEXT_ENGINE = { subjects: SUBJECTS, state:function(){return state;}, view:function(){return view;}, duel:function(){return duel;}, save:saveState, go:go, render:render, installOnlineDuel:function(s,t,ranked,questions){duelEndApplied=false;duel={subjectId:s,topicId:t,isRanked:ranked,questions:questions,index:0,round:1,correctCount:0,wrongThisRound:[],wrongPrompts:[],lives:LIVES_MAX,phase:"asking"};view={name:"duel"};render();window.scrollTo(0,0);} };
+    window.RotaGame = {
+      go: go,
+      setTheme: function(t){state.theme="base";saveState();render();},
+      startTopic: function (subjectId, topicId) { duelEndApplied = false; startTopicDuel(subjectId, topicId, false); },
+      startRevanche: function (subjectId, topicId) { duelEndApplied = false; startTopicDuel(subjectId, topicId); },
+      startRanked: function (subjectId) { duelEndApplied = false; startRankedDuel(subjectId); },
+      answer: answerQuestion,
+      nextQuestion: nextQuestion,
+      nextRound: startNextRound,
+      retryDuel: retryDuel,
+      speakExplain: function (subjectId, topicId) { var t = findTopic(subjectId, topicId); if (t) speak(t.explain.join(". ") + ". Exemplo: " + t.example); },
+      speakRap: function (subjectId, topicId) { var t = findTopic(subjectId, topicId); if (t) speak(t.rap.join(", ")); },
+      toggleBeat: toggleBeat,
+      toggleReadingMode: toggleReadingMode,
+      toggleRap: toggleRap,
+    };
+
+    render();
+  })();
+  </script>
+<script src="assets/music.js"></script>
+<script src="assets/accounts.js"></script>
+</body>
+</html>
+
